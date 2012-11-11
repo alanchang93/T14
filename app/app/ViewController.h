@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "UIDropDownMenu.h"
+
 
 @interface ViewController : UIViewController <UITextFieldDelegate> {
     NSMutableArray * _contactInfo;
+    //IBOutlet UITextField *textfield;
+    //UIDropDownMenu *menu;
 }
 
 @property (copy, nonatomic) NSString *name;
@@ -17,6 +21,12 @@
 @property (copy, nonatomic) NSString *address;
 @property (copy, nonatomic) NSString *city;
 @property (copy, nonatomic) NSString *state;
-
+@property (copy, nonatomic) NSString *zip;
+@property (copy, nonatomic) NSString *cell;
+@property (copy, nonatomic) NSString *work;
+@property (copy, nonatomic) NSString *email;
+@property (copy, nonatomic) NSString *country;
+//@property (strong, nonatomic) IBOutlet UITextField *textfield;
+//@property (strong, nonatomic) UIDropDownMenu *menu;
 
 @end
