@@ -9,6 +9,19 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *stateField;
+@property (weak, nonatomic) IBOutlet UILabel *stateLabel;
+
+@property (weak, nonatomic) IBOutlet UITextField *cityField;
+@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+
+@property (weak, nonatomic) IBOutlet UITextField *addressField;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+
+
+@property (weak, nonatomic) IBOutlet UITextField *dobField;
+@property (weak, nonatomic) IBOutlet UILabel *dobLabel;
+
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 - (IBAction)update:(id)sender;
@@ -32,8 +45,12 @@
 
 - (IBAction)update:(id)sender {
     self.name = self.nameField.text;
- 
-    _contactInfo = [[NSMutableArray alloc] initWithObjects:@[self.name],nil];
+    self.dob = self.dobField.text;
+    self.address = self.addressField.text;
+    self.city = self.cityField.text;
+    self.state = self.stateField.text;
+    
+    _contactInfo = [[NSMutableArray alloc] initWithObjects:@[self.name, self.dob, self.address,self.city, self.state],nil];
     
     
 

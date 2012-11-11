@@ -13,5 +13,10 @@
 }
 
 @property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *dob;
+@property (copy, nonatomic) NSString *address;
+@property (copy, nonatomic) NSString *city;
+@property (copy, nonatomic) NSString *state;
+
 
 @end
