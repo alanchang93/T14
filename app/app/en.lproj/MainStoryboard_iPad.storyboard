@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -76,6 +76,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9am-Mq-gKY">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="183" id="FDw-yf-dNh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -98,9 +101,6 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Country:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NA-0L-vq0">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="65" id="MZp-eP-FL8"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -166,13 +166,6 @@
                                     <outlet property="delegate" destination="2" id="IC8-Md-N3X"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gsh-NU-gAa">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="0Iz-2G-jO5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -180,14 +173,12 @@
                             <constraint firstItem="p3g-H5-STf" firstAttribute="top" secondItem="5" secondAttribute="top" constant="343" id="2Ts-rA-cKE"/>
                             <constraint firstItem="rdW-a3-tTa" firstAttribute="leading" secondItem="aaf-bb-Rqw" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="3YN-8u-28U"/>
                             <constraint firstItem="cEO-jb-n6t" firstAttribute="top" secondItem="5" secondAttribute="top" constant="201" id="9xp-zo-JKC"/>
-                            <constraint firstItem="gsh-NU-gAa" firstAttribute="leading" secondItem="3NA-0L-vq0" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="AOb-t5-cW1"/>
                             <constraint firstItem="Te0-VD-xKp" firstAttribute="baseline" secondItem="g9u-Sb-Yny" secondAttribute="baseline" type="default" id="BC5-4M-X5O"/>
                             <constraint firstItem="oKX-y1-L80" firstAttribute="top" secondItem="5" secondAttribute="top" constant="114" id="C5l-de-UP6"/>
                             <constraint firstItem="3NA-0L-vq0" firstAttribute="top" secondItem="5" secondAttribute="top" constant="347" id="EdV-ZU-bPx"/>
                             <constraint firstItem="pNT-mc-6vk" firstAttribute="leading" secondItem="HTA-gb-pNd" secondAttribute="leading" type="default" id="IYS-bs-3A8"/>
                             <constraint firstItem="aaf-bb-Rqw" firstAttribute="top" secondItem="5" secondAttribute="top" constant="412" id="L0B-h6-iLo"/>
                             <constraint firstItem="g9u-Sb-Yny" firstAttribute="baseline" secondItem="9am-Mq-gKY" secondAttribute="baseline" type="default" id="LBv-hr-gJf"/>
-                            <constraint firstItem="gsh-NU-gAa" firstAttribute="top" secondItem="3NA-0L-vq0" secondAttribute="top" type="default" id="MCh-RM-cob"/>
                             <constraint firstItem="XZV-Af-Sla" firstAttribute="bottom" secondItem="rdW-a3-tTa" secondAttribute="bottom" type="default" id="PJl-Sx-wpp"/>
                             <constraint firstAttribute="bottom" secondItem="g9b-r8-BUf" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="PqB-3N-Y4Z"/>
                             <constraint firstItem="aR8-Pw-xEp" firstAttribute="baseline" secondItem="pNT-mc-6vk" secondAttribute="baseline" type="default" id="Pzn-sY-nMS"/>
@@ -211,7 +202,6 @@
                             <constraint firstItem="p3g-H5-STf" firstAttribute="leading" secondItem="aR8-Pw-xEp" secondAttribute="leading" type="default" id="iwS-NW-ngQ"/>
                             <constraint firstItem="aaf-bb-Rqw" firstAttribute="leading" secondItem="3NA-0L-vq0" secondAttribute="leading" type="default" id="jef-TS-ah4"/>
                             <constraint firstItem="9am-Mq-gKY" firstAttribute="trailing" secondItem="rdW-a3-tTa" secondAttribute="trailing" type="default" id="k8e-UH-pFC"/>
-                            <constraint firstItem="gsh-NU-gAa" firstAttribute="leading" secondItem="9am-Mq-gKY" secondAttribute="leading" type="default" id="knO-h2-X4t"/>
                             <constraint firstItem="7vc-OY-fcB" firstAttribute="leading" secondItem="cEO-jb-n6t" secondAttribute="leading" type="default" id="kye-Ih-4d3"/>
                             <constraint firstItem="Te0-VD-xKp" firstAttribute="trailing" secondItem="HTA-gb-pNd" secondAttribute="trailing" type="default" id="n9M-8j-wbs"/>
                             <constraint firstItem="rdW-a3-tTa" firstAttribute="trailing" secondItem="PkD-h2-eZs" secondAttribute="trailing" type="default" id="nvr-TP-O1o"/>
@@ -231,7 +221,6 @@
                         <outlet property="cellLabel" destination="aaf-bb-Rqw" id="9bC-Ax-lvb"/>
                         <outlet property="cityField" destination="9am-Mq-gKY" id="UiI-hx-Zyp"/>
                         <outlet property="cityLabel" destination="7vc-OY-fcB" id="dXg-X2-Mee"/>
-                        <outlet property="countryField" destination="gsh-NU-gAa" id="Ech-Xl-X4X"/>
                         <outlet property="countryLabel" destination="3NA-0L-vq0" id="uRf-uf-dLw"/>
                         <outlet property="dobField" destination="oKX-y1-L80" id="DG8-Ia-R4k"/>
                         <outlet property="dobLabel" destination="aR8-Pw-xEp" id="TM2-fe-euT"/>
@@ -265,7 +254,6 @@
                 <relationship kind="outlet" name="cellLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="cityField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="cityLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="countryField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="countryLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="dobField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="dobLabel" candidateClass="UILabel"/>
