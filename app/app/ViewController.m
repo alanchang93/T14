@@ -32,5 +32,22 @@
 }
 
 - (IBAction)update:(id)sender {
+    self.name = self.nameField.text;
+    
+    /*
+    NSString *nameString = self.name;
+    if([nameString length] == 0) {
+        nameString = @"World";
+    }
+    */
+    
+    self.updatedName.text = self.name;
+}
+
+- (BOOL) nameFieldShouldReturn: (UITextField *) textField {
+    if (textField == self.nameField){
+        [textField resignFirstResponder];
+    }
+    return YES;
 }
 @end
