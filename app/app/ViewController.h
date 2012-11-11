@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UITextFieldDelegate>
+@interface ViewController : UIViewController <UITextFieldDelegate> {
+    NSMutableArray * _contactInfo;
+}
 
 @property (copy, nonatomic) NSString *name;
 

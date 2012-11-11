@@ -24,11 +24,6 @@
                                     <outlet property="delegate" destination="2" id="zSX-Gz-1Va"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVl-nz-JvQ">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9b-r8-BUf">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Update">
@@ -46,39 +41,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="g9b-r8-BUf" firstAttribute="top" secondItem="5" secondAttribute="top" constant="305" id="CTz-HE-nVB"/>
+                            <constraint firstItem="g9b-r8-BUf" firstAttribute="centerX" secondItem="pNT-mc-6vk" secondAttribute="centerX" type="default" id="Eqw-bA-jXS"/>
                             <constraint firstItem="pNT-mc-6vk" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="160" id="K5Q-mC-leP"/>
                             <constraint firstItem="pNT-mc-6vk" firstAttribute="top" secondItem="5" secondAttribute="top" constant="132" id="NV0-i5-qKg"/>
-                            <constraint firstItem="hVl-nz-JvQ" firstAttribute="top" secondItem="5" secondAttribute="top" constant="251" id="gkA-6z-wcP"/>
-                            <constraint firstItem="g9b-r8-BUf" firstAttribute="centerX" secondItem="hVl-nz-JvQ" secondAttribute="centerX" type="default" id="jqF-Rl-ExL"/>
                             <constraint firstItem="gER-z2-Waz" firstAttribute="top" secondItem="5" secondAttribute="top" constant="136" id="prX-WP-gAd"/>
                             <constraint firstItem="gER-z2-Waz" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="85" id="ysF-OM-sPK"/>
-                            <constraint firstItem="hVl-nz-JvQ" firstAttribute="centerX" secondItem="pNT-mc-6vk" secondAttribute="centerX" type="default" id="zKU-re-lxW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="nameField" destination="pNT-mc-6vk" id="L9V-o4-2e9"/>
                         <outlet property="nameLabel" destination="gER-z2-Waz" id="eLF-Gn-wl3"/>
-                        <outlet property="updatedName" destination="hVl-nz-JvQ" id="8k5-j3-3m9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="update:"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="updatedName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -9,7 +9,6 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *updatedName;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 - (IBAction)update:(id)sender;
@@ -33,15 +32,12 @@
 
 - (IBAction)update:(id)sender {
     self.name = self.nameField.text;
+ 
+    _contactInfo = [[NSMutableArray alloc] initWithObjects:@[self.name],nil];
     
-    /*
-    NSString *nameString = self.name;
-    if([nameString length] == 0) {
-        nameString = @"World";
-    }
-    */
     
-    self.updatedName.text = self.name;
+
+    NSLog(@"%@",_contactInfo);
 }
 
 - (BOOL) nameFieldShouldReturn: (UITextField *) textField {
