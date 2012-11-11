@@ -48,24 +48,12 @@
 
 @implementation ViewController 
 
-//@synthesize country,  menu;
+@synthesize _countryField;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   /* menu = [[UIDropDownMenu alloc] init];
-    NSArray *arrayNames = [[NSArray alloc] initWithObjects:
-                           @"Erik Vanderwal",
-                           @"Max Town",
-                           @"Darryl Totman",
-                           @"Avis Villalon",
-                           @"Hugh Salvia",
-                           @"Allie Maland",
-                           nil];
-    [menu makeMenu:self.countryField titleArray:arrayNames valueArray: arrayNames targetView:self.view];
-    [menu setDropdownTextColor:[UIColor whiteColor]];
-    [menu setDropdownBackgroundColor:[UIColor darkGrayColor]];
-    */
+    countryList = [[NSArray alloc] initWithObjects: @"USA", @"Mexico", @"Canada",nil];
     
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -94,6 +82,25 @@
 
     NSLog(@"%@",_contactInfo); //prints what is in contact info list
 }
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)_countryField
+{
+    //One column
+    return 1;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    //set number of rows
+    return countryList.count;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    //set item per row
+    return [countryList objectAtIndex:row];
+}
+
 
 - (BOOL) nameFieldShouldReturn: (UITextField *) textField {
     if (textField == self.nameField){

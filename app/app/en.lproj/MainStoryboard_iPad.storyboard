@@ -166,12 +166,18 @@
                                     <outlet property="delegate" destination="2" id="IC8-Md-N3X"/>
                                 </connections>
                             </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaM-BX-BTe">
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="MPh-9c-sVl"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PkD-h2-eZs" firstAttribute="leading" secondItem="saE-eA-O0i" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="0O7-if-f9M"/>
                             <constraint firstItem="p3g-H5-STf" firstAttribute="top" secondItem="5" secondAttribute="top" constant="343" id="2Ts-rA-cKE"/>
                             <constraint firstItem="rdW-a3-tTa" firstAttribute="leading" secondItem="aaf-bb-Rqw" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="3YN-8u-28U"/>
+                            <constraint firstItem="iaM-BX-BTe" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="7Qa-xH-W8b"/>
                             <constraint firstItem="cEO-jb-n6t" firstAttribute="top" secondItem="5" secondAttribute="top" constant="201" id="9xp-zo-JKC"/>
                             <constraint firstItem="Te0-VD-xKp" firstAttribute="baseline" secondItem="g9u-Sb-Yny" secondAttribute="baseline" type="default" id="BC5-4M-X5O"/>
                             <constraint firstItem="oKX-y1-L80" firstAttribute="top" secondItem="5" secondAttribute="top" constant="114" id="C5l-de-UP6"/>
@@ -179,15 +185,17 @@
                             <constraint firstItem="pNT-mc-6vk" firstAttribute="leading" secondItem="HTA-gb-pNd" secondAttribute="leading" type="default" id="IYS-bs-3A8"/>
                             <constraint firstItem="aaf-bb-Rqw" firstAttribute="top" secondItem="5" secondAttribute="top" constant="412" id="L0B-h6-iLo"/>
                             <constraint firstItem="g9u-Sb-Yny" firstAttribute="baseline" secondItem="9am-Mq-gKY" secondAttribute="baseline" type="default" id="LBv-hr-gJf"/>
+                            <constraint firstItem="iaM-BX-BTe" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="Ock-AL-FAX"/>
+                            <constraint firstItem="gER-z2-Waz" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="77" id="Ohg-DU-Bgm"/>
                             <constraint firstItem="XZV-Af-Sla" firstAttribute="bottom" secondItem="rdW-a3-tTa" secondAttribute="bottom" type="default" id="PJl-Sx-wpp"/>
                             <constraint firstAttribute="bottom" secondItem="g9b-r8-BUf" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="PqB-3N-Y4Z"/>
                             <constraint firstItem="aR8-Pw-xEp" firstAttribute="baseline" secondItem="pNT-mc-6vk" secondAttribute="baseline" type="default" id="Pzn-sY-nMS"/>
+                            <constraint firstAttribute="bottom" secondItem="iaM-BX-BTe" secondAttribute="bottom" constant="8" id="Q6M-XM-FvY"/>
                             <constraint firstItem="Te0-VD-xKp" firstAttribute="leading" secondItem="g9u-Sb-Yny" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="QQC-cw-4fa"/>
                             <constraint firstItem="PkD-h2-eZs" firstAttribute="top" secondItem="5" secondAttribute="top" constant="464" id="R07-HQ-djD"/>
                             <constraint firstItem="vrk-IV-2aY" firstAttribute="centerX" secondItem="tY0-eB-mbJ" secondAttribute="centerX" type="default" id="RQY-h3-OlV"/>
                             <constraint firstItem="oKX-y1-L80" firstAttribute="trailing" secondItem="HTA-gb-pNd" secondAttribute="trailing" type="default" id="T6h-HH-d3P"/>
                             <constraint firstItem="vrk-IV-2aY" firstAttribute="baseline" secondItem="aaf-bb-Rqw" secondAttribute="baseline" type="default" id="U7R-B2-HoI"/>
-                            <constraint firstItem="gER-z2-Waz" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="77" id="UDv-b7-jiP"/>
                             <constraint firstItem="9am-Mq-gKY" firstAttribute="top" secondItem="5" secondAttribute="top" constant="270" id="Wiu-jr-lnG"/>
                             <constraint firstItem="cEO-jb-n6t" firstAttribute="leading" secondItem="gER-z2-Waz" secondAttribute="leading" type="default" id="XFJ-qp-DIn"/>
                             <constraint firstItem="HTA-gb-pNd" firstAttribute="top" secondItem="5" secondAttribute="top" constant="197" id="Xhr-jd-bDd"/>
@@ -199,6 +207,7 @@
                             <constraint firstItem="3NA-0L-vq0" firstAttribute="leading" secondItem="7vc-OY-fcB" secondAttribute="leading" type="default" id="eGG-9q-rI4"/>
                             <constraint firstItem="XZV-Af-Sla" firstAttribute="trailing" secondItem="p3g-H5-STf" secondAttribute="trailing" type="default" id="eWG-Ae-3IJ"/>
                             <constraint firstItem="rdW-a3-tTa" firstAttribute="baseline" secondItem="XZV-Af-Sla" secondAttribute="baseline" type="default" id="gRe-T0-X32"/>
+                            <constraint firstItem="iaM-BX-BTe" firstAttribute="centerX" secondItem="g9b-r8-BUf" secondAttribute="centerX" type="default" id="gfq-pK-sf7"/>
                             <constraint firstItem="p3g-H5-STf" firstAttribute="leading" secondItem="aR8-Pw-xEp" secondAttribute="leading" type="default" id="iwS-NW-ngQ"/>
                             <constraint firstItem="aaf-bb-Rqw" firstAttribute="leading" secondItem="3NA-0L-vq0" secondAttribute="leading" type="default" id="jef-TS-ah4"/>
                             <constraint firstItem="9am-Mq-gKY" firstAttribute="trailing" secondItem="rdW-a3-tTa" secondAttribute="trailing" type="default" id="k8e-UH-pFC"/>
@@ -209,7 +218,6 @@
                             <constraint firstItem="vrk-IV-2aY" firstAttribute="trailing" secondItem="g9u-Sb-Yny" secondAttribute="trailing" type="default" id="pSN-m2-wmI"/>
                             <constraint firstItem="tY0-eB-mbJ" firstAttribute="baseline" secondItem="3NA-0L-vq0" secondAttribute="baseline" type="default" id="qtX-wd-Kzi"/>
                             <constraint firstAttribute="trailing" secondItem="p3g-H5-STf" secondAttribute="trailing" constant="137" id="sPg-ns-Du9"/>
-                            <constraint firstItem="g9b-r8-BUf" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" type="default" id="xIK-Vk-qmQ"/>
                             <constraint firstItem="saE-eA-O0i" firstAttribute="leading" secondItem="aaf-bb-Rqw" secondAttribute="leading" type="default" id="zGn-Tg-ybn"/>
                             <constraint firstItem="9am-Mq-gKY" firstAttribute="leading" secondItem="HTA-gb-pNd" secondAttribute="leading" type="default" id="zMK-zh-C52"/>
                         </constraints>
@@ -222,6 +230,7 @@
                         <outlet property="cityField" destination="9am-Mq-gKY" id="UiI-hx-Zyp"/>
                         <outlet property="cityLabel" destination="7vc-OY-fcB" id="dXg-X2-Mee"/>
                         <outlet property="countryLabel" destination="3NA-0L-vq0" id="uRf-uf-dLw"/>
+                        <outlet property="countryList" destination="iaM-BX-BTe" id="r7i-eM-q1Q"/>
                         <outlet property="dobField" destination="oKX-y1-L80" id="DG8-Ia-R4k"/>
                         <outlet property="dobLabel" destination="aR8-Pw-xEp" id="TM2-fe-euT"/>
                         <outlet property="emailField" destination="PkD-h2-eZs" id="DPe-yn-gvx"/>
@@ -238,6 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-187" y="-366"/>
         </scene>
     </scenes>
     <classes>
@@ -254,6 +264,7 @@
                 <relationship kind="outlet" name="cellLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="cityField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="cityLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="countryField" candidateClass="UIPickerView"/>
                 <relationship kind="outlet" name="countryLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="dobField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="dobLabel" candidateClass="UILabel"/>

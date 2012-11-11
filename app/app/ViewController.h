@@ -10,8 +10,10 @@
 //#import "UIDropDownMenu.h"
 
 
-@interface ViewController : UIViewController <UITextFieldDelegate> {
+@interface ViewController : UIViewController <UITextFieldDelegate,UIPickerViewDataSource, UIPickerViewDelegate> {
     NSMutableArray * _contactInfo;
+    NSArray *countryList;
+    UIPickerView *countryField;
     //IBOutlet UITextField *textfield;
     //UIDropDownMenu *menu;
 }
@@ -28,5 +30,6 @@
 @property (copy, nonatomic) NSString *country;
 //@property (strong, nonatomic) IBOutlet UITextField *textfield;
 //@property (strong, nonatomic) UIDropDownMenu *menu;
+@property (strong, nonatomic) IBOutlet UIPickerView *countryField;
 
 @end
