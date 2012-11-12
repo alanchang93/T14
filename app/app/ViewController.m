@@ -51,7 +51,7 @@
 @synthesize picker;
 @synthesize countryField;
 @synthesize countryList;
-
+@synthesize background;
 
 - (void)viewDidLoad
 {
@@ -60,6 +60,8 @@
     countryList = [[NSArray alloc] initWithObjects:@"USA", @"Mexico",@"Canada",nil];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    background.frame = CGRectMake(0, 1000, 768, 263);
 }
 
 - (void)viewDidUnload
@@ -71,6 +73,20 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (IBAction)show:(id)sender {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    background.frame = CGRectMake(0, 741, 768, 263);
+    [UIView commitAnimations];
+}
+
+- (IBAction)hidButton:(id)sender {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    background.frame = CGRectMake(0, 1000, 768, 263);
+    [UIView commitAnimations];
 }
 
 //********************************* Save Button ****************************
@@ -124,4 +140,6 @@
     }
     return YES;
 }
+
+
 @end

@@ -29,5 +29,10 @@
 @property (strong, nonatomic) IBOutlet UITextField *countryField;
 @property (strong, nonatomic) NSArray *countryList;
 
+@property (strong, nonatomic) IBOutlet UIView *background;
+- (IBAction)show:(id)sender;
+- (IBAction)hidButton:(id)sender;
+
+
 
 @end
