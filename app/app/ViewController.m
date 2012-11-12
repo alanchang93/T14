@@ -55,12 +55,11 @@
 
 - (void)viewDidLoad
 {
-    
     picker.showsSelectionIndicator = TRUE;
     countryList = [[NSArray alloc] initWithObjects:@"USA", @"Mexico",@"Canada",nil];
+    background.hidden = YES;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
     background.frame = CGRectMake(0, 1000, 768, 263);
 }
 
@@ -75,7 +74,19 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-- (IBAction)show:(id)sender {
+-(BOOL) textFieldShouldBeginEditing:(UITextField *)textField{
+    if (textField == countryField){
+        background.hidden = NO;
+        [countryField resignFirstResponder];
+        return NO;
+    }
+    else{
+        background.hidden = YES;
+        return YES;
+    }
+}
+
+- (IBAction)showDropDown:(id)sender {
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
     background.frame = CGRectMake(0, 741, 768, 263);
@@ -134,12 +145,7 @@
     return;
 }
 
-- (BOOL) nameFieldShouldReturn: (UITextField *) textField {
-    if (textField == self.nameField){
-        [textField resignFirstResponder];
-    }
-    return YES;
-}
+
 
 
 @end
