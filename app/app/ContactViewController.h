@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "UIDropDownMenu.h"
 
 
-@interface ContactViewController : UIViewController <UITextFieldDelegate,UIPickerViewDataSource, UIPickerViewDelegate> {
+@interface ContactViewController : UIViewController <UITextFieldDelegate,UIPickerViewDataSource, UIPickerViewDelegate, UIPopoverControllerDelegate> {
     NSMutableArray * _contactInfo;
 }
 
@@ -32,7 +31,6 @@
 @property (strong, nonatomic) IBOutlet UIView *background;
 - (IBAction)showDropDown:(id)sender;
 - (IBAction)hidButton:(id)sender;
-
 
 
 @end
