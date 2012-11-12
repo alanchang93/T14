@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4181B13E164F8B2900567868 /* UIDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4181B13D164F8B2900567868 /* UIDropDownMenu.m */; };
 		4199F74D164F66F9003A57F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4199F74C164F66F9003A57F0 /* UIKit.framework */; };
 		4199F74F164F66F9003A57F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4199F74E164F66F9003A57F0 /* Foundation.framework */; };
 		4199F751164F66F9003A57F0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4199F750164F66F9003A57F0 /* CoreGraphics.framework */; };
@@ -38,8 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4181B13C164F8B2900567868 /* UIDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDropDownMenu.h; sourceTree = "<group>"; };
-		4181B13D164F8B2900567868 /* UIDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDropDownMenu.m; sourceTree = "<group>"; };
 		4199F748164F66F9003A57F0 /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4199F74C164F66F9003A57F0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4199F74E164F66F9003A57F0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -126,8 +123,6 @@
 				4199F75C164F66F9003A57F0 /* AppDelegate.m */,
 				4199F764164F66F9003A57F0 /* MainStoryboard_iPhone.storyboard */,
 				4199F767164F66F9003A57F0 /* MainStoryboard_iPad.storyboard */,
-				4181B13C164F8B2900567868 /* UIDropDownMenu.h */,
-				4181B13D164F8B2900567868 /* UIDropDownMenu.m */,
 				4199F76A164F66F9003A57F0 /* ViewController.h */,
 				4199F76B164F66F9003A57F0 /* ViewController.m */,
 				4199F753164F66F9003A57F0 /* Supporting Files */,
@@ -282,7 +277,6 @@
 				4199F759164F66F9003A57F0 /* main.m in Sources */,
 				4199F75D164F66F9003A57F0 /* AppDelegate.m in Sources */,
 				4199F76C164F66F9003A57F0 /* ViewController.m in Sources */,
-				4181B13E164F8B2900567868 /* UIDropDownMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
