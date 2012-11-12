@@ -10,7 +10,6 @@
 
 @interface ViewController ()
 
-
 @property (weak, nonatomic) IBOutlet UILabel *countryLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
@@ -74,6 +73,26 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+//********************************* Save Button ****************************
+
+- (IBAction)update:(id)sender {
+	//assigns a string variable to the text in the textboxes
+    self.name = self.nameField.text;
+    self.dob = self.dobField.text;
+    self.address = self.addressField.text;
+    self.city = self.cityField.text;
+    self.state = self.stateField.text;
+    self.country = self.countryField.text;
+    self.zip = self.zipField.text;
+    self.cell = self.cellField.text;
+    self.work = self.workField.text;
+    self.email = self.emailField.text;
+    
+    _contactInfo = [[NSMutableArray alloc] initWithObjects:@[self.name, self.dob, self.address,self.city, self.state, self.country, self.zip, self.cell, self.work, self.email],nil];
+    
+    NSLog(@"%@",_contactInfo); //prints what is in contact info list
+}
+
 //***************************For Country Field Picker***********************
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
@@ -96,30 +115,7 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
         self.countryField.text=[countryList objectAtIndex:row];
-        return;
-}
-
-//********************************* Save Button ****************************
-
-
-- (IBAction)update:(id)sender {
-	//assigns a string variable to the text in the textboxes
-    self.name = self.nameField.text;
-    self.dob = self.dobField.text;
-    self.address = self.addressField.text;
-    self.city = self.cityField.text;
-    self.state = self.stateField.text;
-    self.country = self.countryField.text;
-    self.zip = self.zipField.text;
-    self.cell = self.cellField.text;
-    self.work = self.workField.text;
-    self.email = self.emailField.text;
-    
-    _contactInfo = [[NSMutableArray alloc] initWithObjects:@[self.name, self.dob, self.address,self.city, self.state, self.country, self.zip, self.cell, self.work, self.email],nil];
-    
-    
-
-    NSLog(@"%@",_contactInfo); //prints what is in contact info list
+    return;
 }
 
 - (BOOL) nameFieldShouldReturn: (UITextField *) textField {
