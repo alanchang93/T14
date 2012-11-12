@@ -10,7 +10,7 @@
 //#import "UIDropDownMenu.h"
 
 
-@interface ViewController : UIViewController <UITextFieldDelegate,UIPickerViewDataSource, UIPickerViewDelegate> {
+@interface ContactViewController : UIViewController <UITextFieldDelegate,UIPickerViewDataSource, UIPickerViewDelegate> {
     NSMutableArray * _contactInfo;
 }
 

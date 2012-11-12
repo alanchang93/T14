@@ -5,10 +5,10 @@
 //  Created by App Jam on 11/10/12.
 //  Copyright (c) 2012 Team 14. All rights reserved.
 //
-#import "ViewController.h"
+#import "ContactViewController.h"
 
 
-@interface ViewController ()
+@interface ContactViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *countryLabel;
 
@@ -46,7 +46,7 @@
 
 
 
-@implementation ViewController 
+@implementation ContactViewController 
 
 @synthesize picker;
 @synthesize countryField;
@@ -74,6 +74,7 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+
 -(BOOL) textFieldShouldBeginEditing:(UITextField *)textField{
     if (textField == countryField){
         background.hidden = NO;
@@ -84,6 +85,9 @@
         background.hidden = YES;
         return YES;
     }
+    if (!textField.isEditing){
+        background.hidden = YES;
+    }
 }
 
 - (IBAction)showDropDown:(id)sender {
@@ -91,6 +95,7 @@
     [UIView setAnimationDuration:0.3];
     background.frame = CGRectMake(0, 741, 768, 263);
     [UIView commitAnimations];
+    
 }
 
 - (IBAction)hidButton:(id)sender {
