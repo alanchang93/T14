@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Team 14. All rights reserved.
 //
 #import "ContactViewController.h"
+#import "PopoverViewController.h"
 
 
 @interface ContactViewController ()
@@ -53,12 +54,17 @@
 @synthesize countryList;
 @synthesize background;
 
+@synthesize popover;
+//@synthesize tabs;
+
 - (void)viewDidLoad
 {
     picker.showsSelectionIndicator = TRUE;
     countryList = [[NSArray alloc] initWithObjects:@"USA", @"Mexico",@"Canada",nil];
     background.hidden = YES;
     [super viewDidLoad];
+    
+    
 	// Do any additional setup after loading the view, typically from a nib.
     background.frame = CGRectMake(0, 1000, 768, 263);
 }
@@ -74,6 +80,19 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self.nameField resignFirstResponder];
+    [self.dobField resignFirstResponder];
+    [self.addressField resignFirstResponder];
+    [self.cityField resignFirstResponder];
+    [self.stateField resignFirstResponder];
+    [countryField resignFirstResponder];
+    [self.zipField resignFirstResponder];
+    [self.cellField resignFirstResponder];
+    [self.workField resignFirstResponder];
+    [self.emailField resignFirstResponder];
+    return YES;
+}
 
 -(BOOL) textFieldShouldBeginEditing:(UITextField *)textField{
     if (textField == countryField){
@@ -85,12 +104,10 @@
         background.hidden = YES;
         return YES;
     }
-    if (!textField.isEditing){
-        background.hidden = YES;
-    }
 }
 
 - (IBAction)showDropDown:(id)sender {
+
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
     background.frame = CGRectMake(0, 741, 768, 263);
@@ -103,6 +120,19 @@
     [UIView setAnimationDuration:0.3];
     background.frame = CGRectMake(0, 1000, 768, 263);
     [UIView commitAnimations];
+}
+
+- (IBAction)popButton:(id)sender {
+    if ([popover isPopoverVisible]){
+        [popover dismissPopoverAnimated:YES];
+    }
+    else{
+    PopoverViewController *popup = [[PopoverViewController alloc] init];
+    popover = [[UIPopoverController alloc]initWithContentViewController:popup];
+    popover.popoverContentSize = CGSizeMake(200,300);
+        
+    [popover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
 }
 
 

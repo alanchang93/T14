@@ -210,7 +210,7 @@
                                 <items>
                                     <barButtonItem title="Select" id="ESP-gT-2nZ">
                                         <connections>
-                                            <action selector="showPop:" destination="2" id="Lxe-Io-Ff3"/>
+                                            <action selector="popButton:" destination="2" id="G7M-3m-tBM"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
