@@ -75,12 +75,12 @@
     NSLog(@"%@",items);
     
     NSArray *patient;
-    for(int i = 0; i<[rows count]; i++){
-        patient = [[rows objectAtIndex:i] componentsSeparatedByString:@","];
-        for (int i = 0; i < [patient count]; i++){
-        NSLog(@"%@", [patient objectAtIndex:i]);
+        for(int i = 0; i<[rows count]; i++){
+            patient = [[rows objectAtIndex:i] componentsSeparatedByString:@","];
+            for (int i = 0; i < [patient count]; i++){
+                NSLog(@"%@", [patient objectAtIndex:i]);
+            }
         }
-    }
     }
     [super viewDidLoad];
     
