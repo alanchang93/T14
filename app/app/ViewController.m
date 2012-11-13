@@ -1,28 +1,22 @@
 //
-//  PopoverViewController.m
+//  ViewController.m
 //  app
 //
 //  Created by App Jam on 11/12/12.
 //  Copyright (c) 2012 Team 14. All rights reserved.
 //
 
-#import "PopoverViewController.h"
+#import "ViewController.h"
 
-@interface PopoverViewController ()
+@interface ViewController ()
 
 @end
 
-@implementation PopoverViewController
+@implementation ViewController
 
-<<<<<<< HEAD
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-=======
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
->>>>>>> Created popover but need to get rid of it after button press
     if (self) {
         // Custom initialization
     }
@@ -32,16 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-<<<<<<< HEAD
-    // Do any additional setup after loading the view from its nib.
-=======
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
->>>>>>> Created popover but need to get rid of it after button press
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,8 +40,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-<<<<<<< HEAD
-=======
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -133,5 +121,4 @@
      */
 }
 
->>>>>>> Created popover but need to get rid of it after button press
 @end

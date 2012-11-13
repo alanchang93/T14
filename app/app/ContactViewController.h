@@ -33,8 +33,11 @@
 - (IBAction)showDropDown:(id)sender;
 - (IBAction)hidButton:(id)sender;
 
+<<<<<<< HEAD
 @property (strong, nonatomic) IBOutlet UIPopoverController *popover;
 //@property (strong, nonatomic) IBOutlet UITableView *tabs;
 - (IBAction)popButton:(id)sender;
 
+=======
+>>>>>>> Created popover but need to get rid of it after button press
 @end

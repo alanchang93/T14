@@ -54,8 +54,11 @@
 @synthesize countryList;
 @synthesize background;
 
+<<<<<<< HEAD
 @synthesize popover;
 //@synthesize tabs;
+=======
+>>>>>>> Created popover but need to get rid of it after button press
 
 - (void)viewDidLoad
 {
@@ -122,6 +125,7 @@
     [UIView commitAnimations];
 }
 
+<<<<<<< HEAD
 - (IBAction)popButton:(id)sender {
     if ([popover isPopoverVisible]){
         [popover dismissPopoverAnimated:YES];
@@ -136,6 +140,8 @@
 }
 
 
+=======
+>>>>>>> Created popover but need to get rid of it after button press
 //********************************* Save Button ****************************
 
 - (IBAction)update:(id)sender {
@@ -180,8 +186,5 @@
         self.countryField.text=[countryList objectAtIndex:row];
     return;
 }
-
-
-
 
 @end

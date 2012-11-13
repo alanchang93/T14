@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+<<<<<<< HEAD
 @interface PopoverViewController : UIViewController
+=======
+@interface PopoverViewController : UITableViewController
+>>>>>>> Created popover but need to get rid of it after button press
 
 @end
