@@ -60,10 +60,21 @@
     countryList = [[NSArray alloc] initWithObjects:@"USA", @"Mexico",@"Canada",nil];
     background.hidden = YES;
     fm = [NSFileManager defaultManager];
+    NSError *error;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *dir = [paths objectAtIndex:0];
-    for (NSString* fileName in [fm contentsOfDirectoryAtPath:dir error:nil]){
-        NSLog(@"file: %@", fileName);
+    NSString *fileName = [NSString stringWithFormat:@"jane.csv"];
+    NSString *filePath = [dir stringByAppendingPathComponent:fileName];
+    NSString *items = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
+    NSArray *rows = [items componentsSeparatedByString:@"\n"];
+    NSLog(@"%@",items);
+    
+    NSArray *patient;
+    for(int i = 0; i<[rows count]; i++){
+        patient = [[rows objectAtIndex:i] componentsSeparatedByString:@","];
+        for (int i = 0; i < [patient count]; i++){
+        NSLog(@"%@", [patient objectAtIndex:i]);
+        }
     }
     [super viewDidLoad];
     
