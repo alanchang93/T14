@@ -423,41 +423,6 @@
             <point key="canvasLocation" x="-598" y="-1235"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="ContactViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="hidButton:"/>
-                <relationship kind="action" name="showDropDown:"/>
-                <relationship kind="action" name="update:"/>
-                <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="background" candidateClass="UIView"/>
-                <relationship kind="outlet" name="cellField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="cellLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cityField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="cityLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="countryField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="countryLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="dobField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="dobLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="stateField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="stateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="workField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="workLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="zipField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="zipLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
