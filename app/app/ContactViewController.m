@@ -60,6 +60,11 @@
     countryList = [[NSArray alloc] initWithObjects:@"USA", @"Mexico",@"Canada",nil];
     background.hidden = YES;
     fm = [NSFileManager defaultManager];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *dir = [paths objectAtIndex:0];
+    for (NSString* fileName in [fm contentsOfDirectoryAtPath:dir error:nil]){
+        NSLog(@"file: %@", fileName);
+    }
     [super viewDidLoad];
     
     
@@ -103,6 +108,7 @@
         return YES;
     }
 }
+
 
 - (IBAction)showDropDown:(id)sender {
 
