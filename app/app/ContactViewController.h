@@ -32,4 +32,6 @@
 - (IBAction)showDropDown:(id)sender;
 - (IBAction)hidButton:(id)sender;
 
+- (IBAction)clearButton:(id)sender;
+
 @end

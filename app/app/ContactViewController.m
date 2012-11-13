@@ -119,6 +119,20 @@
     [UIView commitAnimations];
 }
 
+- (IBAction)clearButton:(id)sender {
+    self.nameField.text = nil;
+    self.dobField.text = nil;
+    self.addressField.text = nil;
+    self.cityField.text = nil;
+    self.stateField.text = nil;
+    self.countryField.text = nil;
+    self.zipField.text = nil;
+    self.cellField.text = nil;
+    self.workField.text = nil;
+    self.emailField.text = nil;
+    
+}
+
 
 
 //********************************* Save Button ****************************
