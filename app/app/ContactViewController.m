@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Team 14. All rights reserved.
 //
 #import "ContactViewController.h"
+#import "CSVParser.h"
 
 
 @interface ContactViewController ()
@@ -59,6 +60,7 @@
     picker.showsSelectionIndicator = TRUE;
     countryList = [[NSArray alloc] initWithObjects:@"USA", @"Mexico",@"Canada",nil];
     background.hidden = YES;
+    //reads csv files 
     fm = [NSFileManager defaultManager];
     NSError *error;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -66,22 +68,23 @@
     
     NSArray *fileList = [[NSArray alloc] init];
     fileList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dir error: &error];
-    for (NSString *i in fileList){
-        NSLog(@"%@", i);
+    for (NSString *i in fileList){ //goes through each patient
+        //NSLog(@"%@", i);
     NSString *fileName = [NSString stringWithFormat:@"%@",i];
     NSString *filePath = [dir stringByAppendingPathComponent:fileName];
     NSString *items = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
     NSArray *rows = [items componentsSeparatedByString:@"\n"];
-    NSLog(@"%@",items);
+    //NSLog(@"%@",items);
     
     NSArray *patient;
-        for(int i = 0; i<[rows count]; i++){
+        for(int i = 0; i<[rows count]; i++){ //gets each tab on patient
             patient = [[rows objectAtIndex:i] componentsSeparatedByString:@","];
-            for (int i = 0; i < [patient count]; i++){
-                NSLog(@"%@", [patient objectAtIndex:i]);
+            for (int i = 0; i < [patient count]; i++){ //gets each item per tab
+                //NSLog(@"%@", [patient objectAtIndex:i]);
             }
         }
     }
+    
     [super viewDidLoad];
     
     
@@ -129,7 +132,7 @@
 
 
 - (IBAction)showDropDown:(id)sender {
-
+    //shows pickerview
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
     background.frame = CGRectMake(0, 741, 768, 263);
@@ -138,6 +141,7 @@
 }
 
 - (IBAction)hidButton:(id)sender {
+    //hides pickerview
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
     background.frame = CGRectMake(0, 1000, 768, 263);
@@ -145,6 +149,7 @@
 }
 
 - (IBAction)clearButton:(id)sender {
+    //clears all textfields
     self.nameField.text = nil;
     self.dobField.text = nil;
     self.addressField.text = nil;
@@ -175,16 +180,21 @@
     self.work = self.workField.text;
     self.email = self.emailField.text;
     
-    _contactInfo = [[NSMutableArray alloc] initWithObjects:@[self.name, self.dob, self.address,self.city, self.state, self.country, self.zip, self.cell, self.work, self.email],nil];
-    data = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@%@%@%@%@%@%@%@%@%@%@",self.name,@",",self.dob,@",", self.address,@",", self.city,@",",self.state,@",",self.country,@",", self.zip,@",",self.cell,@",",self.work,@",",self.email];
+    //add stuff into the array
+    _contactInfo = [NSMutableArray arrayWithObjects:self.name, self.dob, self.address,self.city, self.state, self.country, self.zip, self.cell, self.work, self.email,nil];
     
-    NSLog(@"%@",_contactInfo); //prints what is in contact info list
+    NSString *data = [_contactInfo componentsJoinedByString:@","];//turns array to string with commas separating each item
+    //NSLog(@"%@", data);
     
+    //writes to csv file
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *dir = [paths objectAtIndex:0];
     NSString *fileName = [NSString stringWithFormat:@"%@%@",self.name,@".csv"];
     NSString *filePath = [dir stringByAppendingPathComponent:fileName];
     [data writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    
+    //sends data on _contactInfo to CSVParser class
+    [CSVParser loadData: _contactInfo];
 }
 
 //***************************For Country Field Picker***********************

@@ -24,6 +24,7 @@
 		4199F776164F66F9003A57F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4199F74E164F66F9003A57F0 /* Foundation.framework */; };
 		4199F77E164F66F9003A57F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4199F77C164F66F9003A57F0 /* InfoPlist.strings */; };
 		4199F781164F66F9003A57F0 /* appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4199F780164F66F9003A57F0 /* appTests.m */; };
+		41B28CB31652D236003252CB /* CSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B28CB21652D236003252CB /* CSVParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		4199F77D164F66F9003A57F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4199F77F164F66F9003A57F0 /* appTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = appTests.h; sourceTree = "<group>"; };
 		4199F780164F66F9003A57F0 /* appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = appTests.m; sourceTree = "<group>"; };
+		41B28CB11652D236003252CB /* CSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVParser.h; sourceTree = "<group>"; };
+		41B28CB21652D236003252CB /* CSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				4199F767164F66F9003A57F0 /* MainStoryboard_iPad.storyboard */,
 				4199F76A164F66F9003A57F0 /* ContactViewController.h */,
 				4199F76B164F66F9003A57F0 /* ContactViewController.m */,
+				41B28CB11652D236003252CB /* CSVParser.h */,
+				41B28CB21652D236003252CB /* CSVParser.m */,
 				4199F753164F66F9003A57F0 /* Supporting Files */,
 			);
 			path = app;
@@ -277,6 +282,7 @@
 				4199F759164F66F9003A57F0 /* main.m in Sources */,
 				4199F75D164F66F9003A57F0 /* AppDelegate.m in Sources */,
 				4199F76C164F66F9003A57F0 /* ContactViewController.m in Sources */,
+				41B28CB31652D236003252CB /* CSVParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
