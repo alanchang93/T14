@@ -11,6 +11,8 @@
 
 @interface ContactViewController : UIViewController <UITextFieldDelegate,UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource> {
     NSMutableArray * _contactInfo;
+    NSFileManager *fm;
+    NSString *data;
 }
 
 @property (copy, nonatomic) NSString *name;

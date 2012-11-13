@@ -59,6 +59,7 @@
     picker.showsSelectionIndicator = TRUE;
     countryList = [[NSArray alloc] initWithObjects:@"USA", @"Mexico",@"Canada",nil];
     background.hidden = YES;
+    fm = [NSFileManager defaultManager];
     [super viewDidLoad];
     
     
@@ -151,8 +152,15 @@
     self.email = self.emailField.text;
     
     _contactInfo = [[NSMutableArray alloc] initWithObjects:@[self.name, self.dob, self.address,self.city, self.state, self.country, self.zip, self.cell, self.work, self.email],nil];
+    data = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@%@%@%@%@%@%@%@%@%@%@",self.name,@",",self.dob,@",", self.address,@",", self.city,@",",self.state,@",",self.country,@",", self.zip,@",",self.cell,@",",self.work,@",",self.email];
     
     NSLog(@"%@",_contactInfo); //prints what is in contact info list
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *dir = [paths objectAtIndex:0];
+    NSString *fileName = [NSString stringWithFormat:@"%@%@",self.name,@".csv"];
+    NSString *filePath = [dir stringByAppendingPathComponent:fileName];
+    [data writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
 }
 
 //***************************For Country Field Picker***********************
