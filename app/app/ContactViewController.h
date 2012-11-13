@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ContactViewController : UIViewController <UITextFieldDelegate,UIPickerViewDataSource, UIPickerViewDelegate, UIPopoverControllerDelegate, UITableViewDelegate, UITableViewDataSource> {
+@interface ContactViewController : UIViewController <UITextFieldDelegate,UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource> {
     NSMutableArray * _contactInfo;
-    UIPopoverController *popover;
 }
 
 @property (copy, nonatomic) NSString *name;
@@ -32,6 +31,5 @@
 @property (strong, nonatomic) IBOutlet UIView *background;
 - (IBAction)showDropDown:(id)sender;
 - (IBAction)hidButton:(id)sender;
-
 
 @end
