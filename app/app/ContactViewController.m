@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Team 14. All rights reserved.
 //
 #import "ContactViewController.h"
-#import "PopoverViewController.h"
 
 
 @interface ContactViewController ()
@@ -54,11 +53,6 @@
 @synthesize countryList;
 @synthesize background;
 
-<<<<<<< HEAD
-@synthesize popover;
-//@synthesize tabs;
-=======
->>>>>>> Created popover but need to get rid of it after button press
 
 - (void)viewDidLoad
 {
@@ -125,23 +119,6 @@
     [UIView commitAnimations];
 }
 
-<<<<<<< HEAD
-- (IBAction)popButton:(id)sender {
-    if ([popover isPopoverVisible]){
-        [popover dismissPopoverAnimated:YES];
-    }
-    else{
-    PopoverViewController *popup = [[PopoverViewController alloc] init];
-    popover = [[UIPopoverController alloc]initWithContentViewController:popup];
-    popover.popoverContentSize = CGSizeMake(200,300);
-        
-    [popover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-    }
-}
-
-
-=======
->>>>>>> Created popover but need to get rid of it after button press
 //********************************* Save Button ****************************
 
 - (IBAction)update:(id)sender {
