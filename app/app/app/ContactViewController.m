@@ -63,7 +63,12 @@
     NSError *error;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *dir = [paths objectAtIndex:0];
-    NSString *fileName = [NSString stringWithFormat:@"jane.csv"];
+    
+    NSArray *fileList = [[NSArray alloc] init];
+    fileList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dir error: &error];
+    for (NSString *i in fileList){
+        NSLog(@"%@", i);
+    NSString *fileName = [NSString stringWithFormat:@"%@",i];
     NSString *filePath = [dir stringByAppendingPathComponent:fileName];
     NSString *items = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
     NSArray *rows = [items componentsSeparatedByString:@"\n"];
@@ -76,12 +81,14 @@
         NSLog(@"%@", [patient objectAtIndex:i]);
         }
     }
+    }
     [super viewDidLoad];
     
     
 	// Do any additional setup after loading the view, typically from a nib.
     background.frame = CGRectMake(0, 1000, 768, 263);
 }
+
 
 - (void)viewDidUnload
 {
