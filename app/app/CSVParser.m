@@ -27,7 +27,7 @@
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *dir = [paths objectAtIndex:0];
-    NSString *fileName = [NSString stringWithFormat:@"%s%@","nov13",@".csv"];
+    NSString *fileName = [NSString stringWithFormat:@"%@%@%@%@",[write objectAtIndex:0],@" ",[write objectAtIndex:1],@".csv"];
     NSString *filePath = [dir stringByAppendingPathComponent:fileName];
     [data writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
     
