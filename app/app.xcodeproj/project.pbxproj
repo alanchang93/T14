@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4115E4E9165366CA0008DA34 /* PastHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4115E4E8165366CA0008DA34 /* PastHistoryViewController.m */; };
+		4115E4EC165368140008DA34 /* RxAllergiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4115E4EB165368140008DA34 /* RxAllergiesViewController.m */; };
+		4115E4EF165369470008DA34 /* FamilyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4115E4EE165369470008DA34 /* FamilyViewController.m */; };
+		4115E4F216536A880008DA34 /* SocialHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4115E4F116536A880008DA34 /* SocialHistoryViewController.m */; };
+		418770AB16536BB9007135B7 /* ROSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418770AA16536BB9007135B7 /* ROSViewController.m */; };
+		418770AF16536C3C007135B7 /* PEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418770AE16536C3C007135B7 /* PEViewController.m */; };
+		418770B216536D36007135B7 /* LabsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418770B116536D36007135B7 /* LabsViewController.m */; };
+		418770B516536DE7007135B7 /* AssessmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418770B416536DE7007135B7 /* AssessmentViewController.m */; };
+		418770B816536E29007135B7 /* DocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418770B716536E29007135B7 /* DocViewController.m */; };
 		4199F74D164F66F9003A57F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4199F74C164F66F9003A57F0 /* UIKit.framework */; };
 		4199F74F164F66F9003A57F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4199F74E164F66F9003A57F0 /* Foundation.framework */; };
 		4199F751164F66F9003A57F0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4199F750164F66F9003A57F0 /* CoreGraphics.framework */; };
@@ -40,6 +49,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4115E4E7165366CA0008DA34 /* PastHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastHistoryViewController.h; sourceTree = "<group>"; };
+		4115E4E8165366CA0008DA34 /* PastHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastHistoryViewController.m; sourceTree = "<group>"; };
+		4115E4EA165368140008DA34 /* RxAllergiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxAllergiesViewController.h; sourceTree = "<group>"; };
+		4115E4EB165368140008DA34 /* RxAllergiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxAllergiesViewController.m; sourceTree = "<group>"; };
+		4115E4ED165369470008DA34 /* FamilyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyViewController.h; sourceTree = "<group>"; };
+		4115E4EE165369470008DA34 /* FamilyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyViewController.m; sourceTree = "<group>"; };
+		4115E4F016536A880008DA34 /* SocialHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialHistoryViewController.h; sourceTree = "<group>"; };
+		4115E4F116536A880008DA34 /* SocialHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialHistoryViewController.m; sourceTree = "<group>"; };
+		418770A916536BB9007135B7 /* ROSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ROSViewController.h; path = ../../ROSViewController.h; sourceTree = "<group>"; };
+		418770AA16536BB9007135B7 /* ROSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ROSViewController.m; path = ../../ROSViewController.m; sourceTree = "<group>"; };
+		418770AD16536C3C007135B7 /* PEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PEViewController.h; path = ../../PEViewController.h; sourceTree = "<group>"; };
+		418770AE16536C3C007135B7 /* PEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PEViewController.m; path = ../../PEViewController.m; sourceTree = "<group>"; };
+		418770B016536D36007135B7 /* LabsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabsViewController.h; path = ../LabsViewController.h; sourceTree = "<group>"; };
+		418770B116536D36007135B7 /* LabsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabsViewController.m; path = ../LabsViewController.m; sourceTree = "<group>"; };
+		418770B316536DE7007135B7 /* AssessmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssessmentViewController.h; path = ../AssessmentViewController.h; sourceTree = "<group>"; };
+		418770B416536DE7007135B7 /* AssessmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentViewController.m; path = ../AssessmentViewController.m; sourceTree = "<group>"; };
+		418770B616536E29007135B7 /* DocViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocViewController.h; path = ../../DocViewController.h; sourceTree = "<group>"; };
+		418770B716536E29007135B7 /* DocViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocViewController.m; path = ../../DocViewController.m; sourceTree = "<group>"; };
 		4199F748164F66F9003A57F0 /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4199F74C164F66F9003A57F0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4199F74E164F66F9003A57F0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -65,8 +92,8 @@
 		4199F780164F66F9003A57F0 /* appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = appTests.m; sourceTree = "<group>"; };
 		41B28CB11652D236003252CB /* CSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVParser.h; sourceTree = "<group>"; };
 		41B28CB21652D236003252CB /* CSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVParser.m; sourceTree = "<group>"; };
-		41F485B416534F4400546473 /* CCHPIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHPIViewController.h; sourceTree = "<group>"; };
-		41F485B516534F4400546473 /* CCHPIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHPIViewController.m; sourceTree = "<group>"; };
+		41F485B416534F4400546473 /* CCHPIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCHPIViewController.h; path = ../CCHPIViewController.h; sourceTree = "<group>"; };
+		41F485B516534F4400546473 /* CCHPIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCHPIViewController.m; path = ../CCHPIViewController.m; sourceTree = "<group>"; };
 		41F912C116534CC100F75184 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
 		41F912C216534CC100F75184 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = ../HomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +122,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4115E4E5165365BE0008DA34 /* PatientCreation */ = {
+			isa = PBXGroup;
+			children = (
+				418770B616536E29007135B7 /* DocViewController.h */,
+				418770B716536E29007135B7 /* DocViewController.m */,
+				418770B316536DE7007135B7 /* AssessmentViewController.h */,
+				418770B416536DE7007135B7 /* AssessmentViewController.m */,
+				418770B016536D36007135B7 /* LabsViewController.h */,
+				418770B116536D36007135B7 /* LabsViewController.m */,
+				418770AD16536C3C007135B7 /* PEViewController.h */,
+				418770AE16536C3C007135B7 /* PEViewController.m */,
+				418770A916536BB9007135B7 /* ROSViewController.h */,
+				418770AA16536BB9007135B7 /* ROSViewController.m */,
+				4115E4F016536A880008DA34 /* SocialHistoryViewController.h */,
+				4115E4F116536A880008DA34 /* SocialHistoryViewController.m */,
+				4115E4ED165369470008DA34 /* FamilyViewController.h */,
+				4115E4EE165369470008DA34 /* FamilyViewController.m */,
+				4115E4EA165368140008DA34 /* RxAllergiesViewController.h */,
+				4115E4EB165368140008DA34 /* RxAllergiesViewController.m */,
+				4115E4E7165366CA0008DA34 /* PastHistoryViewController.h */,
+				4115E4E8165366CA0008DA34 /* PastHistoryViewController.m */,
+				41F485B416534F4400546473 /* CCHPIViewController.h */,
+				41F485B516534F4400546473 /* CCHPIViewController.m */,
+			);
+			path = PatientCreation;
+			sourceTree = "<group>";
+		};
 		4199F73D164F66F9003A57F0 = {
 			isa = PBXGroup;
 			children = (
@@ -130,12 +184,11 @@
 			children = (
 				41F912C116534CC100F75184 /* HomeViewController.h */,
 				41F912C216534CC100F75184 /* HomeViewController.m */,
-				41F485B416534F4400546473 /* CCHPIViewController.h */,
-				41F485B516534F4400546473 /* CCHPIViewController.m */,
 				4199F75B164F66F9003A57F0 /* AppDelegate.h */,
 				4199F75C164F66F9003A57F0 /* AppDelegate.m */,
 				4199F764164F66F9003A57F0 /* MainStoryboard_iPhone.storyboard */,
 				4199F767164F66F9003A57F0 /* MainStoryboard_iPad.storyboard */,
+				4115E4E5165365BE0008DA34 /* PatientCreation */,
 				4199F76A164F66F9003A57F0 /* ContactViewController.h */,
 				4199F76B164F66F9003A57F0 /* ContactViewController.m */,
 				41B28CB11652D236003252CB /* CSVParser.h */,
@@ -295,6 +348,15 @@
 				41B28CB31652D236003252CB /* CSVParser.m in Sources */,
 				41F912C316534CC100F75184 /* HomeViewController.m in Sources */,
 				41F485B616534F4400546473 /* CCHPIViewController.m in Sources */,
+				4115E4E9165366CA0008DA34 /* PastHistoryViewController.m in Sources */,
+				4115E4EC165368140008DA34 /* RxAllergiesViewController.m in Sources */,
+				4115E4EF165369470008DA34 /* FamilyViewController.m in Sources */,
+				4115E4F216536A880008DA34 /* SocialHistoryViewController.m in Sources */,
+				418770AB16536BB9007135B7 /* ROSViewController.m in Sources */,
+				418770AF16536C3C007135B7 /* PEViewController.m in Sources */,
+				418770B216536D36007135B7 /* LabsViewController.m in Sources */,
+				418770B516536DE7007135B7 /* AssessmentViewController.m in Sources */,
+				418770B816536E29007135B7 /* DocViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
