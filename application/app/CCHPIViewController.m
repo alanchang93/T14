@@ -14,6 +14,9 @@
 
 @implementation CCHPIViewController
 
+@synthesize CCText;
+@synthesize HPIText;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,5 +37,17 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (IBAction)popover:(id)sender {
+    NSLog(@"%@",CCText.text);
+    NSLog(@"%@", HPIText.text);
+}
+
+- (IBAction)home:(id)sender {
+    NSLog(@"%@",CCText.text);
+    NSLog(@"%@", HPIText.text);
+}
+
 
 @end
