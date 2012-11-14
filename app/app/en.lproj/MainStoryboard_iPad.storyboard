@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="JDl-dS-Ri8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="u5r-P5-Yza">
+            <objects>
+                <viewController id="2NU-iW-4o4" customClass="HomeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tRV-G4-r6p">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRJ-MC-i4q">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="eI6-rm-yfP"/>
+                                    <constraint firstAttribute="height" constant="91" id="okm-DF-LlZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="New Patient">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="newPatientButton:" destination="2NU-iW-4o4" eventType="touchUpInside" id="aqx-ez-LC0"/>
+                                    <segue destination="2" kind="push" id="fOB-cp-hip"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oRJ-MC-i4q" firstAttribute="top" secondItem="tRV-G4-r6p" secondAttribute="top" constant="157" id="e9h-Aq-Ddn"/>
+                            <constraint firstItem="oRJ-MC-i4q" firstAttribute="centerX" secondItem="tRV-G4-r6p" secondAttribute="centerX" type="default" id="x9w-k8-I50"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="IM2-Pd-pc9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8FI-Xl-Xac" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2023" y="-523"/>
+        </scene>
         <!--Contact View Controller-->
         <scene sceneID="4">
             <objects>
@@ -336,43 +375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-987" y="-10"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="6eP-zH-l0e">
-            <objects>
-                <viewController id="3wM-aJ-OXJ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="y7F-t9-IZE">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxv-e2-bso">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="PopOver">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="4iO-6h-JyI" kind="popover" popoverAnchorView="kxv-e2-bso" id="nlZ-oU-Xup">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="kxv-e2-bso" firstAttribute="top" secondItem="y7F-t9-IZE" secondAttribute="top" constant="20" symbolic="YES" type="default" id="BY9-B3-p7j"/>
-                            <constraint firstItem="kxv-e2-bso" firstAttribute="leading" secondItem="y7F-t9-IZE" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mR0-Pl-JvZ"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="0D9-hj-9SK"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LZS-Kf-uQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="210" y="10"/>
+            <point key="canvasLocation" x="961" y="-10"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="0Jw-Iu-AzZ">
@@ -427,9 +430,6 @@
                                             <constraint firstItem="IeY-jl-E0W" firstAttribute="top" secondItem="by1-U0-Ycn" secondAttribute="top" constant="11" id="0Zb-d7-5HD"/>
                                             <constraint firstItem="IeY-jl-E0W" firstAttribute="leading" secondItem="by1-U0-Ycn" secondAttribute="leading" constant="20" type="default" id="hhL-vl-58t"/>
                                         </constraints>
-                                        <connections>
-                                            <segue destination="3wM-aJ-OXJ" kind="modal" id="4Wc-y2-Wwf"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="l9R-Vh-km9">
                                         <rect key="frame" x="0.0" y="88" width="768" height="44"/>
@@ -472,6 +472,24 @@
             </objects>
             <point key="canvasLocation" x="-598" y="-1235"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nfc-pK-jri">
+            <objects>
+                <navigationController id="JDl-dS-Ri8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YRm-Q9-r5w">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2NU-iW-4o4" kind="relationship" relationship="rootViewController" id="XoX-rO-6eT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fCQ-9Q-3iR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3373" y="-459"/>
+        </scene>
     </scenes>
     <classes>
         <class className="ContactViewController" superclassName="UIViewController">
@@ -505,6 +523,12 @@
                 <relationship kind="outlet" name="zipLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
+        <class className="HomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="newPatientButton:"/>
+            </relationships>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
@@ -515,6 +539,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pPC-ev-rE2"/>
+        <segue reference="f3T-Z7-LXi"/>
     </inferredMetricsTieBreakers>
 </document>
