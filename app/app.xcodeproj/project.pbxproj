@@ -25,8 +25,6 @@
 		4199F77E164F66F9003A57F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4199F77C164F66F9003A57F0 /* InfoPlist.strings */; };
 		4199F781164F66F9003A57F0 /* appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4199F780164F66F9003A57F0 /* appTests.m */; };
 		41B28CB31652D236003252CB /* CSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B28CB21652D236003252CB /* CSVParser.m */; };
-		41F485B616534F4400546473 /* CCHPIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F485B516534F4400546473 /* CCHPIViewController.m */; };
-		41F912C316534CC100F75184 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F912C216534CC100F75184 /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,10 +63,6 @@
 		4199F780164F66F9003A57F0 /* appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = appTests.m; sourceTree = "<group>"; };
 		41B28CB11652D236003252CB /* CSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVParser.h; sourceTree = "<group>"; };
 		41B28CB21652D236003252CB /* CSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVParser.m; sourceTree = "<group>"; };
-		41F485B416534F4400546473 /* CCHPIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHPIViewController.h; sourceTree = "<group>"; };
-		41F485B516534F4400546473 /* CCHPIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHPIViewController.m; sourceTree = "<group>"; };
-		41F912C116534CC100F75184 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
-		41F912C216534CC100F75184 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = ../HomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,10 +122,6 @@
 		4199F752164F66F9003A57F0 /* app */ = {
 			isa = PBXGroup;
 			children = (
-				41F912C116534CC100F75184 /* HomeViewController.h */,
-				41F912C216534CC100F75184 /* HomeViewController.m */,
-				41F485B416534F4400546473 /* CCHPIViewController.h */,
-				41F485B516534F4400546473 /* CCHPIViewController.m */,
 				4199F75B164F66F9003A57F0 /* AppDelegate.h */,
 				4199F75C164F66F9003A57F0 /* AppDelegate.m */,
 				4199F764164F66F9003A57F0 /* MainStoryboard_iPhone.storyboard */,
@@ -293,8 +283,6 @@
 				4199F75D164F66F9003A57F0 /* AppDelegate.m in Sources */,
 				4199F76C164F66F9003A57F0 /* ContactViewController.m in Sources */,
 				41B28CB31652D236003252CB /* CSVParser.m in Sources */,
-				41F912C316534CC100F75184 /* HomeViewController.m in Sources */,
-				41F485B616534F4400546473 /* CCHPIViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
