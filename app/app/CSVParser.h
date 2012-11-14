@@ -14,4 +14,8 @@ extern NSMutableArray *_contactInfo;
 
 + (void) loadData:(NSMutableArray *) data;
 
++ (void) writeData:(NSMutableArray *) write;
+
+//+ (void) readData:(NSMutableArray *) read;
+
 @end

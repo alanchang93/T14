@@ -60,7 +60,9 @@
     picker.showsSelectionIndicator = TRUE;
     countryList = [[NSArray alloc] initWithObjects:@"USA", @"Mexico",@"Canada",nil];
     background.hidden = YES;
-    //reads csv files 
+    //reads csv files
+    
+    /*
     fm = [NSFileManager defaultManager];
     NSError *error;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -84,6 +86,7 @@
             }
         }
     }
+    */
     
     [super viewDidLoad];
     
@@ -187,6 +190,8 @@
     //NSLog(@"%@", data);
     
     //writes to csv file
+    
+    /*
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *dir = [paths objectAtIndex:0];
     NSString *fileName = [NSString stringWithFormat:@"%@%@",self.name,@".csv"];
@@ -194,7 +199,10 @@
     [data writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
     
     //sends data on _contactInfo to CSVParser class
+     */
     [CSVParser loadData: _contactInfo];
+    [CSVParser writeData: _contactInfo];
+    //[CSVParser readData: _contactInfo];
 }
 
 //***************************For Country Field Picker***********************
