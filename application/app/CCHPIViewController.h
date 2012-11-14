@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CCHPIViewController : UIViewController <UITextViewDelegate>{
-    NSMutableArray *textList;
+    NSMutableDictionary *CCHPI;
 }
 
 @property (weak, nonatomic) IBOutlet UITextView *CCText;
@@ -17,5 +17,7 @@
 
 - (IBAction)popover:(id)sender;
 - (IBAction)home:(id)sender;
+
++(void) saveCCHPI: (NSMutableDictionary *)info;
 
 @end

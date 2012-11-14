@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PastHistoryViewController : UIViewController
+@interface PastHistoryViewController : UIViewController <UITextViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextView *childMedical;
+@property (weak, nonatomic) IBOutlet UITextView *adultMedical;
+
+@property (weak, nonatomic) IBOutlet UITextView *childSugical;
+@property (weak, nonatomic) IBOutlet UITextView *adultSurgical;
+
+- (IBAction)popover:(id)sender;
+- (IBAction)home:(id)sender;
 
 @end

@@ -38,6 +38,11 @@
     // Dispose of any resources that can be recreated.
 }
 
++ (void) saveCCHPI:(NSMutableDictionary *)info{
+    for (NSString *text in info){
+        
+    }
+}
 
 - (IBAction)popover:(id)sender {
     NSLog(@"%@",CCText.text);

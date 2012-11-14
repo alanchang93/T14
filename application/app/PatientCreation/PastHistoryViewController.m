@@ -14,6 +14,11 @@
 
 @implementation PastHistoryViewController
 
+@synthesize childMedical;
+@synthesize adultMedical;
+@synthesize childSugical;
+@synthesize adultSurgical;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,4 +40,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)popover:(id)sender {
+    NSLog(@"%@",childMedical);
+    NSLog(@"%@",adultMedical);
+    NSLog(@"%@",childSugical);
+    NSLog(@"%@",adultSurgical);
+}
+
+- (IBAction)home:(id)sender {
+    NSLog(@"%@",childMedical);
+    NSLog(@"%@",adultMedical);
+    NSLog(@"%@",childSugical);
+    NSLog(@"%@",adultSurgical);
+}
 @end
