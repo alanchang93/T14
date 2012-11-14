@@ -10,14 +10,15 @@
 
 //NSMutableArray *_contactInfo;
 
+static NSMutableDictionary *patient = nil;
+
 @implementation CSVParser
-NSArray *fields = nil;
-NSMutableDictionary *patient = nil;
+
 
 + (void) initialize{
     NSArray *fields = [NSArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email", nil];
     NSArray *blanks = [NSArray arrayWithObjects: @"",@"",@"",@"",@"",@"",@"",@"",@"",@"",nil];
-    NSMutableDictionary *patient = [[NSMutableDictionary alloc] initWithObjects: blanks forKeys:fields];
+    patient = [[NSMutableDictionary alloc] initWithObjects: blanks forKeys:fields];
     NSLog(@"%@",patient);
     
 }

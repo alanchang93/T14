@@ -10,4 +10,18 @@
 
 @interface RxAllergiesViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *RxName;
+@property (weak, nonatomic) IBOutlet UITextField *RxDose;
+@property (weak, nonatomic) IBOutlet UITextField *RxRoute;
+@property (weak, nonatomic) IBOutlet UITextField *RxFrequency;
+@property (weak, nonatomic) IBOutlet UITextField *RxStarted;
+@property (weak, nonatomic) IBOutlet UITextField *RxEnded;
+
+- (IBAction)addRx:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITextField *allergiesItem;
+@property (weak, nonatomic) IBOutlet UITextField *allergiesReaction;
+
+- (IBAction)addAllergies:(id)sender;
+
 @end

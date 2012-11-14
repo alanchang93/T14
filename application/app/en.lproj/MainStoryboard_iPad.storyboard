@@ -1070,6 +1070,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addRx:" destination="QmE-RQ-hRf" eventType="touchUpInside" id="aOJ-I3-BEj"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4KG-Td-oMg">
                                 <subviews>
@@ -2019,6 +2022,18 @@
                             <constraint firstItem="F9t-Vl-xk8" firstAttribute="top" secondItem="XjW-sa-dOk" secondAttribute="top" constant="762" id="zG4-Gy-g4R"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Route" destination="3GI-g6-c8P" id="sFc-q2-spw"/>
+                        <outlet property="RxDose" destination="ZM8-H4-SW6" id="hEJ-WY-BYt"/>
+                        <outlet property="RxEnded" destination="6e1-T9-F3U" id="JvY-oI-Ix6"/>
+                        <outlet property="RxFrequency" destination="pbr-lg-4mZ" id="QAi-9V-nnB"/>
+                        <outlet property="RxName" destination="Z1v-hO-aon" id="RbR-yE-vkx"/>
+                        <outlet property="RxRoute" destination="3GI-g6-c8P" id="zO2-SB-NLV"/>
+                        <outlet property="RxStarted" destination="IFJ-HI-wi6" id="n1j-PX-8yS"/>
+                        <outlet property="addAllergies" destination="xJw-UQ-4Np" id="QyM-a9-xwF"/>
+                        <outlet property="allergiesItem" destination="oG7-bG-kau" id="Qh0-VZ-lfc"/>
+                        <outlet property="allergiesReaction" destination="W40-Ao-UHS" id="Zwe-ty-C2v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6u-jY-WoI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2436,6 +2451,18 @@
         </class>
         <class className="RxAllergiesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RxAllergiesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addAllergies:"/>
+                <relationship kind="action" name="addRx:"/>
+                <relationship kind="outlet" name="RxDose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="RxEnded" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="RxFrequency" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="RxName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="RxRoute" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="RxStarted" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="allergiesItem" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="allergiesReaction" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="SocialHistoryViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialHistoryViewController.h"/>
