@@ -37,4 +37,7 @@
 
 - (IBAction)newPatientButton:(id)sender {
 }
+
+- (IBAction)PatientSearch:(id)sender {
+}
 @end
