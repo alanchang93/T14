@@ -41,16 +41,16 @@
 }
 
 - (IBAction)popover:(id)sender {
-    NSLog(@"%@",childMedical);
-    NSLog(@"%@",adultMedical);
-    NSLog(@"%@",childSugical);
-    NSLog(@"%@",adultSurgical);
+    NSLog(@"%@",childMedical.text);
+    NSLog(@"%@",adultMedical.text);
+    NSLog(@"%@",childSugical.text);
+    NSLog(@"%@",adultSurgical.text);
 }
 
 - (IBAction)home:(id)sender {
-    NSLog(@"%@",childMedical);
-    NSLog(@"%@",adultMedical);
-    NSLog(@"%@",childSugical);
-    NSLog(@"%@",adultSurgical);
+    NSLog(@"%@",childMedical.text);
+    NSLog(@"%@",adultMedical.text);
+    NSLog(@"%@",childSugical.text);
+    NSLog(@"%@",adultSurgical.text);
 }
 @end
