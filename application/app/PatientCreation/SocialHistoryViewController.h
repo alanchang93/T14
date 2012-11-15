@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SocialHistoryViewController : UIViewController
+@interface SocialHistoryViewController : UIViewController{
+    IBOutlet UISegmentedControl *drugButton;
+    IBOutlet UISegmentedControl *alcButton;
+}
+
+
+- (IBAction)drugButton:(id)sender;
+- (IBAction)alcButton:(id)sender;
+- (IBAction)popover:(id)sender;
+- (IBAction)home:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *otherField;
+@property (weak, nonatomic) IBOutlet UITextField *drugField;
+@property (weak, nonatomic) IBOutlet UITextField *alcField;
+@property (weak, nonatomic) IBOutlet UILabel *drugLabel;
+@property (weak, nonatomic) IBOutlet UILabel *alcLabel;
 
 @end

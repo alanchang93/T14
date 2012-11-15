@@ -14,6 +14,8 @@
 
 @implementation ROSViewController
 
+@synthesize vitalField, generalField, heentField, cardioField, respField, gastroField, geniField, nervField, pulField, neuroField;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,4 +37,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)popover:(id)sender {
+}
+
+- (IBAction)home:(id)sender {
+}
 @end

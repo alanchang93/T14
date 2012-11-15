@@ -14,6 +14,8 @@
 
 @implementation FamilyViewController
 
+@synthesize familyText;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,4 +37,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)famHome:(id)sender {
+    NSLog(@"%@",familyText.text);
+}
+
+- (IBAction)popover:(id)sender {
+    NSLog(@"%@",familyText.text);
+}
 @end
