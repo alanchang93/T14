@@ -12,24 +12,15 @@
 
 @end
 
+
 @implementation PastHistoryViewController
 
-@synthesize childMedical;
-@synthesize adultMedical;
-@synthesize childSugical;
-@synthesize adultSurgical;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize childMedical, adultMedical, childSurgical, adultSurgical;
 
 - (void)viewDidLoad
 {
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -40,17 +31,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)popover:(id)sender {
-    NSLog(@"%@",childMedical.text);
-    NSLog(@"%@",adultMedical.text);
-    NSLog(@"%@",childSugical.text);
-    NSLog(@"%@",adultSurgical.text);
+- (IBAction)PastHistoryPopover:(id)sender {
+    NSLog(@"%@", childMedical.text);
+    NSLog(@"%@", adultMedical.text);
+    NSLog(@"%@", childSurgical.text);
+    NSLog(@"%@", adultMedical.text);
 }
 
-- (IBAction)home:(id)sender {
-    NSLog(@"%@",childMedical.text);
-    NSLog(@"%@",adultMedical.text);
-    NSLog(@"%@",childSugical.text);
-    NSLog(@"%@",adultSurgical.text);
+- (IBAction)PastHistoryHome:(id)sender {
+    NSLog(@"%@", childMedical.text);
+    NSLog(@"%@", adultMedical.text);
+    NSLog(@"%@", childSurgical.text);
+    NSLog(@"%@", adultMedical.text);
 }
 @end

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CCHPIViewController : UIViewController <UITextViewDelegate>{
+@interface CCHPIViewController : UIViewController <UITextViewDelegate, UIScrollViewDelegate>{
     NSMutableDictionary *CCHPI;
+
 }
 
 @property (weak, nonatomic) IBOutlet UITextView *CCText;
@@ -19,5 +20,6 @@
 - (IBAction)home:(id)sender;
 
 +(void) saveCCHPI: (NSMutableDictionary *)info;
+
 
 @end

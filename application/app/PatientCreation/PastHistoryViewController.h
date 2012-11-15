@@ -8,15 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PastHistoryViewController : UIViewController <UITextViewDelegate>
+@interface PastHistoryViewController : UIViewController <UITextViewDelegate, UIScrollViewDelegate>{
+}
 
 @property (weak, nonatomic) IBOutlet UITextView *childMedical;
 @property (weak, nonatomic) IBOutlet UITextView *adultMedical;
-
-@property (weak, nonatomic) IBOutlet UITextView *childSugical;
+@property (weak, nonatomic) IBOutlet UITextView *childSurgical;
 @property (weak, nonatomic) IBOutlet UITextView *adultSurgical;
 
-- (IBAction)popover:(id)sender;
-- (IBAction)home:(id)sender;
+
+- (IBAction)PastHistoryPopover:(id)sender;
+- (IBAction)PastHistoryHome:(id)sender;
+
 
 @end

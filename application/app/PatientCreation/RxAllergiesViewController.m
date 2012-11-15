@@ -14,8 +14,6 @@
 
 @implementation RxAllergiesViewController
 
-@synthesize RxName, RxDose, RxRoute, RxFrequency, RxStarted, RxEnded, allergiesItem, allergiesReaction;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -37,8 +35,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)addRx:(id)sender {
-}
-- (IBAction)addAllergies:(id)sender {
-}
+
 @end
