@@ -7,6 +7,7 @@
 //
 
 #import "PatientListViewController.h"
+#import "CSVParser.h"
 
 @interface PatientListViewController ()
 {
@@ -34,8 +35,8 @@
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
     
-    totalStrings = [[NSMutableArray alloc] initWithObjects:@"One",@"Two", @"THREE", @"FOUR", @"FIVE", @"SIX",@"Seven", nil];
-    
+    totalStrings = [CSVParser getFileNames];
+    NSLog(@"%@",totalStrings);
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

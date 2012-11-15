@@ -55,34 +55,26 @@ static NSMutableDictionary *patient = nil;
     [headers writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
     
 }
-/*
-+(void) readData:(NSMutableArray *)read {
-    //reads csv files
-    
 
++ (NSMutableArray *) getFileNames{
     NSError *error;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *dir = [paths objectAtIndex:0];
+    NSMutableArray *nameHolder = [[NSMutableArray alloc]init];
     
     NSArray *fileList = [[NSArray alloc] init];
     fileList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dir error: &error];
     for (NSString *i in fileList){ //goes through each patient
-        //NSLog(@"%@", i);
-        NSString *fileName = [NSString stringWithFormat:@"%@",i];
-        NSString *filePath = [dir stringByAppendingPathComponent:fileName];
-        NSString *items = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
-        NSArray *rows = [items componentsSeparatedByString:@"\n"];
-        //NSLog(@"%@",items);
-        
-        NSArray *patient;
-        for(int i = 0; i<[rows count]; i++){ //gets each tab on patient
-            patient = [[rows objectAtIndex:i] componentsSeparatedByString:@","];
-            for (int i = 0; i < [patient count]; i++){ //gets each item per tab
-                //NSLog(@"%@", [patient objectAtIndex:i]);
-            }
+        if ([i isEqualToString:@".csv"]) {
+            
+           }
+        else if([i isEqualToString:@".DS_Store"]) {
+            
+        }
+        else {
+        [nameHolder addObject:i];
         }
     }
-     
+    return nameHolder;
 }
-*/
 @end

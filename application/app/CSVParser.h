@@ -20,4 +20,5 @@ extern NSMutableDictionary *contact;
 + (NSMutableDictionary *)saveData: (NSMutableDictionary *) data;
 //+ (void) readData:(NSMutableArray *) read;
 
++ (NSMutableArray *) getFileNames;
 @end
