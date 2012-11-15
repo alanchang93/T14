@@ -14,6 +14,8 @@
 
 @implementation AssessmentViewController
 
+@synthesize RxField, noteField;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,4 +37,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)home:(id)sender {
+}
+
+- (IBAction)popover:(id)sender {
+}
 @end

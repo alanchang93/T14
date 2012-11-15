@@ -10,4 +10,10 @@
 
 @interface LabsViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextView *textField;
+
+- (IBAction)home:(id)sender;
+- (IBAction)popover:(id)sender;
+
+
 @end

@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AssessmentViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *RxField;
+@property (weak, nonatomic) IBOutlet UITextView *noteField;
 
+- (IBAction)home:(id)sender;
+- (IBAction)popover:(id)sender;
 @end

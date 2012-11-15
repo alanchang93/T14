@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface DocViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *physicianField;
+@property (weak, nonatomic) IBOutlet UITextField *studentField;
+- (IBAction)home:(id)sender;
+- (IBAction)popover:(id)sender;
+- (IBAction)save:(id)sender;
 
 @end
