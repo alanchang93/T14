@@ -367,6 +367,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="home:" destination="2" eventType="touchUpInside" id="qDN-qQ-5zH"/>
                                     <segue destination="2NU-iW-4o4" kind="push" id="t4t-hu-iyw"/>
                                 </connections>
                             </button>

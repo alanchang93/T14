@@ -70,6 +70,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     contact = [CSVParser getPatient];
     self.nameField.text = [contact objectForKey:@"Name"];
+
 }
 
 - (void)viewDidUnload
@@ -116,6 +117,10 @@
     background.frame = CGRectMake(0, 741, 768, 263);
     [UIView commitAnimations];
     
+}
+
+-(IBAction)home:(id)sender{
+    [CSVParser clearPatient];
 }
 
 - (IBAction)hidButton:(id)sender {
@@ -165,7 +170,6 @@
     NSDictionary *contact = [[NSDictionary alloc] initWithObjects: _contactInfo forKeys:fields];
     [CSVParser writeData:contact];
 
-    
     //NSLog(@"%@",[[CSVParser saveData: contact] objectForKey:@"Name"]);
     //[CSVParser readData: _contactInfo];
 }

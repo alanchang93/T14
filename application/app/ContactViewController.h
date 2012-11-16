@@ -33,6 +33,7 @@
 @property (strong, nonatomic) IBOutlet UIView *background;
 - (IBAction)showDropDown:(id)sender;
 - (IBAction)hidButton:(id)sender;
+- (IBAction)home:(id)sender;
 
 - (IBAction)clearButton:(id)sender;
 

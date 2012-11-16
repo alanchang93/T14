@@ -92,4 +92,9 @@ static NSArray *fields = nil;
     return patient;
     
 }
+
++(NSMutableDictionary *)clearPatient{
+    patient = [[NSMutableDictionary alloc] init];
+    return patient;
+}
 @end
