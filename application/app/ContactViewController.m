@@ -160,7 +160,8 @@
     NSMutableArray *fields = [NSMutableArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email", nil];
     
     NSDictionary *contact = [[NSDictionary alloc] initWithObjects: _contactInfo forKeys:fields];
-    NSLog(@"%@",[[CSVParser saveData: contact] objectForKey:@"Name"]);
+    [CSVParser writeData:contact];
+    //NSLog(@"%@",[[CSVParser saveData: contact] objectForKey:@"Name"]);
     //[CSVParser readData: _contactInfo];
 }
 

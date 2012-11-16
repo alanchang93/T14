@@ -77,4 +77,13 @@ static NSMutableDictionary *patient = nil;
     }
     return nameHolder;
 }
+
+//Method does not seem to be working :(
++(NSMutableDictionary *) loadDataFromFile: (NSString *) fileName {
+    patient = nil;
+    NSLog(@"%@",fileName);
+    NSMutableString *allData = [[NSMutableString alloc]initWithContentsOfFile:fileName];
+    NSLog(@"%@", allData);
+    return allData;
+}
 @end

@@ -13,6 +13,7 @@
 {
     NSMutableArray *totalStrings;
     NSMutableArray *filteredStrings;
+    NSMutableDictionary *contentOfFile;
     BOOL isFiltered;
 }
 
@@ -35,8 +36,11 @@
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
     
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *dir = [paths objectAtIndex:0];
+    NSString *filePath = [dir stringByAppendingPathComponent:@"Alan.csv"];
+    [CSVParser loadDataFromFile: filePath];
     totalStrings = [CSVParser getFileNames];
-    NSLog(@"%@",totalStrings);
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -67,7 +71,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"patient";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if(!cell){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
@@ -93,7 +97,12 @@
     return 1;
 }
 
-
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *cellText = cell.textLabel.text;
+    NSLog(@"%@",cellText);
+    
+}
 
 - (void)didReceiveMemoryWarning
 {
