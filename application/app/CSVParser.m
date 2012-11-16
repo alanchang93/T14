@@ -17,8 +17,8 @@ static NSArray *fields = nil;
 
 
 + (void) initialize{
-    fields = [NSArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email",@"CC", @"HPI", nil];
-    NSArray *blanks = [NSArray arrayWithObjects: @"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",nil];
+    fields = [NSArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email",@"CC", @"HPI", @"Childhood Medical History", @"Adulthood Medical History", @"Childhood Surgical History", @"Adulthood Surgical History", nil];
+    NSArray *blanks = [NSArray arrayWithObjects: @"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",nil];
     patient = [[NSMutableDictionary alloc] initWithObjects: blanks forKeys:fields];
 }
 
@@ -83,7 +83,7 @@ static NSArray *fields = nil;
     NSMutableString *allData = [[NSMutableString alloc]initWithContentsOfFile:fileName];
     NSArray *patientInfo = [allData componentsSeparatedByString:@","];
     for (int i = 0; i < [fields count]; i++){
-        [patient setObject:[patientInfo objectAtIndex:i] forKey:[fields objectAtIndex:i]];
+        [patient setObject:[patientInfo objectAtIndex: i+[fields count]] forKey:[patientInfo objectAtIndex:i]];
     }
     return patient;
 }

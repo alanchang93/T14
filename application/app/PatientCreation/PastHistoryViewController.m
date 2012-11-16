@@ -7,6 +7,7 @@
 //
 
 #import "PastHistoryViewController.h"
+#import "CSVParser.h"
 
 @interface PastHistoryViewController ()
 
@@ -25,6 +26,15 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void) viewDidAppear:(BOOL)animated{
+    pastHistoryDict = [CSVParser getPatient];
+    self.childMedical.text = [pastHistoryDict objectForKey:@"Childhood Medical History"];
+    self.adultMedical.text = [pastHistoryDict objectForKey:@"Adulthood Medical History"];
+    self.childSurgical.text = [pastHistoryDict objectForKey:@"Childhood Surgical History"];
+    self.adultSurgical.text = [pastHistoryDict objectForKey:@"Adulthood Surgical History"];
+        
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -32,16 +42,18 @@
 }
 
 - (IBAction)PastHistoryPopover:(id)sender {
-    NSLog(@"%@", childMedical.text);
-    NSLog(@"%@", adultMedical.text);
-    NSLog(@"%@", childSurgical.text);
-    NSLog(@"%@", adultMedical.text);
+    NSMutableArray *headers = [[NSMutableArray alloc] initWithObjects:@"Childhood Medical History",@"Adulthood Medical History",@"Childhood Surgical History", @"Adulthood Surgical History", nil];
+    NSMutableArray *pastHistoryInfo = [[NSMutableArray alloc] initWithObjects: self.childMedical.text, self.adultMedical.text, self.childSurgical.text, self.adultSurgical.text,nil];
+    pastHistoryDict = [[NSMutableDictionary alloc] initWithObjects:pastHistoryInfo forKeys:headers];
+    [CSVParser saveData:pastHistoryDict];
 }
 
 - (IBAction)PastHistoryHome:(id)sender {
-    NSLog(@"%@", childMedical.text);
-    NSLog(@"%@", adultMedical.text);
-    NSLog(@"%@", childSurgical.text);
-    NSLog(@"%@", adultMedical.text);
+    NSMutableArray *headers = [[NSMutableArray alloc] initWithObjects:@"Childhood Medical History",@"Adulthood Medical History",@"Childhood Surgical History", @"Adulthood Surgical History", nil];
+    NSMutableArray *pastHistoryInfo = [[NSMutableArray alloc] initWithObjects: self.childMedical.text, self.adultMedical.text, self.childSurgical.text, self.adultSurgical.text,nil];
+    pastHistoryDict = [[NSMutableDictionary alloc] initWithObjects:pastHistoryInfo forKeys:headers];
+    [CSVParser saveData:pastHistoryDict];
+    [CSVParser writeData];
+    [CSVParser clearPatient];
 }
 @end

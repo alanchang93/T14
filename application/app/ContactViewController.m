@@ -140,13 +140,14 @@
     self.work = self.workField.text;
     self.email = self.emailField.text;
     
+    if(self.name == @""){
     //add stuff into the array
     _contactInfo = [NSMutableArray arrayWithObjects:self.name, self.dob, self.address,self.city, self.state, self.country, self.zip, self.cell, self.work, self.email,nil];
     NSMutableArray *fields = [NSMutableArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email", nil];
-    
     NSDictionary *contact = [[NSDictionary alloc] initWithObjects: _contactInfo forKeys:fields];
     [CSVParser saveData:contact];
     [CSVParser writeData];
+    }
     [CSVParser clearPatient];
 }
 
@@ -191,34 +192,6 @@
     self.workField.text = nil;
     self.emailField.text = nil;
     
-}
-
-
-
-//********************************* Save Button ****************************
-
-- (IBAction)update:(id)sender {
-	//assigns a string variable to the text in the textboxes
-    self.name = self.nameField.text;
-    self.dob = self.dobField.text;
-    self.address = self.addressField.text;
-    self.city = self.cityField.text;
-    self.state = self.stateField.text;
-    self.country = self.countryField.text;
-    self.zip = self.zipField.text;
-    self.cell = self.cellField.text;
-    self.work = self.workField.text;
-    self.email = self.emailField.text;
-    
-    //add stuff into the array
-    _contactInfo = [NSMutableArray arrayWithObjects:self.name, self.dob, self.address,self.city, self.state, self.country, self.zip, self.cell, self.work, self.email,nil];
-    NSMutableArray *fields = [NSMutableArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email", nil];
-    
-    NSDictionary *contact = [[NSDictionary alloc] initWithObjects: _contactInfo forKeys:fields];
-    [CSVParser saveData:contact];
-
-    //NSLog(@"%@",[[CSVParser saveData: contact] objectForKey:@"Name"]);
-    //[CSVParser readData: _contactInfo];
 }
 
 //***************************For Country Field Picker***********************

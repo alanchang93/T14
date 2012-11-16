@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PastHistoryViewController : UIViewController <UITextViewDelegate, UIScrollViewDelegate>{
+    NSMutableDictionary *pastHistoryDict;
 }
 
 @property (weak, nonatomic) IBOutlet UITextView *childMedical;
