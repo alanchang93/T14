@@ -19,7 +19,7 @@
 - (IBAction)popover:(id)sender;
 - (IBAction)home:(id)sender;
 
-+(void) saveCCHPI: (NSMutableDictionary *)info;
+- (NSMutableDictionary *) saveCCHPI: (NSMutableDictionary *)info;
 
 
 @end

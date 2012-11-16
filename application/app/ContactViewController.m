@@ -70,6 +70,15 @@
 -(void)viewDidAppear:(BOOL)animated{
     contact = [CSVParser getPatient];
     self.nameField.text = [contact objectForKey:@"Name"];
+    self.dobField.text = [contact objectForKey:@"DOB"];
+    self.addressField.text = [contact objectForKey:@"Address"];
+    self.cityField.text = [contact objectForKey: @"City"];
+    self.stateField.text = [contact objectForKey:@"State"];
+    self.countryField.text = [contact objectForKey:@"Country"];
+    self.zipField.text = [contact objectForKey:@"Zip Code"];
+    self.cellField.text = [contact objectForKey:@"Cell Phone"];
+    self.workField.text = [contact objectForKey:@"Work Phone"];
+    self.emailField.text = [contact objectForKey:@"Email"];
 
 }
 
@@ -120,7 +129,45 @@
 }
 
 -(IBAction)home:(id)sender{
+    self.name = self.nameField.text;
+    self.dob = self.dobField.text;
+    self.address = self.addressField.text;
+    self.city = self.cityField.text;
+    self.state = self.stateField.text;
+    self.country = self.countryField.text;
+    self.zip = self.zipField.text;
+    self.cell = self.cellField.text;
+    self.work = self.workField.text;
+    self.email = self.emailField.text;
+    
+    //add stuff into the array
+    _contactInfo = [NSMutableArray arrayWithObjects:self.name, self.dob, self.address,self.city, self.state, self.country, self.zip, self.cell, self.work, self.email,nil];
+    NSMutableArray *fields = [NSMutableArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email", nil];
+    
+    NSDictionary *contact = [[NSDictionary alloc] initWithObjects: _contactInfo forKeys:fields];
+    [CSVParser saveData:contact];
+    [CSVParser writeData];
     [CSVParser clearPatient];
+}
+
+- (IBAction)popover:(id)sender {
+    self.name = self.nameField.text;
+    self.dob = self.dobField.text;
+    self.address = self.addressField.text;
+    self.city = self.cityField.text;
+    self.state = self.stateField.text;
+    self.country = self.countryField.text;
+    self.zip = self.zipField.text;
+    self.cell = self.cellField.text;
+    self.work = self.workField.text;
+    self.email = self.emailField.text;
+    
+    //add stuff into the array
+    _contactInfo = [NSMutableArray arrayWithObjects:self.name, self.dob, self.address,self.city, self.state, self.country, self.zip, self.cell, self.work, self.email,nil];
+    NSMutableArray *fields = [NSMutableArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email", nil];
+    
+    NSDictionary *contact = [[NSDictionary alloc] initWithObjects: _contactInfo forKeys:fields];
+    [CSVParser saveData:contact];
 }
 
 - (IBAction)hidButton:(id)sender {
@@ -168,7 +215,7 @@
     NSMutableArray *fields = [NSMutableArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email", nil];
     
     NSDictionary *contact = [[NSDictionary alloc] initWithObjects: _contactInfo forKeys:fields];
-    [CSVParser writeData:contact];
+    [CSVParser saveData:contact];
 
     //NSLog(@"%@",[[CSVParser saveData: contact] objectForKey:@"Name"]);
     //[CSVParser readData: _contactInfo];

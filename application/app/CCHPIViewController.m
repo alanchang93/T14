@@ -7,6 +7,7 @@
 //
 
 #import "CCHPIViewController.h"
+#import "CSVParser.h"
 
 @interface CCHPIViewController ()
 
@@ -23,26 +24,32 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void) viewDidAppear:(BOOL)animated{
+    CCHPI = [CSVParser getPatient];
+    self.CCText.text = [CCHPI objectForKey:@"CC"];
+    self.HPIText.text = [CCHPI objectForKey:@"HPI"];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-+ (void) saveCCHPI:(NSMutableDictionary *)info{
-    for (NSString *text in info){
-        
-    }
-}
-
 - (IBAction)popover:(id)sender {
-    NSLog(@"%@",CCText.text);
-    NSLog(@"%@", HPIText.text);
+    NSMutableArray *headers = [[NSMutableArray alloc] initWithObjects: @"CC",@"HPI", nil];
+    NSMutableArray *CCinfo = [[NSMutableArray alloc] initWithObjects: self.CCText.text, self.HPIText.text, nil];
+    CCHPI = [[NSMutableDictionary alloc] initWithObjects:CCinfo forKeys:headers];
+    [CSVParser saveData:CCHPI];
 }
 
 - (IBAction)home:(id)sender {
-    NSLog(@"%@",CCText.text);
-    NSLog(@"%@", HPIText.text);
+    NSMutableArray *headers = [[NSMutableArray alloc] initWithObjects: @"CC",@"HPI",nil];
+    NSMutableArray *CCinfo = [[NSMutableArray alloc] initWithObjects: self.CCText.text, self.HPIText.text, nil];
+    CCHPI = [[NSMutableDictionary alloc] initWithObjects:CCinfo forKeys:headers];
+    [CSVParser saveData:CCHPI];
+    [CSVParser writeData];
+    [CSVParser clearPatient];
 }
 
 

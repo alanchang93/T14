@@ -34,6 +34,7 @@
 - (IBAction)showDropDown:(id)sender;
 - (IBAction)hidButton:(id)sender;
 - (IBAction)home:(id)sender;
+- (IBAction)popover:(id)sender;
 
 - (IBAction)clearButton:(id)sender;
 

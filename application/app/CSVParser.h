@@ -15,7 +15,7 @@
 
 extern NSMutableDictionary *contact;
 
-+ (void) writeData:(NSMutableDictionary *) write;
++ (void) writeData;
 
 + (NSMutableDictionary *)saveData: (NSMutableDictionary *) data;
 //+ (void) readData:(NSMutableArray *) read;

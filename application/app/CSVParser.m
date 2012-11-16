@@ -17,8 +17,8 @@ static NSArray *fields = nil;
 
 
 + (void) initialize{
-    fields = [NSArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email", nil];
-    NSArray *blanks = [NSArray arrayWithObjects: @"",@"",@"",@"",@"",@"",@"",@"",@"",@"",nil];
+    fields = [NSArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email",@"CC", @"HPI", nil];
+    NSArray *blanks = [NSArray arrayWithObjects: @"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",nil];
     patient = [[NSMutableDictionary alloc] initWithObjects: blanks forKeys:fields];
 }
 
@@ -36,20 +36,20 @@ static NSArray *fields = nil;
 
 
 
-+(void) writeData: (NSMutableDictionary *)write {
++(void) writeData{
     NSMutableString *headers = [[NSMutableString alloc] init];
     NSMutableString *data = [[NSMutableString alloc] init];
-    for (NSString *key in write){
+    for (NSString *key in patient){
         [headers appendString: key];
         [headers appendString: @","];
-        [data appendString: [write objectForKey:key]];
+        [data appendString: [patient objectForKey:key]];
         [data appendString: @","];
     }
     headers = [NSMutableString stringWithFormat:@"%@\n", headers];
     [headers appendString: data];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *dir = [paths objectAtIndex:0];
-    NSString *fileName = [NSString stringWithFormat:@"%@%@%@%@",[write objectForKey:@"Name"],@" ",[write objectForKey:@"DOB"],@".csv"];
+    NSString *fileName = [NSString stringWithFormat:@"%@%@%@%@",[patient objectForKey:@"Name"],@" ",[patient objectForKey:@"DOB"],@".csv"];
     NSString *filePath = [dir stringByAppendingPathComponent:fileName];
     [headers writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
     
