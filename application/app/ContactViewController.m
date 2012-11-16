@@ -60,7 +60,6 @@
     picker.showsSelectionIndicator = TRUE;
     countryList = [[NSArray alloc] initWithObjects:@"USA", @"Mexico",@"Canada",nil];
     background.hidden = YES;
-    
     [super viewDidLoad];
     
     
@@ -68,6 +67,10 @@
     background.frame = CGRectMake(0, 1000, 768, 263);
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    contact = [CSVParser getPatient];
+    self.nameField.text = [contact objectForKey:@"Name"];
+}
 
 - (void)viewDidUnload
 {
@@ -161,6 +164,8 @@
     
     NSDictionary *contact = [[NSDictionary alloc] initWithObjects: _contactInfo forKeys:fields];
     [CSVParser writeData:contact];
+
+    
     //NSLog(@"%@",[[CSVParser saveData: contact] objectForKey:@"Name"]);
     //[CSVParser readData: _contactInfo];
 }

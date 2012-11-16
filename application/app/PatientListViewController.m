@@ -35,11 +35,6 @@
     self.mySearchBar.delegate = self;
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *dir = [paths objectAtIndex:0];
-    NSString *filePath = [dir stringByAppendingPathComponent:@"Alan.csv"];
-    [CSVParser loadDataFromFile: filePath];
     totalStrings = [CSVParser getFileNames];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -100,8 +95,11 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *cellText = cell.textLabel.text;
-    NSLog(@"%@",cellText);
-    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *dir = [paths objectAtIndex:0];
+    NSString *filePath = [dir stringByAppendingPathComponent:cellText];
+    [CSVParser loadDataFromFile: filePath];
+
 }
 
 - (void)didReceiveMemoryWarning

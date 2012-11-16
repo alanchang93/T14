@@ -11,15 +11,15 @@
 //NSMutableArray *_contactInfo;
 
 static NSMutableDictionary *patient = nil;
+static NSArray *fields = nil;
 
 @implementation CSVParser
 
 
 + (void) initialize{
-    NSArray *fields = [NSArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email", nil];
+    fields = [NSArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email", nil];
     NSArray *blanks = [NSArray arrayWithObjects: @"",@"",@"",@"",@"",@"",@"",@"",@"",@"",nil];
     patient = [[NSMutableDictionary alloc] initWithObjects: blanks forKeys:fields];
-    
 }
 
 
@@ -37,7 +37,6 @@ static NSMutableDictionary *patient = nil;
 
 
 +(void) writeData: (NSMutableDictionary *)write {
-    NSLog(@"%@",write);
     NSMutableString *headers = [[NSMutableString alloc] init];
     NSMutableString *data = [[NSMutableString alloc] init];
     for (NSString *key in write){
@@ -80,10 +79,17 @@ static NSMutableDictionary *patient = nil;
 
 //Method does not seem to be working :(
 +(NSMutableDictionary *) loadDataFromFile: (NSString *) fileName {
-    patient = nil;
-    NSLog(@"%@",fileName);
+    patient = [[NSMutableDictionary alloc] init];
     NSMutableString *allData = [[NSMutableString alloc]initWithContentsOfFile:fileName];
-    NSLog(@"%@", allData);
-    return allData;
+    NSArray *patientInfo = [allData componentsSeparatedByString:@","];
+    for (int i = 0; i < [fields count]; i++){
+        [patient setObject:[patientInfo objectAtIndex:i] forKey:[fields objectAtIndex:i]];
+    }
+    return patient;
+}
+
++ (NSMutableDictionary *) getPatient{
+    return patient;
+    
 }
 @end
