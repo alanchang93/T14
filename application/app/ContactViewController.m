@@ -58,7 +58,8 @@
 - (void)viewDidLoad
 {
     picker.showsSelectionIndicator = TRUE;
-    countryList = [[NSArray alloc] initWithObjects:@"USA", @"Mexico",@"Canada",nil];
+    countryList =[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Countries" ofType:@"plist"]];
+    //countryList = [[NSArray alloc] initWithObjects:@"USA", @"Mexico",@"Canada",nil];
     background.hidden = YES;
     [super viewDidLoad];
     
@@ -197,6 +198,8 @@
 
 //***************************For Country Field Picker***********************
 
+
+/*
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     
     return [countryList count];
@@ -219,8 +222,22 @@
         self.countryField.text=[countryList objectAtIndex:row];
     return;
 }
+ */
 
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    self.countryField.text = [[self.countryList objectAtIndex:row] objectForKey:@"name"];
+}
 
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return self.countryList.count;
+}
 
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [[self.countryList objectAtIndex:row] objectForKey:@"name"];
+}
 
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
 @end
