@@ -40,12 +40,23 @@ static NSArray *fields = nil;
 +(void) writeData{
     NSMutableString *headers = [[NSMutableString alloc] init];
     NSMutableString *data = [[NSMutableString alloc] init];
+
+    //NSArray * objects = [patient objectsForKeys: sortedKeys notFoundMarker: [NSNull null]];
+    
+    for (NSString *key  in[[patient allKeys]sortedArrayUsingSelector:@selector(compare:) ]) {
+        [headers appendString: key];
+        [headers appendString: @","];
+        [data appendString: [patient objectForKey:key]];
+        [data appendString: @","];
+    }
+    /*
     for (NSString *key in patient){
         [headers appendString: key];
         [headers appendString: @","];
         [data appendString: [patient objectForKey:key]];
         [data appendString: @","];
     }
+     */
     NSString *fileName = [NSString stringWithFormat:@"%@%@%@%@",[patient objectForKey:@"Name"],@" ",[patient objectForKey:@"DOB"],@".csv"];
     NSMutableArray *fileList = [CSVParser getFileNames];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
