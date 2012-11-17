@@ -24,10 +24,9 @@ static NSArray *fields = nil;
 
 
 +(NSMutableDictionary *)saveData:(NSMutableDictionary *)data{
-    NSLog(@"3");
-    for (id key in [data allKeys]){
-        for(id k in [patient allKeys]){
-            if(key == k){
+    for (NSString *key in [data allKeys]){
+        for(NSString *k in [patient allKeys]){
+            if([key isEqualToString: k]){
                 [patient setObject: [data objectForKey:key] forKey: k];
             }
             
