@@ -69,7 +69,6 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     contact = [CSVParser getPatient];
-    if (contact != nil){
     self.nameField.text = [[contact objectForKey:@"Name"] stringByReplacingOccurrencesOfString:@";" withString: @","];
     self.dobField.text = [[contact objectForKey:@"DOB"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     self.addressField.text = [[contact objectForKey:@"Address"] stringByReplacingOccurrencesOfString:@";" withString:@","];
@@ -80,7 +79,6 @@
     self.cellField.text = [[contact objectForKey:@"Cell Phone"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     self.workField.text = [[contact objectForKey:@"Work Phone"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     self.emailField.text = [[contact objectForKey:@"Email"] stringByReplacingOccurrencesOfString:@";" withString:@","];
-    }
 }
 
 - (void)viewDidUnload
@@ -141,14 +139,13 @@
     self.work = [self.workField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     self.email = [self.emailField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     
-    if (self.name != @""){
     //add stuff into the array
-    _contactInfo = [NSMutableArray arrayWithObjects:self.name, self.dob, self.address,self.city, self.state, self.country, self.zip, self.cell, self.work, self.email,nil];
+    _contactInfo = [NSMutableArray arrayWithObjects:self.nameField.text, self.dobField.text, self.addressField.text,self.cityField.text, self.stateField.text, self.countryField.text, self.zipField.text, self.cellField.text, self.workField.text, self.emailField.text,nil];
     NSMutableArray *fields = [NSMutableArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email", nil];
+    NSLog(@"%@",contact);
     NSDictionary *contact = [[NSDictionary alloc] initWithObjects: _contactInfo forKeys:fields];
     [CSVParser saveData:contact];
     [CSVParser writeData];
-    }
     [CSVParser clearPatient];
 }
 
@@ -165,9 +162,8 @@
     self.email = self.emailField.text;
     
     //add stuff into the array
-    _contactInfo = [NSMutableArray arrayWithObjects:self.name, self.dob, self.address,self.city, self.state, self.country, self.zip, self.cell, self.work, self.email,nil];
+    _contactInfo = [NSMutableArray arrayWithObjects:self.nameField.text, self.dobField.text, self.addressField.text,self.cityField.text, self.stateField.text, self.countryField.text, self.zipField.text, self.cellField.text, self.workField.text, self.emailField.text,nil];
     NSMutableArray *fields = [NSMutableArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email", nil];
-    
     NSDictionary *contact = [[NSDictionary alloc] initWithObjects: _contactInfo forKeys:fields];
     [CSVParser saveData:contact];
 }
