@@ -7,6 +7,7 @@
 //
 
 #import "FamilyViewController.h"
+#import "CSVParser.h"
 
 @interface FamilyViewController ()
 
@@ -25,6 +26,11 @@
     return self;
 }
 
+-(void) viewDidAppear:(BOOL)animated{
+    FamHis = [CSVParser getPatient];
+    familyText.text = [[FamHis objectForKey:@"Family History"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -38,10 +44,18 @@
 }
 
 - (IBAction)famHome:(id)sender {
-    NSLog(@"%@",familyText.text);
+    NSArray *header = [[NSArray alloc] initWithObjects:@"Family History", nil];
+    NSArray *FamilyHistory = [[NSArray alloc] initWithObjects:[familyText.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    FamHis = [[NSMutableDictionary alloc] initWithObjects:FamilyHistory forKeys:header];
+    [CSVParser saveData:FamHis];
+    [CSVParser writeData];
+    [CSVParser clearPatient];
 }
 
 - (IBAction)popover:(id)sender {
-    NSLog(@"%@",familyText.text);
+    NSArray *header = [[NSArray alloc] initWithObjects:@"Family History", nil];
+    NSArray *FamilyHistory = [[NSArray alloc] initWithObjects:[familyText.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    FamHis = [[NSMutableDictionary alloc] initWithObjects:FamilyHistory forKeys:header];
+    [CSVParser saveData:FamHis];
 }
 @end

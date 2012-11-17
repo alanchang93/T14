@@ -7,6 +7,7 @@
 //
 
 #import "SocialHistoryViewController.h"
+#import "CSVParser.h"
 
 @interface SocialHistoryViewController ()
 
@@ -29,6 +30,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+
+-(void) viewDidAppear:(BOOL)animated{
+    socialHis = [CSVParser getPatient];
+    if ([socialHis objectForKey:@"Drug Use"] == @"YES"){
+        drugButton.selectedSegmentIndex = 1;
+    }
+    if([socialHis objectForKey:@"Alcohol Use"] == @"YES"){
+        alcButton.selectedSegmentIndex = 1;
+    }
+drugField.text = [[socialHis objectForKey:@"Drug Detail"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+alcField.text = [[socialHis objectForKey:@"Alcohol Detail"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+otherField.text = [[socialHis objectForKey:@"Other Information"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,10 +76,46 @@
     }
 }
 - (IBAction)popover:(id)sender {
-    NSLog(@"%@%@%@", drugField, alcField, otherField);
+    NSArray *headers = [[NSArray alloc] initWithObjects:@"Drug Use", @"Drug Detail", @"Alcohol Use", @"Alcohol Detail", @"Other Information", nil];
+    NSString *drugUse;
+    if (drugButton.selectedSegmentIndex == 1) {
+        drugUse = @"YES";
+    }
+    else{
+        drugUse = @"NO";
+    }
+    NSString *alcUse;
+    if(alcButton.selectedSegmentIndex == 1){
+        alcUse =@"YES";
+    }
+    else{
+        alcUse = @"NO";
+    }
+    NSArray *info = [[NSArray alloc] initWithObjects: drugUse,[drugField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], alcUse, [alcField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], [otherField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    socialHis = [[NSMutableDictionary alloc] initWithObjects:info forKeys:headers];
+    [CSVParser saveData:socialHis];
 }
 
 - (IBAction)home:(id)sender {
-    NSLog(@"%@%@%@", drugField, alcField, otherField);
+    NSArray *headers = [[NSArray alloc] initWithObjects:@"Drug Use", @"Drug Detail", @"Alcohol Use", @"Alcohol Detail", @"Other Information", nil];
+    NSString *drugUse;
+    if (drugButton.selectedSegmentIndex == 1) {
+        drugUse = @"YES";
+    }
+    else{
+        drugUse = @"NO";
+    }
+    NSString *alcUse;
+    if(alcButton.selectedSegmentIndex == 1){
+        alcUse =@"YES";
+    }
+    else{
+        alcUse = @"NO";
+    }
+    NSArray *info = [[NSArray alloc] initWithObjects: drugUse,[drugField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], alcUse, [alcField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], [otherField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    socialHis = [[NSMutableDictionary alloc] initWithObjects:info forKeys:headers];
+    [CSVParser saveData:socialHis];
+    [CSVParser writeData];
+    [CSVParser clearPatient];
 }
 @end

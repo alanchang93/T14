@@ -7,6 +7,7 @@
 //
 
 #import "PEViewController.h"
+#import "CSVParser.h"
 
 @interface PEViewController ()
 
@@ -31,6 +32,19 @@
 	// Do any additional setup after loading the view.
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    PEDict = [CSVParser getPatient];
+    generalField.text = [[PEDict objectForKey:@"PEGeneral"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    heentField.text = [[PEDict objectForKey:@"PEHeent"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    cardioField.text = [[PEDict objectForKey:@"PECardio"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    respField.text = [[PEDict objectForKey:@"PEResp"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    gastroField.text = [[PEDict objectForKey:@"PEGastro"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    geniField.text = [[PEDict objectForKey:@"PEGeni"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    nervField.text = [[PEDict objectForKey:@"PENervous"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    pulField.text = [[PEDict objectForKey:@"PEPulmonary"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    neuroField.text = [[PEDict objectForKey:@"PENeuro"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -38,8 +52,36 @@
 }
 
 - (IBAction)home:(id)sender {
+    NSArray *headers = [[NSArray alloc] initWithObjects: @"PEGeneral", @"PEHeent", @"PECardio", @"PEResp", @"PEGastro", @"PEGeni", @"PENerv", @"PEPul", @"PENeuro", nil];
+    NSString *general = [generalField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *heent = [heentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *cardio = [cardioField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *resp = [respField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *gastro =[gastroField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *geni = [geniField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *nerv = [nervField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *pul = [pulField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *neuro = [neuroField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSArray *info = [[NSArray alloc] initWithObjects: general, heent, cardio, resp, gastro, geni, nerv, pul, neuro, nil];
+    PEDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:headers];
+    [CSVParser saveData:PEDict];
+    [CSVParser writeData];
+    [CSVParser clearPatient];
 }
 
 - (IBAction)popover:(id)sender {
+    NSArray *headers = [[NSArray alloc] initWithObjects: @"PEGeneral", @"PEHeent", @"PECardio", @"PEResp", @"PEGastro", @"PEGeni", @"PENerv", @"PEPul", @"PENeuro", nil];
+    NSString *general = [generalField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *heent = [heentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *cardio = [cardioField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *resp = [respField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *gastro =[gastroField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *geni = [geniField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *nerv = [nervField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *pul = [pulField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *neuro = [neuroField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSArray *info = [[NSArray alloc] initWithObjects: general, heent, cardio, resp, gastro, geni, nerv, pul, neuro, nil];
+    PEDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:headers];
+    [CSVParser saveData:PEDict];
 }
 @end

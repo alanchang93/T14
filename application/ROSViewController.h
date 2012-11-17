@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ROSViewController : UIViewController
+@interface ROSViewController : UIViewController{
+    NSMutableDictionary *ROSDict;
+}
 @property (weak, nonatomic) IBOutlet UITextField *vitalField;
 @property (weak, nonatomic) IBOutlet UITextField *generalField;
 @property (weak, nonatomic) IBOutlet UITextField *heentField;

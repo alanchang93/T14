@@ -11,6 +11,7 @@
 @interface SocialHistoryViewController : UIViewController{
     IBOutlet UISegmentedControl *drugButton;
     IBOutlet UISegmentedControl *alcButton;
+    NSMutableDictionary *socialHis;
 }
 
 

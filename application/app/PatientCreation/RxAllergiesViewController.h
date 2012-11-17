@@ -11,6 +11,8 @@
 @interface RxAllergiesViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>{
     IBOutlet UITableView *mainTableView;
     NSMutableArray *RxList;
+    NSMutableArray *allergiesList;
+    NSMutableDictionary *RxDict;
 }
 // for Rx
 @property (weak, nonatomic) IBOutlet UITextField *RxName;
@@ -25,5 +27,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *allergiesItem;
 @property (weak, nonatomic) IBOutlet UITextField *allergiesReaction;
 - (IBAction)addAllergies:(id)sender;
+
+- (IBAction)popover:(id)sender;
+- (IBAction)home:(id)sender;
+
 
 @end

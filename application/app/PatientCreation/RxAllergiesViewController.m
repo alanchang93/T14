@@ -7,6 +7,7 @@
 //
 
 #import "RxAllergiesViewController.h"
+#import "CSVParser.h"
 
 @interface RxAllergiesViewController ()
 
@@ -14,7 +15,7 @@
 
 @implementation RxAllergiesViewController
 
-@synthesize RxName, RxDose, RxRoute, RxFreq, RxStarted, RxEnded;
+@synthesize RxName, RxDose, RxRoute, RxFreq, RxStarted, RxEnded, allergiesItem, allergiesReaction;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +31,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     RxList = [[NSMutableArray alloc] init];
+}
+
+-(void) viewDidAppear:(BOOL)animated{
+    RxDict = [CSVParser getPatient];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,6 +58,29 @@
 }
 
 - (IBAction)addAllergies:(id)sender {
+}
+
+- (IBAction)popover:(id)sender {
+    RxList = [[NSMutableArray alloc] initWithObjects:RxName.text,RxDose.text, RxRoute.text, RxFreq.text, RxStarted.text, RxEnded.text, nil];
+    allergiesList = [[NSMutableArray alloc] initWithObjects:allergiesItem, allergiesReaction, nil];
+    
+    NSArray *headers = [[NSArray alloc] initWithObjects:@"Rx", @"Allergies", nil];
+    NSArray *RxInfo = [[NSArray alloc] initWithObjects:[RxList componentsJoinedByString:@";"], [allergiesList componentsJoinedByString:@";"], nil];
+    RxDict = [[NSMutableDictionary alloc] initWithObjects:RxInfo forKeys:headers];
+    [CSVParser saveData:RxDict];
+    
+}
+
+- (IBAction)home:(id)sender {
+    RxList = [[NSMutableArray alloc] initWithObjects:RxName.text,RxDose.text, RxRoute.text, RxFreq.text, RxStarted.text, RxEnded.text, nil];
+    allergiesList = [[NSMutableArray alloc] initWithObjects:allergiesItem, allergiesReaction, nil];
+    
+    NSArray *headers = [[NSArray alloc] initWithObjects:@"Rx", @"Allergies", nil];
+    NSArray *RxInfo = [[NSArray alloc] initWithObjects:[RxList componentsJoinedByString:@";"], [allergiesList componentsJoinedByString:@";"], nil];
+    RxDict = [[NSMutableDictionary alloc] initWithObjects:RxInfo forKeys:headers];
+    [CSVParser saveData:RxDict];
+    [CSVParser writeData];
+    [CSVParser clearPatient];
 }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{

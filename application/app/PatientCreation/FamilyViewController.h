@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FamilyViewController : UIViewController
+@interface FamilyViewController : UIViewController{
+    NSMutableDictionary *FamHis;
+}
 @property (weak, nonatomic) IBOutlet UITextView *familyText;
 - (IBAction)famHome:(id)sender;
 - (IBAction)popover:(id)sender;

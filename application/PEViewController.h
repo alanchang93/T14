@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PEViewController : UIViewController
+@interface PEViewController : UIViewController {
+    NSMutableDictionary *PEDict;
+}
 @property (weak, nonatomic) IBOutlet UITextField *generalField;
 @property (weak, nonatomic) IBOutlet UITextField *heentField;
 @property (weak, nonatomic) IBOutlet UITextField *cardioField;

@@ -11,7 +11,6 @@
 		4115E4EC165368140008DA34 /* RxAllergiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4115E4EB165368140008DA34 /* RxAllergiesViewController.m */; };
 		4115E4EF165369470008DA34 /* FamilyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4115E4EE165369470008DA34 /* FamilyViewController.m */; };
 		4115E4F216536A880008DA34 /* SocialHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4115E4F116536A880008DA34 /* SocialHistoryViewController.m */; };
-		4127B6E71657AA6E006EC505 /* Countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4127B6E61657AA6E006EC505 /* Countries.plist */; };
 		415661111654FAD200FA9EEF /* PatientListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 415661101654FAD200FA9EEF /* PatientListViewController.m */; };
 		418770AB16536BB9007135B7 /* ROSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418770AA16536BB9007135B7 /* ROSViewController.m */; };
 		418770AF16536C3C007135B7 /* PEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418770AE16536C3C007135B7 /* PEViewController.m */; };
@@ -59,7 +58,6 @@
 		4115E4EE165369470008DA34 /* FamilyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyViewController.m; sourceTree = "<group>"; };
 		4115E4F016536A880008DA34 /* SocialHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialHistoryViewController.h; sourceTree = "<group>"; };
 		4115E4F116536A880008DA34 /* SocialHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialHistoryViewController.m; sourceTree = "<group>"; };
-		4127B6E61657AA6E006EC505 /* Countries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Countries.plist; path = ../../../Downloads/Countries.plist; sourceTree = "<group>"; };
 		4156610F1654FAD200FA9EEF /* PatientListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientListViewController.h; sourceTree = "<group>"; };
 		415661101654FAD200FA9EEF /* PatientListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientListViewController.m; sourceTree = "<group>"; };
 		418770A916536BB9007135B7 /* ROSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ROSViewController.h; path = ../../ROSViewController.h; sourceTree = "<group>"; };
@@ -210,7 +208,6 @@
 			children = (
 				4199F754164F66F9003A57F0 /* app-Info.plist */,
 				4199F755164F66F9003A57F0 /* InfoPlist.strings */,
-				4127B6E61657AA6E006EC505 /* Countries.plist */,
 				4199F758164F66F9003A57F0 /* main.m */,
 				4199F75A164F66F9003A57F0 /* app-Prefix.pch */,
 				4199F75E164F66F9003A57F0 /* Default.png */,
@@ -316,7 +313,6 @@
 				4199F763164F66F9003A57F0 /* Default-568h@2x.png in Resources */,
 				4199F766164F66F9003A57F0 /* MainStoryboard_iPhone.storyboard in Resources */,
 				4199F769164F66F9003A57F0 /* MainStoryboard_iPad.storyboard in Resources */,
-				4127B6E71657AA6E006EC505 /* Countries.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
