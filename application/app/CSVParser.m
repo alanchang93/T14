@@ -46,13 +46,24 @@ static NSArray *fields = nil;
         [data appendString: [patient objectForKey:key]];
         [data appendString: @","];
     }
-    headers = [NSMutableString stringWithFormat:@"%@\n", headers];
-    [headers appendString: data];
+    NSString *fileName = [NSString stringWithFormat:@"%@%@%@%@",[patient objectForKey:@"Name"],@" ",[patient objectForKey:@"DOB"],@".csv"];
+    NSMutableArray *fileList = [CSVParser getFileNames];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *dir = [paths objectAtIndex:0];
-    NSString *fileName = [NSString stringWithFormat:@"%@%@%@%@",[patient objectForKey:@"Name"],@" ",[patient objectForKey:@"DOB"],@".csv"];
     NSString *filePath = [dir stringByAppendingPathComponent:fileName];
-    [headers writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    NSString *toFile;
+    if (![fileList containsObject: fileName]){
+    headers = [NSMutableString stringWithFormat:@"%@\n", headers];
+    [headers appendString: data];
+    toFile = headers;
+    }
+    else{
+        NSMutableString *allData = [[NSMutableString alloc]initWithContentsOfFile:filePath];
+        [allData appendString: data];
+        toFile = allData;
+    }
+
+    [toFile writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
     
 }
 
