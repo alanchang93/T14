@@ -28,10 +28,10 @@
 
 - (void) viewDidAppear:(BOOL)animated{
     pastHistoryDict = [CSVParser getPatient];
-    self.childMedical.text = [pastHistoryDict objectForKey:@"Childhood Medical History"];
-    self.adultMedical.text = [pastHistoryDict objectForKey:@"Adulthood Medical History"];
-    self.childSurgical.text = [pastHistoryDict objectForKey:@"Childhood Surgical History"];
-    self.adultSurgical.text = [pastHistoryDict objectForKey:@"Adulthood Surgical History"];
+    self.childMedical.text = [[pastHistoryDict objectForKey:@"Childhood Medical History"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    self.adultMedical.text = [[pastHistoryDict objectForKey:@"Adulthood Medical History"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    self.childSurgical.text = [[pastHistoryDict objectForKey:@"Childhood Surgical History"] stringByReplacingOccurrencesOfString: @";" withString:@","];
+    self.adultSurgical.text = [[pastHistoryDict objectForKey:@"Adulthood Surgical History"] stringByReplacingOccurrencesOfString: @";" withString:@","];
         
 }
 
@@ -50,7 +50,11 @@
 
 - (IBAction)PastHistoryHome:(id)sender {
     NSMutableArray *headers = [[NSMutableArray alloc] initWithObjects:@"Childhood Medical History",@"Adulthood Medical History",@"Childhood Surgical History", @"Adulthood Surgical History", nil];
-    NSMutableArray *pastHistoryInfo = [[NSMutableArray alloc] initWithObjects: self.childMedical.text, self.adultMedical.text, self.childSurgical.text, self.adultSurgical.text,nil];
+    NSString *mchild = [self.childMedical.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *madult = [self.adultMedical.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *schild = [self.childSurgical.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *sadult = [self.adultSurgical.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSMutableArray *pastHistoryInfo = [[NSMutableArray alloc] initWithObjects: mchild, madult, schild, sadult,nil];
     pastHistoryDict = [[NSMutableDictionary alloc] initWithObjects:pastHistoryInfo forKeys:headers];
     [CSVParser saveData:pastHistoryDict];
     [CSVParser writeData];

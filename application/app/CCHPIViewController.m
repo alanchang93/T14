@@ -26,8 +26,8 @@
 
 - (void) viewDidAppear:(BOOL)animated{
     CCHPI = [CSVParser getPatient];
-    self.CCText.text = [CCHPI objectForKey:@"CC"];
-    self.HPIText.text = [CCHPI objectForKey:@"HPI"];
+    self.CCText.text = [[CCHPI objectForKey:@"CC"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    self.HPIText.text = [[CCHPI objectForKey:@"HPI"] stringByReplacingOccurrencesOfString:@";" withString:@","];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,7 +45,7 @@
 
 - (IBAction)home:(id)sender {
     NSMutableArray *headers = [[NSMutableArray alloc] initWithObjects: @"CC",@"HPI",nil];
-    NSMutableArray *CCinfo = [[NSMutableArray alloc] initWithObjects: self.CCText.text, self.HPIText.text, nil];
+    NSMutableArray *CCinfo = [[NSMutableArray alloc] initWithObjects: [self.CCText.text stringByReplacingOccurrencesOfString:@"," withString:@";"], [self.HPIText.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
     CCHPI = [[NSMutableDictionary alloc] initWithObjects:CCinfo forKeys:headers];
     [CSVParser saveData:CCHPI];
     [CSVParser writeData];
