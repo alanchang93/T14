@@ -34,6 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationItem setTitle:@"Family History"];
 	// Do any additional setup after loading the view.
 }
 

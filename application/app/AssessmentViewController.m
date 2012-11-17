@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationItem setTitle: @"Assessment & Plan"];
 	// Do any additional setup after loading the view.
 }
 

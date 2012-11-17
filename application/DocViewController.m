@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationItem setTitle:@"Certification"];
 	// Do any additional setup after loading the view.
 }
 

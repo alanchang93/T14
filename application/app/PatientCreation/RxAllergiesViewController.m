@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    RxList = [[NSMutableArray alloc] init];
+    [self.navigationItem setTitle:@"Rx and Allergies"];
 }
 
 -(void) viewDidAppear:(BOOL)animated{

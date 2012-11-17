@@ -62,6 +62,7 @@
     //countryList = [[NSArray alloc] initWithObjects:@"USA", @"Mexico",@"Canada",nil];
     background.hidden = YES;
     [super viewDidLoad];
+    [self.navigationItem setTitle:@"Basic Contact Information"];
     
     
 	// Do any additional setup after loading the view, typically from a nib.

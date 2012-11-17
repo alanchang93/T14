@@ -24,6 +24,7 @@
 
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self.navigationItem setTitle:@"Past History"];
 }
 
 - (void) viewDidAppear:(BOOL)animated{

@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationItem setTitle: @"Lab & Other"];
 	// Do any additional setup after loading the view.
 }
 

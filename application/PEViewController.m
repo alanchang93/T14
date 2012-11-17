@@ -30,6 +30,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self.navigationItem setTitle:@"Physical Exam"];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -40,8 +41,8 @@
     respField.text = [[PEDict objectForKey:@"PEResp"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     gastroField.text = [[PEDict objectForKey:@"PEGastro"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     geniField.text = [[PEDict objectForKey:@"PEGeni"] stringByReplacingOccurrencesOfString:@";" withString:@","];
-    nervField.text = [[PEDict objectForKey:@"PENervous"] stringByReplacingOccurrencesOfString:@";" withString:@","];
-    pulField.text = [[PEDict objectForKey:@"PEPulmonary"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    nervField.text = [[PEDict objectForKey:@"PENerv"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    pulField.text = [[PEDict objectForKey:@"PEPul"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     neuroField.text = [[PEDict objectForKey:@"PENeuro"] stringByReplacingOccurrencesOfString:@";" withString:@","];
 }
 
@@ -57,12 +58,12 @@
     NSString *heent = [heentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *cardio = [cardioField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *resp = [respField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
-    NSString *gastro =[gastroField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *gastro = [gastroField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *geni = [geniField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *nerv = [nervField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *pul = [pulField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *neuro = [neuroField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
-    NSArray *info = [[NSArray alloc] initWithObjects: general, heent, cardio, resp, gastro, geni, nerv, pul, neuro, nil];
+    NSArray *info = [NSArray arrayWithObjects:general, heent, cardio, resp, gastro, geni, nerv, pul, neuro, nil];
     PEDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:headers];
     [CSVParser saveData:PEDict];
     [CSVParser writeData];
@@ -75,12 +76,15 @@
     NSString *heent = [heentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *cardio = [cardioField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *resp = [respField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
-    NSString *gastro =[gastroField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    NSString *gastro = [gastroField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *geni = [geniField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *nerv = [nervField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *pul = [pulField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *neuro = [neuroField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
-    NSArray *info = [[NSArray alloc] initWithObjects: general, heent, cardio, resp, gastro, geni, nerv, pul, neuro, nil];
+    NSLog(@"%@%@%@", nerv, pul, neuro);
+    NSArray *info = [NSArray arrayWithObjects:general, heent, cardio, resp, gastro, geni, nerv, pul, neuro, nil];
+    NSLog(@">>>>%@", info);
+    NSLog(@"%d", [info count]);
     PEDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:headers];
     [CSVParser saveData:PEDict];
 }

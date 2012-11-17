@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationItem setTitle: @"Review Of Systems"];
 	// Do any additional setup after loading the view.
 }
 

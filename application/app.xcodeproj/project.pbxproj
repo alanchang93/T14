@@ -35,6 +35,7 @@
 		4199F77E164F66F9003A57F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4199F77C164F66F9003A57F0 /* InfoPlist.strings */; };
 		4199F781164F66F9003A57F0 /* appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4199F780164F66F9003A57F0 /* appTests.m */; };
 		41B28CB31652D236003252CB /* CSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B28CB21652D236003252CB /* CSVParser.m */; };
+		41B746F3165852BD008D18AA /* Countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41B746F2165852BD008D18AA /* Countries.plist */; };
 		41F485B616534F4400546473 /* CCHPIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F485B516534F4400546473 /* CCHPIViewController.m */; };
 		41F912C316534CC100F75184 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F912C216534CC100F75184 /* HomeViewController.m */; };
 /* End PBXBuildFile section */
@@ -95,6 +96,7 @@
 		4199F780164F66F9003A57F0 /* appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = appTests.m; sourceTree = "<group>"; };
 		41B28CB11652D236003252CB /* CSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVParser.h; sourceTree = "<group>"; };
 		41B28CB21652D236003252CB /* CSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVParser.m; sourceTree = "<group>"; };
+		41B746F2165852BD008D18AA /* Countries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Countries.plist; path = app/Countries.plist; sourceTree = SOURCE_ROOT; };
 		41F485B416534F4400546473 /* CCHPIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCHPIViewController.h; path = ../CCHPIViewController.h; sourceTree = "<group>"; };
 		41F485B516534F4400546473 /* CCHPIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCHPIViewController.m; path = ../CCHPIViewController.m; sourceTree = "<group>"; };
 		41F912C116534CC100F75184 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		4199F753164F66F9003A57F0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				41B746F2165852BD008D18AA /* Countries.plist */,
 				4199F754164F66F9003A57F0 /* app-Info.plist */,
 				4199F755164F66F9003A57F0 /* InfoPlist.strings */,
 				4199F758164F66F9003A57F0 /* main.m */,
@@ -313,6 +316,7 @@
 				4199F763164F66F9003A57F0 /* Default-568h@2x.png in Resources */,
 				4199F766164F66F9003A57F0 /* MainStoryboard_iPhone.storyboard in Resources */,
 				4199F769164F66F9003A57F0 /* MainStoryboard_iPad.storyboard in Resources */,
+				41B746F3165852BD008D18AA /* Countries.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
