@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AssessmentViewController : UIViewController
+@interface AssessmentViewController : UIViewController{
+    NSMutableDictionary *assessmentDict;
+}
 @property (weak, nonatomic) IBOutlet UITextField *RxField;
 @property (weak, nonatomic) IBOutlet UITextView *noteField;
 

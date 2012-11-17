@@ -17,8 +17,8 @@ static NSArray *fields = nil;
 
 
 + (void) initialize{
-    fields = [NSArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email",@"CC", @"HPI", @"Childhood Medical History", @"Adulthood Medical History", @"Childhood Surgical History", @"Adulthood Surgical History",@"Rx",@"Allergies",@"Family History",@"Drug Use",@"Drug Detail", @"Alcohol Use",@"Alcohol Detail", @"Other Information",@"ROSVital", @"ROSGeneral",@"ROSHeent", @"ROSCardio",@"ROSResp", @"ROSGastro", @"ROSGeni" ,@"ROSNervous" ,@"ROSPulmonary",@"ROSNeuro",@"PEGeneral", @"PEHeent", @"PECardio", @"PEResp", @"PEGastro", @"PEGeni", @"PENerv", @"PEPul", @"PENeuro", nil];
-    NSArray *blanks = [NSArray arrayWithObjects: @"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"" ,@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",nil];
+    fields = [NSArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email",@"CC", @"HPI", @"Childhood Medical History", @"Adulthood Medical History", @"Childhood Surgical History", @"Adulthood Surgical History",@"Rx",@"Allergies",@"Family History",@"Drug Use",@"Drug Detail", @"Alcohol Use",@"Alcohol Detail", @"Other Information",@"ROSVital", @"ROSGeneral",@"ROSHeent", @"ROSCardio",@"ROSResp", @"ROSGastro", @"ROSGeni" ,@"ROSNervous" ,@"ROSPulmonary",@"ROSNeuro",@"PEGeneral", @"PEHeent", @"PECardio", @"PEResp", @"PEGastro", @"PEGeni", @"PENerv", @"PEPul", @"PENeuro", @"Lab&Other",@"Rx" @"notes",@"Physician", @"Med Student", nil];
+    NSArray *blanks = [NSArray arrayWithObjects: @"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"" ,@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",nil];
     patient = [[NSMutableDictionary alloc] initWithObjects: blanks forKeys:fields];
 }
 

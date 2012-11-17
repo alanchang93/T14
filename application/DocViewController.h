@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DocViewController : UIViewController
+@interface DocViewController : UIViewController{
+    NSMutableDictionary *docDict;
+}
 @property (weak, nonatomic) IBOutlet UITextField *physicianField;
 @property (weak, nonatomic) IBOutlet UITextField *studentField;
 - (IBAction)home:(id)sender;

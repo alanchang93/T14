@@ -7,6 +7,7 @@
 //
 
 #import "DocViewController.h"
+#import "CSVParser.h"
 
 @interface DocViewController ()
 
@@ -31,6 +32,12 @@
 	// Do any additional setup after loading the view.
 }
 
+-(void) viewDidAppear:(BOOL)animated{
+    docDict = [CSVParser getPatient];
+    physicianField.text = [[docDict objectForKey:@"Physician"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    studentField.text = [[docDict objectForKey:@"Med Student"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -38,11 +45,25 @@
 }
 
 - (IBAction)home:(id)sender {
+    NSArray *header = [[NSArray alloc] initWithObjects:@"Physician", @"Med Student", nil];
+    NSArray *info = [[NSArray alloc] initWithObjects:[physicianField.text stringByReplacingOccurrencesOfString:@"," withString:@";"],[studentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    docDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:header];
+    [CSVParser saveData:docDict];
+    [CSVParser writeData];
+    [CSVParser clearPatient];
 }
 
 - (IBAction)popover:(id)sender {
+    NSArray *header = [[NSArray alloc] initWithObjects:@"Physician", @"Med Student", nil];
+    NSArray *info = [[NSArray alloc] initWithObjects:[physicianField.text stringByReplacingOccurrencesOfString:@"," withString:@";"],[studentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    docDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:header];
+    [CSVParser saveData:docDict];
 }
 
 - (IBAction)save:(id)sender {
+    NSArray *header = [[NSArray alloc] initWithObjects:@"Physician", @"Med Student", nil];
+    NSArray *info = [[NSArray alloc] initWithObjects:[physicianField.text stringByReplacingOccurrencesOfString:@"," withString:@";"],[studentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    docDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:header];
+    [CSVParser saveData:docDict];
 }
 @end

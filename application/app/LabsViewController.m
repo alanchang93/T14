@@ -7,6 +7,7 @@
 //
 
 #import "LabsViewController.h"
+#import "CSVParser.h"
 
 @interface LabsViewController ()
 
@@ -31,6 +32,11 @@
 	// Do any additional setup after loading the view.
 }
 
+-(void) viewDidAppear:(BOOL)animated{
+    labDict = [CSVParser getPatient];
+    textField.text = [[labDict objectForKey:@"Lab&Other"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -38,8 +44,18 @@
 }
 
 - (IBAction)home:(id)sender {
+    NSArray *header = [[NSArray alloc] initWithObjects:@"Lab&Other",nil];
+    NSArray *info = [[NSArray alloc] initWithObjects:[textField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    labDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:header];
+    [CSVParser saveData:labDict];
+    [CSVParser writeData];
+    [CSVParser clearPatient];
 }
 
 - (IBAction)popover:(id)sender {
+    NSArray *header = [[NSArray alloc] initWithObjects:@"Lab&Other",nil];
+    NSArray *info = [[NSArray alloc] initWithObjects:[textField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    labDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:header];
+    [CSVParser saveData:labDict];
 }
 @end

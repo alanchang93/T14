@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LabsViewController : UIViewController
+@interface LabsViewController : UIViewController{
+    NSMutableDictionary *labDict;
+}
 
 @property (weak, nonatomic) IBOutlet UITextView *textField;
 
