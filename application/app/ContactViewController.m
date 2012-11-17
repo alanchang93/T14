@@ -142,6 +142,11 @@
     //add stuff into the array
     _contactInfo = [NSMutableArray arrayWithObjects:self.nameField.text, self.dobField.text, self.addressField.text,self.cityField.text, self.stateField.text, self.countryField.text, self.zipField.text, self.cellField.text, self.workField.text, self.emailField.text,nil];
     NSMutableArray *fields = [NSMutableArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email", nil];
+    if ([_contactInfo count] == 0) {
+        for (NSString *blank in fields) {
+            [_contactInfo addObject:@" "];
+        }
+    }
     NSDictionary *contact = [[NSDictionary alloc] initWithObjects: _contactInfo forKeys:fields];
     [CSVParser saveData:contact];
     [CSVParser writeData];

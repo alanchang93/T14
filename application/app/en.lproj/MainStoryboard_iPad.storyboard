@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="JDl-dS-Ri8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="JDl-dS-Ri8">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Patient List View Controller-->
@@ -113,7 +113,7 @@
             <objects>
                 <viewController id="2" customClass="ContactViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gER-z2-Waz">
@@ -278,7 +278,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ie1-d5-ayj">
-                                <rect key="frame" x="45" y="935" width="114" height="44"/>
+                                <rect key="frame" x="45" y="891" width="114" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Clear">
@@ -293,7 +293,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="aRX-tf-4sA">
-                                <rect key="frame" x="0.0" y="741" width="768" height="263"/>
+                                <rect key="frame" x="0.0" y="697" width="768" height="263"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" id="Ov7-m2-avx">
                                         <rect key="frame" x="0.0" y="44" width="768" height="216"/>
@@ -2351,9 +2351,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="fRC-Aa-tPw"/>
-        <segue reference="Mxb-jN-TVs"/>
-        <segue reference="x6A-Di-40b"/>
+        <segue reference="pPC-ev-rE2"/>
         <segue reference="sWw-DM-3a1"/>
+        <segue reference="t4t-hu-iyw"/>
+        <segue reference="x6A-Di-40b"/>
     </inferredMetricsTieBreakers>
 </document>
