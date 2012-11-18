@@ -37,7 +37,6 @@
 		41B28CB31652D236003252CB /* CSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B28CB21652D236003252CB /* CSVParser.m */; };
 		41B746F3165852BD008D18AA /* Countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41B746F2165852BD008D18AA /* Countries.plist */; };
 		41D8FAC11658C4010006FFB9 /* bluetooth.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D8FAC01658C4010006FFB9 /* bluetooth.png */; };
-		41D8FAC31658C6AD0006FFB9 /* clipboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D8FAC21658C6AD0006FFB9 /* clipboard.png */; };
 		41D8FAC51658C7CF0006FFB9 /* clipboard_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D8FAC41658C7CF0006FFB9 /* clipboard_arrow_down.png */; };
 		41D8FAC91658C9DC0006FFB9 /* Home-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D8FAC81658C9DC0006FFB9 /* Home-icon.png */; };
 		41F485B616534F4400546473 /* CCHPIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F485B516534F4400546473 /* CCHPIViewController.m */; };
@@ -102,7 +101,6 @@
 		41B28CB21652D236003252CB /* CSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVParser.m; sourceTree = "<group>"; };
 		41B746F2165852BD008D18AA /* Countries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Countries.plist; path = app/Countries.plist; sourceTree = SOURCE_ROOT; };
 		41D8FAC01658C4010006FFB9 /* bluetooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluetooth.png; path = ../../icon/bluetooth.png; sourceTree = "<group>"; };
-		41D8FAC21658C6AD0006FFB9 /* clipboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clipboard.png; path = ../../icon/clipboard.png; sourceTree = "<group>"; };
 		41D8FAC41658C7CF0006FFB9 /* clipboard_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clipboard_arrow_down.png; path = ../../icon/clipboard_arrow_down.png; sourceTree = "<group>"; };
 		41D8FAC81658C9DC0006FFB9 /* Home-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Home-icon.png"; path = "../icon/Home-icon.png"; sourceTree = "<group>"; };
 		41F485B416534F4400546473 /* CCHPIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCHPIViewController.h; path = ../CCHPIViewController.h; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 			isa = PBXGroup;
 			children = (
 				41D8FAC41658C7CF0006FFB9 /* clipboard_arrow_down.png */,
-				41D8FAC21658C6AD0006FFB9 /* clipboard.png */,
 				41D8FAC01658C4010006FFB9 /* bluetooth.png */,
 				41B746F2165852BD008D18AA /* Countries.plist */,
 				4199F754164F66F9003A57F0 /* app-Info.plist */,
@@ -330,7 +327,6 @@
 				4199F769164F66F9003A57F0 /* MainStoryboard_iPad.storyboard in Resources */,
 				41B746F3165852BD008D18AA /* Countries.plist in Resources */,
 				41D8FAC11658C4010006FFB9 /* bluetooth.png in Resources */,
-				41D8FAC31658C6AD0006FFB9 /* clipboard.png in Resources */,
 				41D8FAC51658C7CF0006FFB9 /* clipboard_arrow_down.png in Resources */,
 				41D8FAC91658C9DC0006FFB9 /* Home-icon.png in Resources */,
 			);

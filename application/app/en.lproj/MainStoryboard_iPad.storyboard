@@ -67,7 +67,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oRJ-MC-i4q">
-                                <rect key="frame" x="234" y="87" width="300" height="92"/>
+                                <rect key="frame" x="234" y="167" width="300" height="92"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="New Patient">
@@ -83,7 +83,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hpH-v4-43q">
-                                <rect key="frame" x="234" y="314" width="300" height="94"/>
+                                <rect key="frame" x="234" y="394" width="300" height="94"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Patient List">
@@ -99,10 +99,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t7J-sd-Ovc">
-                                <rect key="frame" x="234" y="544" width="300" height="102"/>
+                                <rect key="frame" x="234" y="624" width="300" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Send Patient File">
+                                <state key="normal" title="Connect Via Bluetooth">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -110,20 +110,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="bbl-Xq-yZe" kind="push" id="Oh2-NV-X7d"/>
+                                    <segue destination="k0v-vY-odW" kind="push" id="FMK-Su-e3w"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8Id-1G-rrr">
-                                <rect key="frame" x="234" y="758" width="300" height="111"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Recieve Patient File">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -134,6 +122,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8FI-Xl-Xac" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3927" y="-851"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xN8-QF-xQo">
+            <objects>
+                <viewController id="70w-t4-jP8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Aan-fq-4uo">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zhE-gB-X7A">
+                                <rect key="frame" x="0.0" y="91" width="768" height="913"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="file" id="ne7-Mn-UKv">
+                                        <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="748" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <searchBar contentMode="redraw" id="3g3-cM-nan">
+                                <rect key="frame" x="0.0" y="43" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="RyT-zZ-Mfa">
+                                <rect key="frame" x="0.0" y="0.0" width="295" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Send"/>
+                                    <segment title="Receive"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YxR-J7-SGM">
+                                <rect key="frame" x="700" y="-4" width="48" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="Home-icon.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2NU-iW-4o4" kind="push" id="AZa-cc-tuR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KuR-iU-64a"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ef2-XJ-PyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2572" y="339"/>
         </scene>
         <!--Contact View Controller-->
         <scene sceneID="4">
@@ -355,7 +404,7 @@
             <objects>
                 <tableViewController id="ntY-4d-EDW" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6I7-bp-KLA">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -600,7 +649,7 @@
             <objects>
                 <viewController id="uuu-ww-GlP" customClass="CCHPIViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P7S-9R-Cnb">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xVQ-rk-omK">
@@ -683,7 +732,7 @@
             <objects>
                 <viewController id="YGx-J7-YyQ" customClass="PastHistoryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6yL-mm-t19">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Childhood" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iDr-ey-wEb">
@@ -850,7 +899,7 @@
             <objects>
                 <viewController id="QmE-RQ-hRf" customClass="RxAllergiesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XjW-sa-dOk">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9HT-ho-R8E">
@@ -1153,7 +1202,7 @@
             <objects>
                 <viewController id="gGS-kB-MoB" customClass="FamilyViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jtx-Oh-lrf">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fP2-fU-SFO">
@@ -1214,7 +1263,7 @@
             <objects>
                 <viewController id="Hbq-kd-B7z" customClass="SocialHistoryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h8D-Xy-8sj">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SCc-2j-zVd">
@@ -1350,7 +1399,7 @@
             <objects>
                 <viewController id="bgk-4d-Ief" customClass="ROSViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9K-9a-Rzi">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cCz-Gi-fiD">
@@ -1550,14 +1599,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MtP-0k-fkB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4796" y="90"/>
+            <point key="canvasLocation" x="5770" y="90"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="I5g-Up-5hK">
             <objects>
                 <viewController id="5YG-Af-Eim" customClass="PEViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VU4-Iz-d0t">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="67z-uj-TK8">
@@ -1742,7 +1791,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpG-Xk-u2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3718" y="34"/>
+            <point key="canvasLocation" x="4692" y="34"/>
         </scene>
         <!--Labs View Controller-->
         <scene sceneID="yMa-6y-yRc">
@@ -1803,14 +1852,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8s-hS-V5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2442" y="836"/>
+            <point key="canvasLocation" x="3416" y="836"/>
         </scene>
         <!--Assessment View Controller-->
         <scene sceneID="3EZ-lf-wiq">
             <objects>
                 <viewController id="lTT-Mx-MGd" customClass="AssessmentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YpX-fV-Dek">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6yu-D3-oC9">
@@ -1885,14 +1934,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ds1-6X-RJI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152" y="674"/>
+            <point key="canvasLocation" x="2126" y="674"/>
         </scene>
         <!--Doc View Controller-->
         <scene sceneID="FgZ-0m-IBl">
             <objects>
                 <viewController id="72C-DA-btY" customClass="DocViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gdy-zP-Hib">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="x15-Ea-anr">
@@ -1987,7 +2036,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59g-IY-m8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-160" y="354"/>
+            <point key="canvasLocation" x="814" y="354"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eOX-Ro-HNR">
@@ -2114,7 +2163,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Eo-Jz-OKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5098" y="478"/>
+            <point key="canvasLocation" x="6072" y="478"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HLB-J9-b2G">
@@ -2132,7 +2181,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E6u-jc-OjF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3748" y="718"/>
+            <point key="canvasLocation" x="4722" y="718"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZLh-5R-yhG">
@@ -2150,7 +2199,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pEs-sg-f9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2614" y="1302"/>
+            <point key="canvasLocation" x="3588" y="1302"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DvI-ie-1au">
@@ -2168,7 +2217,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRZ-EB-ogW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1144" y="1322"/>
+            <point key="canvasLocation" x="2118" y="1322"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LkG-3k-3US">
@@ -2186,7 +2235,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lxB-fE-qzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-626" y="814"/>
+            <point key="canvasLocation" x="348" y="814"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l9v-8b-729">
@@ -2207,56 +2256,24 @@
             </objects>
             <point key="canvasLocation" x="-3919" y="-2046"/>
         </scene>
-        <!--Patient List View Controller-->
-        <scene sceneID="R2Q-mV-5U2">
+        <!--Navigation Controller-->
+        <scene sceneID="IE9-fF-uNK">
             <objects>
-                <viewController id="bbl-Xq-yZe" customClass="PatientListViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ogJ-Hg-53N">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" id="uMd-rm-vhm">
-                                <rect key="frame" x="0.0" y="3" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rMP-Dr-ObJ">
-                                <rect key="frame" x="0.0" y="47" width="768" height="959"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="patient" id="dIi-c3-00Z">
-                                        <rect key="frame" x="0.0" y="22" width="768" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="748" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="eZy-gi-ds0"/>
+                <navigationController id="k0v-vY-odW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Jrf-Zt-Uac"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sFZ-OD-Bx5">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <outlet property="mySearchBar" destination="uMd-rm-vhm" id="Gsf-D9-YZR"/>
-                        <outlet property="myTableView" destination="rMP-Dr-ObJ" id="ldr-hF-IDs"/>
-                        <outlet property="searchDisplayController" destination="Fkg-Lv-gjg" id="CY9-D5-ufq"/>
+                        <segue destination="70w-t4-jP8" kind="relationship" relationship="rootViewController" id="TZd-Jw-NJE"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FBd-jS-W4f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="6pU-l6-iv4">
-                    <connections>
-                        <outlet property="delegate" destination="bbl-Xq-yZe" id="OFt-fH-eC6"/>
-                        <outlet property="searchContentsController" destination="bbl-Xq-yZe" id="PlG-2n-rtf"/>
-                        <outlet property="searchResultsDataSource" destination="bbl-Xq-yZe" id="Vxr-GN-oOq"/>
-                        <outlet property="searchResultsDelegate" destination="bbl-Xq-yZe" id="ljg-Dr-FjO"/>
-                    </connections>
-                </searchDisplayController>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DQv-cT-cb4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2929" y="526"/>
+            <point key="canvasLocation" x="-3410" y="486"/>
         </scene>
     </scenes>
     <resources>
@@ -2445,8 +2462,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="kEm-fZ-1ph"/>
-        <segue reference="7DV-eU-Ndi"/>
         <segue reference="TtK-m4-eBb"/>
+        <segue reference="AZa-cc-tuR"/>
         <segue reference="x6A-Di-40b"/>
     </inferredMetricsTieBreakers>
 </document>
