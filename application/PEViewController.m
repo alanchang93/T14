@@ -81,10 +81,7 @@
     NSString *nerv = [nervField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *pul = [pulField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *neuro = [neuroField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
-    NSLog(@"%@%@%@", nerv, pul, neuro);
     NSArray *info = [NSArray arrayWithObjects:general, heent, cardio, resp, gastro, geni, nerv, pul, neuro, nil];
-    NSLog(@">>>>%@", info);
-    NSLog(@"%d", [info count]);
     PEDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:headers];
     [CSVParser saveData:PEDict];
 }

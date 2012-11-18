@@ -15,15 +15,12 @@
     NSString *data;
 }
 
+@property (copy, nonatomic) NSString *visitDate;
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSString *dob;
-@property (copy, nonatomic) NSString *address;
 @property (copy, nonatomic) NSString *city;
 @property (copy, nonatomic) NSString *state;
-@property (copy, nonatomic) NSString *zip;
-@property (copy, nonatomic) NSString *cell;
-@property (copy, nonatomic) NSString *work;
-@property (copy, nonatomic) NSString *email;
+@property (copy, nonatomic) NSString *gender;
 @property (copy, nonatomic) NSString *country;
 
 @property (strong, nonatomic) IBOutlet UIPickerView *picker;

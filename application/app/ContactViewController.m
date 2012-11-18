@@ -11,6 +11,8 @@
 
 @interface ContactViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *visitDateField;
+@property (weak, nonatomic) IBOutlet UITextField *genderField;
 @property (weak, nonatomic) IBOutlet UILabel *countryLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
@@ -71,16 +73,13 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     contact = [CSVParser getPatient];
+    self.visitDateField.text = [[contact objectForKey:@"Visit Date"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     self.nameField.text = [[contact objectForKey:@"Name"] stringByReplacingOccurrencesOfString:@";" withString: @","];
     self.dobField.text = [[contact objectForKey:@"DOB"] stringByReplacingOccurrencesOfString:@";" withString:@","];
-    self.addressField.text = [[contact objectForKey:@"Address"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    self.genderField.text = [[contact objectForKey:@"Gender"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     self.cityField.text = [[contact objectForKey: @"City"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     self.stateField.text = [[contact objectForKey:@"State"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     self.countryField.text = [[contact objectForKey:@"Country"] stringByReplacingOccurrencesOfString:@";" withString:@","];
-    self.zipField.text = [[contact objectForKey:@"Zip Code"] stringByReplacingOccurrencesOfString:@";" withString:@","];
-    self.cellField.text = [[contact objectForKey:@"Cell Phone"] stringByReplacingOccurrencesOfString:@";" withString:@","];
-    self.workField.text = [[contact objectForKey:@"Work Phone"] stringByReplacingOccurrencesOfString:@";" withString:@","];
-    self.emailField.text = [[contact objectForKey:@"Email"] stringByReplacingOccurrencesOfString:@";" withString:@","];
 }
 
 - (void)viewDidUnload
@@ -95,16 +94,13 @@
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self.visitDateField resignFirstResponder];
     [self.nameField resignFirstResponder];
     [self.dobField resignFirstResponder];
-    [self.addressField resignFirstResponder];
+    [self.genderField resignFirstResponder];
     [self.cityField resignFirstResponder];
     [self.stateField resignFirstResponder];
     [countryField resignFirstResponder];
-    [self.zipField resignFirstResponder];
-    [self.cellField resignFirstResponder];
-    [self.workField resignFirstResponder];
-    [self.emailField resignFirstResponder];
     return YES;
 }
 
@@ -130,20 +126,17 @@
 }
 
 -(IBAction)home:(id)sender{
+    self.visitDate = [self.visitDateField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     self.name = [self.nameField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     self.dob = [self.dobField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
-    self.address = [self.addressField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    self.gender = [self.genderField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     self.city = [self.cityField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     self.state = [self.stateField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     self.country = [self.countryField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
-    self.zip = [self.zipField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
-    self.cell = [self.cellField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
-    self.work = [self.workField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
-    self.email = [self.emailField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     
     //add stuff into the array
-    _contactInfo = [NSMutableArray arrayWithObjects:self.nameField.text, self.dobField.text, self.addressField.text,self.cityField.text, self.stateField.text, self.countryField.text, self.zipField.text, self.cellField.text, self.workField.text, self.emailField.text,nil];
-    NSMutableArray *fields = [NSMutableArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email", nil];
+       _contactInfo = [NSMutableArray arrayWithObjects: self.visitDate, self.name, self.dob, self.gender, self.city, self.state,self.country, nil];
+    NSMutableArray *fields = [NSMutableArray arrayWithObjects: @"Visit Date", @"Name", @"DOB",@"Gender", @"City", @"State", @"Country", nil];
     if ([_contactInfo count] == 0) {
         for (NSString *blank in fields) {
             [_contactInfo addObject:@" "];
@@ -157,20 +150,17 @@
 }
 
 - (IBAction)popover:(id)sender {
-    self.name = self.nameField.text;
-    self.dob = self.dobField.text;
-    self.address = self.addressField.text;
-    self.city = self.cityField.text;
-    self.state = self.stateField.text;
-    self.country = self.countryField.text;
-    self.zip = self.zipField.text;
-    self.cell = self.cellField.text;
-    self.work = self.workField.text;
-    self.email = self.emailField.text;
+    self.visitDate = [self.visitDateField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    self.name = [self.nameField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    self.dob = [self.dobField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    self.gender = [self.genderField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    self.city = [self.cityField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    self.state = [self.stateField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
+    self.country = [self.countryField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     
     //add stuff into the array
-    _contactInfo = [NSMutableArray arrayWithObjects:self.nameField.text, self.dobField.text, self.addressField.text,self.cityField.text, self.stateField.text, self.countryField.text, self.zipField.text, self.cellField.text, self.workField.text, self.emailField.text,nil];
-    NSMutableArray *fields = [NSMutableArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email", nil];
+       _contactInfo = [NSMutableArray arrayWithObjects: self.visitDate, self.name, self.dob, self.gender, self.city, self.state,self.country, nil];
+    NSMutableArray *fields = [NSMutableArray arrayWithObjects: @"Visit Date", @"Name", @"DOB",@"Gender", @"City", @"State", @"Country", nil];
     NSDictionary *contact = [[NSDictionary alloc] initWithObjects: _contactInfo forKeys:fields];
     [CSVParser saveData:contact];
 }
@@ -185,17 +175,14 @@
 
 - (IBAction)clearButton:(id)sender {
     //clears all textfields
+    self.visitDateField.text = nil;
     self.nameField.text = nil;
     self.dobField.text = nil;
-    self.addressField.text = nil;
+    self.genderField.text = nil;
     self.cityField.text = nil;
     self.stateField.text = nil;
     self.countryField.text = nil;
-    self.zipField.text = nil;
-    self.cellField.text = nil;
-    self.workField.text = nil;
-    self.emailField.text = nil;
-    
+
 }
 
 //***************************For Country Field Picker***********************
