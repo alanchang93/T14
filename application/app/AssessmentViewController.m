@@ -31,8 +31,10 @@
     [super viewDidLoad];
     [self.navigationItem setTitle: @"Assessment & Plan"];
 	// Do any additional setup after loading the view.
+    [noteField.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    [noteField.layer setBorderWidth:1];
+    [noteField.layer setCornerRadius:5];
 }
-
 -(void) viewDidAppear:(BOOL)animated{
     assessmentDict = [CSVParser getPatient];
     RxField.text = [[assessmentDict objectForKey:@"prescript"] stringByReplacingOccurrencesOfString:@";" withString:@","];

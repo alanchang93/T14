@@ -32,14 +32,22 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self.navigationItem setTitle:@"Rx and Allergies"];
+    
+    RxTableView.layer.borderWidth = 1.0;
+    RxTableView.layer.borderColor = [UIColor grayColor].CGColor;
+    RxTableView.layer.cornerRadius = 5;
+    
+    allergiesTableView.layer.borderWidth = 1.0;
+    allergiesTableView.layer.borderColor = [UIColor grayColor].CGColor;
+    allergiesTableView.layer.cornerRadius = 5;
 }
 
 -(void) viewDidAppear:(BOOL)animated{
     RxDict = [CSVParser getPatient];
     allRx = [RxDict objectForKey:@"Rx"];
     allAllergies = [RxDict objectForKey:@"Allergies"];
-    [self.RxTableView reloadData];
-    [self.allergiesTableView reloadData];
+    //[self.RxTableView reloadData];
+    //[self.allergiesTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning

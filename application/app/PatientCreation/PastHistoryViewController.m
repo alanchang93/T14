@@ -25,6 +25,22 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self.navigationItem setTitle:@"Past History"];
+    
+    [childMedical.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    [childMedical.layer setBorderWidth:1];
+    [childMedical.layer setCornerRadius:5];
+    
+    [adultMedical.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    [adultMedical.layer setBorderWidth:1];
+    [adultMedical.layer setCornerRadius:5];
+    
+    [childSurgical.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    [childSurgical.layer setBorderWidth:1];
+    [childSurgical.layer setCornerRadius:5];
+    
+    [adultSurgical.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    [adultSurgical.layer setBorderWidth:1];
+    [adultSurgical.layer setCornerRadius:5];
 }
 
 - (void) viewDidAppear:(BOOL)animated{

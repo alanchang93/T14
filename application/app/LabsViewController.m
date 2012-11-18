@@ -30,7 +30,10 @@
 {
     [super viewDidLoad];
     [self.navigationItem setTitle: @"Lab & Other"];
-	// Do any additional setup after loading the view.
+	// Do any additional setup after loading the view.'    
+    [textField.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    [textField.layer setBorderWidth:1];
+    [textField.layer setCornerRadius:5];
 }
 
 -(void) viewDidAppear:(BOOL)animated{

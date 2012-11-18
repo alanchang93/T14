@@ -36,6 +36,9 @@
     [super viewDidLoad];
     [self.navigationItem setTitle:@"Family History"];
 	// Do any additional setup after loading the view.
+    [familyText.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    [familyText.layer setBorderWidth:1];
+    [familyText.layer setCornerRadius:5];
 }
 
 - (void)didReceiveMemoryWarning

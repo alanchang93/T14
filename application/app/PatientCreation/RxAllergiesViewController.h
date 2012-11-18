@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface RxAllergiesViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>{
     IBOutlet UITableView *mainTableView;

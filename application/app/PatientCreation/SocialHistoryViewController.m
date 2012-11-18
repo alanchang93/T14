@@ -31,6 +31,9 @@
     [super viewDidLoad];
     [self.navigationItem setTitle:@"Social History"];
 	// Do any additional setup after loading the view.
+    [otherField.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    [otherField.layer setBorderWidth:1];
+    [otherField.layer setCornerRadius:5];
 }
 
 -(void) viewDidAppear:(BOOL)animated{

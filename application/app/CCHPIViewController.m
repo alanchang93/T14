@@ -23,6 +23,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self.navigationItem setTitle:@"CC & HPI"];
+    
+    [CCText.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    [CCText.layer setBorderWidth:1];
+    [CCText.layer setCornerRadius:5];
+    
+    [HPIText.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    [HPIText.layer setBorderWidth:1];
+    [HPIText.layer setCornerRadius:5];
 }
 
 - (void) viewDidAppear:(BOOL)animated{
