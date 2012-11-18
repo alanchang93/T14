@@ -16,6 +16,7 @@
 @implementation RxAllergiesViewController
 
 @synthesize RxName, RxDose, RxRoute, RxFreq, RxStarted, RxEnded, allergiesItem, allergiesReaction;
+@synthesize RxTableView, allergiesTableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +36,10 @@
 
 -(void) viewDidAppear:(BOOL)animated{
     RxDict = [CSVParser getPatient];
+    allRx = [RxDict objectForKey:@"Rx"];
+    allAllergies = [RxDict objectForKey:@"Allergies"];
+    [self.RxTableView reloadData];
+    [self.allergiesTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,19 +58,28 @@
     RxFreq.text = nil;
     RxStarted.text = nil;
     RxEnded.text = nil;
-    NSLog(@"%@", RxList);
-    [mainTableView reloadData];
+    [allRx addObject:RxList];
+    [self.RxTableView reloadData];
 }
 
 - (IBAction)addAllergies:(id)sender {
+    NSString *allergies = [NSString stringWithFormat:@"%@%@", [allergiesItem.text stringByReplacingOccurrencesOfString:@"," withString:@";"], [allergiesReaction.text stringByReplacingOccurrencesOfString:@"," withString:@";"]];
+    [allergiesList addObject: allergies];
+    allergiesItem.text = nil;
+    allergiesReaction.text = nil;
+    [allAllergies addObject: allergiesList];
+    [self.allergiesTableView reloadData];
+    
 }
 
 - (IBAction)popover:(id)sender {
     RxList = [[NSMutableArray alloc] initWithObjects:RxName.text,RxDose.text, RxRoute.text, RxFreq.text, RxStarted.text, RxEnded.text, nil];
     allergiesList = [[NSMutableArray alloc] initWithObjects:allergiesItem, allergiesReaction, nil];
+    [allRx addObject:RxList];
+    [allAllergies addObject:allergiesList];
     
     NSArray *headers = [[NSArray alloc] initWithObjects:@"Rx", @"Allergies", nil];
-    NSArray *RxInfo = [[NSArray alloc] initWithObjects:[RxList componentsJoinedByString:@";"], [allergiesList componentsJoinedByString:@";"], nil];
+    NSArray *RxInfo = [[NSArray alloc] initWithObjects:[allRx componentsJoinedByString:@";"], [allAllergies componentsJoinedByString:@";"], nil];
     RxDict = [[NSMutableDictionary alloc] initWithObjects:RxInfo forKeys:headers];
     [CSVParser saveData:RxDict];
     
@@ -74,9 +88,11 @@
 - (IBAction)home:(id)sender {
     RxList = [[NSMutableArray alloc] initWithObjects:RxName.text,RxDose.text, RxRoute.text, RxFreq.text, RxStarted.text, RxEnded.text, nil];
     allergiesList = [[NSMutableArray alloc] initWithObjects:allergiesItem, allergiesReaction, nil];
+    [allRx addObject:RxList];
+    [allAllergies addObject:allergiesList];
     
     NSArray *headers = [[NSArray alloc] initWithObjects:@"Rx", @"Allergies", nil];
-    NSArray *RxInfo = [[NSArray alloc] initWithObjects:[RxList componentsJoinedByString:@";"], [allergiesList componentsJoinedByString:@";"], nil];
+    NSArray *RxInfo = [[NSArray alloc] initWithObjects:[allRx componentsJoinedByString:@";"], [allAllergies componentsJoinedByString:@";"], nil];
     RxDict = [[NSMutableDictionary alloc] initWithObjects:RxInfo forKeys:headers];
     [CSVParser saveData:RxDict];
     [CSVParser writeData];
@@ -89,26 +105,38 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    NSLog(@"%u", [RxList count]);
-    return [RxList count];
-    
+    if(tableView == RxTableView){
+    return [allRx count];
+    }
+    else{
+    return [allAllergies count];
+}
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     static NSString *CellIdentifier = @"Formal";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                       reuseIdentifier:CellIdentifier];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                  reuseIdentifier:CellIdentifier];
+    if (tableView == RxTableView){
+        static NSString *CellIdentifier = @"Rx";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                          reuseIdentifier:CellIdentifier];
+        }
+            cell.textLabel.text = [allRx objectAtIndex:indexPath.row];
     }
-    
-    // Configure the cell.
-    
-    cell.textLabel.text = [RxList objectAtIndex:indexPath.row];
-    
+    else{
+        static NSString *CellIdentifier = @"Allergies";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                          reuseIdentifier:CellIdentifier];
+        }
+            cell.textLabel.text = [allAllergies objectAtIndex:indexPath.row];
+    }
+
+
     return cell;
 } 
 @end

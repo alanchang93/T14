@@ -12,6 +12,8 @@
     IBOutlet UITableView *mainTableView;
     NSMutableArray *RxList;
     NSMutableArray *allergiesList;
+    NSMutableArray *allRx;
+    NSMutableArray *allAllergies;
     NSMutableDictionary *RxDict;
 }
 // for Rx
@@ -30,6 +32,9 @@
 
 - (IBAction)popover:(id)sender;
 - (IBAction)home:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITableView *RxTableView;
+@property (weak, nonatomic) IBOutlet UITableView *allergiesTableView;
 
 
 @end

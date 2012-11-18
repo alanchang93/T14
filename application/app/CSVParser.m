@@ -111,13 +111,11 @@ static NSArray *fields = nil;
     NSMutableArray *fileList = [CSVParser getFileNames];
     NSString *Name = [NSString stringWithFormat:@"%@%@%@%@",[patient objectForKey:@"Name"],@" ",[patient objectForKey:@"DOB"],@".csv"];
     if ([patientInfo count] > 46){ //change if new fields are added or removed
-        NSLog(@"yes");
         for (int i = 0; i < [fields count]; i++){
             [patient setObject:[patientInfo objectAtIndex: i+[fields count]] forKey:[fields objectAtIndex:i]];
         }
     }
     else{
-        NSLog(@"no");
         for (int i = 0; i < [fields count]; i++){
             [patient setObject:[patientInfo objectAtIndex: i] forKey:[[fields sortedArrayUsingSelector:@selector(compare:) ] objectAtIndex:i]];
         }
