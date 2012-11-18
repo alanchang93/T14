@@ -17,8 +17,10 @@ static NSArray *fields = nil;
 
 
 + (void) initialize{
-    fields = [NSArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email",@"CC", @"HPI", @"Childhood Medical History", @"Adulthood Medical History", @"Childhood Surgical History", @"Adulthood Surgical History",@"Rx",@"Allergies",@"Family History",@"Drug Use",@"Drug Detail", @"Alcohol Use",@"Alcohol Detail", @"Other Information",@"ROSVital", @"ROSGeneral",@"ROSHeent", @"ROSCardio",@"ROSResp", @"ROSGastro", @"ROSGeni" ,@"ROSNervous" ,@"ROSPulmonary",@"ROSNeuro",@"PEGeneral", @"PEHeent", @"PECardio", @"PEResp", @"PEGastro", @"PEGeni", @"PENerv", @"PEPul", @"PENeuro", @"Lab&Other",@"Rx" @"notes",@"Physician", @"Med Student", nil];
+    fields = [NSArray arrayWithObjects: @"Name", @"DOB",@"Address", @"City", @"State", @"Country", @"Zip Code", @"Cell Phone", @"Work Phone", @"Email",@"CC", @"HPI", @"Childhood Medical History", @"Adulthood Medical History", @"Childhood Surgical History", @"Adulthood Surgical History",@"Rx",@"Allergies",@"Family History",@"Drug Use",@"Drug Detail", @"Alcohol Use",@"Alcohol Detail", @"Other Information",@"ROSVital", @"ROSGeneral",@"ROSHeent", @"ROSCardio",@"ROSResp", @"ROSGastro", @"ROSGeni" ,@"ROSNervous" ,@"ROSPulmonary",@"ROSNeuro",@"PEGeneral", @"PEHeent", @"PECardio", @"PEResp", @"PEGastro", @"PEGeni", @"PENerv", @"PEPul", @"PENeuro", @"Lab&Other",@"prescript" @"notes",@"Physician", @"Med Student", nil];
+    NSLog(@"%d", [fields count]);
     NSArray *blanks = [NSArray arrayWithObjects: @"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"" ,@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",nil];
+    NSLog(@"%d", [blanks count]);
     patient = [[NSMutableDictionary alloc] initWithObjects: blanks forKeys:fields];
 }
 
@@ -32,6 +34,7 @@ static NSArray *fields = nil;
             
         }
     }
+    NSLog(@"%d", [patient count]);
     return patient;
 }
 
@@ -70,7 +73,8 @@ static NSArray *fields = nil;
     }
     else{
         NSMutableString *allData = [[NSMutableString alloc]initWithContentsOfFile:filePath];
-        [allData appendString: data];
+        NSString *tmp = [NSString stringWithFormat:@"\n%@", data];
+        [allData appendString: tmp];
         toFile = allData;
     }
 

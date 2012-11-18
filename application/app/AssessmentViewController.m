@@ -35,7 +35,7 @@
 
 -(void) viewDidAppear:(BOOL)animated{
     assessmentDict = [CSVParser getPatient];
-    RxField.text = [[assessmentDict objectForKey:@"Rx"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    RxField.text = [[assessmentDict objectForKey:@"prescript"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     noteField.text = [[assessmentDict objectForKey:@"notes"] stringByReplacingOccurrencesOfString:@";" withString:@","];
 }
 
@@ -46,7 +46,7 @@
 }
 
 - (IBAction)home:(id)sender {
-    NSArray *header = [[NSArray alloc] initWithObjects:@"Rx",@"notes", nil];
+    NSArray *header = [[NSArray alloc] initWithObjects:@"prescript",@"notes", nil];
     NSArray *info = [[NSArray alloc] initWithObjects:[RxField.text stringByReplacingOccurrencesOfString:@"," withString:@";"],[noteField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
     assessmentDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:header];
     [CSVParser saveData:assessmentDict];

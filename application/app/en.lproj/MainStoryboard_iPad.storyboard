@@ -113,7 +113,7 @@
             <objects>
                 <viewController id="2" customClass="ContactViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gER-z2-Waz">
@@ -278,7 +278,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ie1-d5-ayj">
-                                <rect key="frame" x="45" y="934" width="114" height="44"/>
+                                <rect key="frame" x="45" y="890" width="114" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Clear">
@@ -293,7 +293,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="aRX-tf-4sA">
-                                <rect key="frame" x="2" y="740" width="768" height="263"/>
+                                <rect key="frame" x="2" y="696" width="768" height="263"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" id="Ov7-m2-avx">
                                         <rect key="frame" x="0.0" y="44" width="768" height="216"/>
@@ -2268,186 +2268,15 @@
             <point key="canvasLocation" x="-3919" y="-2046"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AssessmentViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AssessmentViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="home:"/>
-                <relationship kind="action" name="popover:"/>
-                <relationship kind="outlet" name="RxField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="noteField" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="CCHPIViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCHPIViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="home:"/>
-                <relationship kind="action" name="popover:"/>
-                <relationship kind="outlet" name="CCText" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="HPIText" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="ContactViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="clearButton:"/>
-                <relationship kind="action" name="hidButton:"/>
-                <relationship kind="action" name="home:"/>
-                <relationship kind="action" name="popover:"/>
-                <relationship kind="action" name="showDropDown:"/>
-                <relationship kind="action" name="update:"/>
-                <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="background" candidateClass="UIView"/>
-                <relationship kind="outlet" name="cellField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="cellLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cityField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="cityLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="countryField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="countryLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="dobField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="dobLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="stateField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="stateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="workField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="workLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="zipField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="zipLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DocViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DocViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="home:"/>
-                <relationship kind="action" name="popover:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="physicianField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="studentField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="FamilyViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FamilyViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="famHome:"/>
-                <relationship kind="action" name="popover:"/>
-                <relationship kind="outlet" name="familyText" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="HomeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="PatientSearch:"/>
-                <relationship kind="action" name="newPatientButton:"/>
-            </relationships>
-        </class>
-        <class className="LabsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LabsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="home:"/>
-                <relationship kind="action" name="popover:"/>
-                <relationship kind="outlet" name="textField" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="PEViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PEViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="home:"/>
-                <relationship kind="action" name="popover:"/>
-                <relationship kind="outlet" name="cardioField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="gastroField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="generalField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="geniField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="heentField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nervField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="neuroField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pulField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="respField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="PastHistoryViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PastHistoryViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="PastHistoryHome:"/>
-                <relationship kind="action" name="PastHistoryPopover:"/>
-                <relationship kind="outlet" name="adultMedical" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="adultSurgical" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="childMedical" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="childSurgical" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="PatientListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PatientListViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mySearchBar" candidateClass="UISearchBar"/>
-                <relationship kind="outlet" name="myTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="ROSViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ROSViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="home:"/>
-                <relationship kind="action" name="popover:"/>
-                <relationship kind="outlet" name="cardioField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="gastroField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="generalField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="geniField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="heentField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nervField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="neuroField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pulField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="respField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="vitalField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="RxAllergiesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RxAllergiesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addAllergies:"/>
-                <relationship kind="action" name="addRx:"/>
-                <relationship kind="action" name="home:"/>
-                <relationship kind="action" name="popover:"/>
-                <relationship kind="outlet" name="RxDose" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="RxEnded" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="RxFreq" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="RxName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="RxRoute" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="RxStarted" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="allergiesItem" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="allergiesReaction" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="mainTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="SocialHistoryViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialHistoryViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="alcButton:"/>
-                <relationship kind="action" name="drugButton:"/>
-                <relationship kind="action" name="home:"/>
-                <relationship kind="action" name="popover:"/>
-                <relationship kind="outlet" name="alcButton" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="alcField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="alcLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="drugButton" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="drugField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="drugLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="otherField" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="kEm-fZ-1ph"/>
-        <segue reference="0Mb-gy-dSv"/>
-        <segue reference="x6A-Di-40b"/>
+        <segue reference="pPC-ev-rE2"/>
         <segue reference="sWw-DM-3a1"/>
+        <segue reference="t4t-hu-iyw"/>
+        <segue reference="x6A-Di-40b"/>
     </inferredMetricsTieBreakers>
 </document>

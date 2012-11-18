@@ -153,6 +153,7 @@
     [CSVParser saveData:contact];
     [CSVParser writeData];
     [CSVParser clearPatient];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)popover:(id)sender {
