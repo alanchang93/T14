@@ -628,6 +628,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="shz-wh-FCd"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="275" height="485"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COK-Zr-u8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
