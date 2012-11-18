@@ -110,7 +110,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="k0v-vY-odW" kind="push" id="FMK-Su-e3w"/>
+                                    <segue destination="70w-t4-jP8" kind="push" id="kjU-YO-7ja"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -123,16 +123,16 @@
             </objects>
             <point key="canvasLocation" x="-3927" y="-851"/>
         </scene>
-        <!--View Controller-->
+        <!--Blue Tooth View Controller-->
         <scene sceneID="xN8-QF-xQo">
             <objects>
-                <viewController id="70w-t4-jP8" sceneMemberID="viewController">
+                <viewController id="70w-t4-jP8" customClass="BlueToothViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aan-fq-4uo">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zhE-gB-X7A">
-                                <rect key="frame" x="0.0" y="91" width="768" height="913"/>
+                                <rect key="frame" x="0.0" y="87" width="768" height="913"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -153,36 +153,25 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="RyT-zZ-Mfa">
-                                <rect key="frame" x="0.0" y="0.0" width="295" height="44"/>
+                                <rect key="frame" x="151" y="0.0" width="466" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Send"/>
                                     <segment title="Receive"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YxR-J7-SGM">
-                                <rect key="frame" x="700" y="-4" width="48" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="Home-icon.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="2NU-iW-4o4" kind="push" id="AZa-cc-tuR"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="KuR-iU-64a"/>
+                    <connections>
+                        <outlet property="fileTable" destination="zhE-gB-X7A" id="6L3-Tx-RQU"/>
+                        <outlet property="searchBar" destination="3g3-cM-nan" id="8HU-kq-kp5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ef2-XJ-PyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2572" y="339"/>
+            <point key="canvasLocation" x="-2472" y="491"/>
         </scene>
         <!--Contact View Controller-->
         <scene sceneID="4">
@@ -2290,6 +2279,13 @@
                 <relationship kind="outlet" name="noteField" candidateClass="UITextView"/>
             </relationships>
         </class>
+        <class className="BlueToothViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlueToothViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="fileTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
         <class className="CCHPIViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CCHPIViewController.h"/>
             <relationships>
@@ -2463,7 +2459,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="kEm-fZ-1ph"/>
         <segue reference="TtK-m4-eBb"/>
-        <segue reference="AZa-cc-tuR"/>
+        <segue reference="t4t-hu-iyw"/>
+        <segue reference="kjU-YO-7ja"/>
         <segue reference="x6A-Di-40b"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,6 +12,7 @@
 		4115E4EF165369470008DA34 /* FamilyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4115E4EE165369470008DA34 /* FamilyViewController.m */; };
 		4115E4F216536A880008DA34 /* SocialHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4115E4F116536A880008DA34 /* SocialHistoryViewController.m */; };
 		415661111654FAD200FA9EEF /* PatientListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 415661101654FAD200FA9EEF /* PatientListViewController.m */; };
+		41855C841658D3160043DA7B /* BlueToothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41855C831658D3160043DA7B /* BlueToothViewController.m */; };
 		418770AB16536BB9007135B7 /* ROSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418770AA16536BB9007135B7 /* ROSViewController.m */; };
 		418770AF16536C3C007135B7 /* PEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418770AE16536C3C007135B7 /* PEViewController.m */; };
 		418770B216536D36007135B7 /* LabsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418770B116536D36007135B7 /* LabsViewController.m */; };
@@ -64,6 +65,8 @@
 		4115E4F116536A880008DA34 /* SocialHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialHistoryViewController.m; sourceTree = "<group>"; };
 		4156610F1654FAD200FA9EEF /* PatientListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientListViewController.h; sourceTree = "<group>"; };
 		415661101654FAD200FA9EEF /* PatientListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientListViewController.m; sourceTree = "<group>"; };
+		41855C821658D3160043DA7B /* BlueToothViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueToothViewController.h; sourceTree = "<group>"; };
+		41855C831658D3160043DA7B /* BlueToothViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueToothViewController.m; sourceTree = "<group>"; };
 		418770A916536BB9007135B7 /* ROSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ROSViewController.h; path = ../../ROSViewController.h; sourceTree = "<group>"; };
 		418770AA16536BB9007135B7 /* ROSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ROSViewController.m; path = ../../ROSViewController.m; sourceTree = "<group>"; };
 		418770AD16536C3C007135B7 /* PEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PEViewController.h; path = ../../PEViewController.h; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 				4199F75C164F66F9003A57F0 /* AppDelegate.m */,
 				4199F764164F66F9003A57F0 /* MainStoryboard_iPhone.storyboard */,
 				4199F767164F66F9003A57F0 /* MainStoryboard_iPad.storyboard */,
+				41855C821658D3160043DA7B /* BlueToothViewController.h */,
+				41855C831658D3160043DA7B /* BlueToothViewController.m */,
 				4156610F1654FAD200FA9EEF /* PatientListViewController.h */,
 				415661101654FAD200FA9EEF /* PatientListViewController.m */,
 				4115E4E5165365BE0008DA34 /* PatientCreation */,
@@ -379,6 +384,7 @@
 				418770B516536DE7007135B7 /* AssessmentViewController.m in Sources */,
 				418770B816536E29007135B7 /* DocViewController.m in Sources */,
 				415661111654FAD200FA9EEF /* PatientListViewController.m in Sources */,
+				41855C841658D3160043DA7B /* BlueToothViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
