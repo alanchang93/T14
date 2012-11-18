@@ -38,8 +38,8 @@
     RxDict = [CSVParser getPatient];
     allRx = [RxDict objectForKey:@"Rx"];
     allAllergies = [RxDict objectForKey:@"Allergies"];
-    [self.RxTableView reloadData];
-    [self.allergiesTableView reloadData];
+    //[self.RxTableView reloadData];
+    //[self.allergiesTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
