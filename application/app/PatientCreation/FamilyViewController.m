@@ -46,7 +46,12 @@
 
 - (IBAction)famHome:(id)sender {
     NSArray *header = [[NSArray alloc] initWithObjects:@"Family History", nil];
-    NSArray *FamilyHistory = [[NSArray alloc] initWithObjects:[familyText.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    NSMutableArray *FamilyHistory = [[NSMutableArray alloc] initWithObjects:[familyText.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    if ([FamilyHistory count] != [header count]) {
+        for (int i = [FamilyHistory count] ; i < [header count]; i++) {
+            [FamilyHistory addObject:@" "];
+        }
+    }
     FamHis = [[NSMutableDictionary alloc] initWithObjects:FamilyHistory forKeys:header];
     [CSVParser saveData:FamHis];
     [CSVParser writeData];
@@ -55,7 +60,12 @@
 
 - (IBAction)popover:(id)sender {
     NSArray *header = [[NSArray alloc] initWithObjects:@"Family History", nil];
-    NSArray *FamilyHistory = [[NSArray alloc] initWithObjects:[familyText.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    NSMutableArray *FamilyHistory = [[NSMutableArray alloc] initWithObjects:[familyText.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    if ([FamilyHistory count] != [header count]) {
+        for (int i = [FamilyHistory count] ; i < [header count]; i++) {
+            [FamilyHistory addObject:@" "];
+        }
+    }
     FamHis = [[NSMutableDictionary alloc] initWithObjects:FamilyHistory forKeys:header];
     [CSVParser saveData:FamHis];
 }

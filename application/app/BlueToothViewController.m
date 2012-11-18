@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self.navigationItem setTitle:@"Bluetooth Menu"];
 }
 
 - (void)didReceiveMemoryWarning

@@ -40,6 +40,11 @@
 - (IBAction)popover:(id)sender {
     NSMutableArray *headers = [[NSMutableArray alloc] initWithObjects: @"CC",@"HPI", nil];
     NSMutableArray *CCinfo = [[NSMutableArray alloc] initWithObjects: self.CCText.text, self.HPIText.text, nil];
+    if ([CCinfo count] != [headers count]) {
+        for (int i = [CCinfo count] ; i < [headers count]; i++) {
+            [CCinfo addObject:@" "];
+        }
+    }
     CCHPI = [[NSMutableDictionary alloc] initWithObjects:CCinfo forKeys:headers];
     [CSVParser saveData:CCHPI];
 }
@@ -47,6 +52,11 @@
 - (IBAction)home:(id)sender {
     NSMutableArray *headers = [[NSMutableArray alloc] initWithObjects: @"CC",@"HPI",nil];
     NSMutableArray *CCinfo = [[NSMutableArray alloc] initWithObjects: [self.CCText.text stringByReplacingOccurrencesOfString:@"," withString:@";"], [self.HPIText.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    if ([CCinfo count] != [headers count]) {
+        for (int i = [CCinfo count] ; i < [headers count]; i++) {
+            [CCinfo addObject:@" "];
+        }
+    }
     CCHPI = [[NSMutableDictionary alloc] initWithObjects:CCinfo forKeys:headers];
     [CSVParser saveData:CCHPI];
     [CSVParser writeData];

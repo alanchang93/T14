@@ -46,7 +46,12 @@
 
 - (IBAction)home:(id)sender {
     NSArray *header = [[NSArray alloc] initWithObjects:@"Lab&Other",nil];
-    NSArray *info = [[NSArray alloc] initWithObjects:[textField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    NSMutableArray *info = [[NSMutableArray alloc] initWithObjects:[textField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    if ([info count] != [header count]) {
+        for (int i = [info count] ; i < [header count]; i++) {
+            [info addObject:@" "];
+        }
+    }
     labDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:header];
     [CSVParser saveData:labDict];
     [CSVParser writeData];
@@ -55,7 +60,12 @@
 
 - (IBAction)popover:(id)sender {
     NSArray *header = [[NSArray alloc] initWithObjects:@"Lab&Other",nil];
-    NSArray *info = [[NSArray alloc] initWithObjects:[textField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    NSMutableArray *info = [[NSMutableArray alloc] initWithObjects:[textField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    if ([info count] != [header count]) {
+        for (int i = [info count] ; i < [header count]; i++) {
+            [info addObject:@" "];
+        }
+    }
     labDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:header];
     [CSVParser saveData:labDict];
 }

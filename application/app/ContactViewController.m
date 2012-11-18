@@ -137,8 +137,8 @@
     //add stuff into the array
        _contactInfo = [NSMutableArray arrayWithObjects: self.visitDate, self.name, self.dob, self.gender, self.city, self.state,self.country, nil];
     NSMutableArray *fields = [NSMutableArray arrayWithObjects: @"Visit Date", @"Name", @"DOB",@"Gender", @"City", @"State", @"Country", nil];
-    if ([_contactInfo count] == 0) {
-        for (NSString *blank in fields) {
+    if ([_contactInfo count] != [fields count]) {
+        for (int i = [_contactInfo count] ; i < [fields count]; i++) {
             [_contactInfo addObject:@" "];
         }
     }
@@ -161,6 +161,11 @@
     //add stuff into the array
        _contactInfo = [NSMutableArray arrayWithObjects: self.visitDate, self.name, self.dob, self.gender, self.city, self.state,self.country, nil];
     NSMutableArray *fields = [NSMutableArray arrayWithObjects: @"Visit Date", @"Name", @"DOB",@"Gender", @"City", @"State", @"Country", nil];
+    if ([_contactInfo count] != [fields count]) {
+        for (int i = [_contactInfo count] ; i < [fields count]; i++) {
+            [_contactInfo addObject:@" "];
+        }
+    }
     NSDictionary *contact = [[NSDictionary alloc] initWithObjects: _contactInfo forKeys:fields];
     [CSVParser saveData:contact];
 }

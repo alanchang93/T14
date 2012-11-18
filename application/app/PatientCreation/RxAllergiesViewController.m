@@ -79,7 +79,12 @@
     [allAllergies addObject:allergiesList];
     
     NSArray *headers = [[NSArray alloc] initWithObjects:@"Rx", @"Allergies", nil];
-    NSArray *RxInfo = [[NSArray alloc] initWithObjects:[allRx componentsJoinedByString:@";"], [allAllergies componentsJoinedByString:@";"], nil];
+    NSMutableArray *RxInfo = [[NSMutableArray alloc] initWithObjects:[allRx componentsJoinedByString:@";"], [allAllergies componentsJoinedByString:@";"], nil];
+    if ([RxInfo count] != [headers count]) {
+        for (int i = [RxList count] ; i < [headers count]; i++) {
+            [RxInfo addObject:@" "];
+        }
+    }
     RxDict = [[NSMutableDictionary alloc] initWithObjects:RxInfo forKeys:headers];
     [CSVParser saveData:RxDict];
     
@@ -92,7 +97,12 @@
     [allAllergies addObject:allergiesList];
     
     NSArray *headers = [[NSArray alloc] initWithObjects:@"Rx", @"Allergies", nil];
-    NSArray *RxInfo = [[NSArray alloc] initWithObjects:[allRx componentsJoinedByString:@";"], [allAllergies componentsJoinedByString:@";"], nil];
+    NSMutableArray *RxInfo = [[NSMutableArray alloc] initWithObjects:[allRx componentsJoinedByString:@";"], [allAllergies componentsJoinedByString:@";"], nil];
+    if ([RxInfo count] != [headers count]) {
+        for (int i = [RxList count] ; i < [headers count]; i++) {
+            [RxInfo addObject:@" "];
+        }
+    }
     RxDict = [[NSMutableDictionary alloc] initWithObjects:RxInfo forKeys:headers];
     [CSVParser saveData:RxDict];
     [CSVParser writeData];

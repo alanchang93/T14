@@ -47,7 +47,12 @@
 
 - (IBAction)home:(id)sender {
     NSArray *header = [[NSArray alloc] initWithObjects:@"prescript",@"notes", nil];
-    NSArray *info = [[NSArray alloc] initWithObjects:[RxField.text stringByReplacingOccurrencesOfString:@"," withString:@";"],[noteField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    NSMutableArray *info = [[NSMutableArray alloc] initWithObjects:[RxField.text stringByReplacingOccurrencesOfString:@"," withString:@";"],[noteField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    if ([info count] != [header count]) {
+        for (int i = [info count] ; i < [header count]; i++) {
+            [info addObject:@" "];
+        }
+    }
     assessmentDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:header];
     [CSVParser saveData:assessmentDict];
     [CSVParser writeData];
@@ -56,7 +61,12 @@
 
 - (IBAction)popover:(id)sender {
     NSArray *header = [[NSArray alloc] initWithObjects:@"Rx",@"notes", nil];
-    NSArray *info = [[NSArray alloc] initWithObjects:[RxField.text stringByReplacingOccurrencesOfString:@"," withString:@";"],[noteField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    NSMutableArray *info = [[NSMutableArray alloc] initWithObjects:[RxField.text stringByReplacingOccurrencesOfString:@"," withString:@";"],[noteField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    if ([info count] != [header count]) {
+        for (int i = [info count] ; i < [header count]; i++) {
+            [info addObject:@" "];
+        }
+    }
     assessmentDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:header];
     [CSVParser saveData:assessmentDict];
     [CSVParser writeData];

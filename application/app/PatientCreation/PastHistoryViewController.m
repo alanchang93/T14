@@ -45,6 +45,11 @@
 - (IBAction)PastHistoryPopover:(id)sender {
     NSMutableArray *headers = [[NSMutableArray alloc] initWithObjects:@"Childhood Medical History",@"Adulthood Medical History",@"Childhood Surgical History", @"Adulthood Surgical History", nil];
     NSMutableArray *pastHistoryInfo = [[NSMutableArray alloc] initWithObjects: self.childMedical.text, self.adultMedical.text, self.childSurgical.text, self.adultSurgical.text,nil];
+    if ([pastHistoryInfo count] != [headers count]) {
+        for (int i = [pastHistoryInfo count] ; i < [headers count]; i++) {
+            [pastHistoryInfo addObject:@" "];
+        }
+    }
     pastHistoryDict = [[NSMutableDictionary alloc] initWithObjects:pastHistoryInfo forKeys:headers];
     [CSVParser saveData:pastHistoryDict];
 }
@@ -56,6 +61,11 @@
     NSString *schild = [self.childSurgical.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *sadult = [self.adultSurgical.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSMutableArray *pastHistoryInfo = [[NSMutableArray alloc] initWithObjects: mchild, madult, schild, sadult,nil];
+    if ([pastHistoryInfo count] != [headers count]) {
+        for (int i = [pastHistoryInfo count] ; i < [headers count]; i++) {
+            [pastHistoryInfo addObject:@" "];
+        }
+    }
     pastHistoryDict = [[NSMutableDictionary alloc] initWithObjects:pastHistoryInfo forKeys:headers];
     [CSVParser saveData:pastHistoryDict];
     [CSVParser writeData];

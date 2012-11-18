@@ -47,7 +47,12 @@
 
 - (IBAction)home:(id)sender {
     NSArray *header = [[NSArray alloc] initWithObjects:@"Physician", @"Med Student", nil];
-    NSArray *info = [[NSArray alloc] initWithObjects:[physicianField.text stringByReplacingOccurrencesOfString:@"," withString:@";"],[studentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    NSMutableArray *info = [[NSMutableArray alloc] initWithObjects:[physicianField.text stringByReplacingOccurrencesOfString:@"," withString:@";"],[studentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    if ([info count] != [header count]) {
+        for (int i = [info count] ; i < [header count]; i++) {
+            [info addObject:@" "];
+        }
+    }
     docDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:header];
     [CSVParser saveData:docDict];
     [CSVParser writeData];
@@ -56,14 +61,24 @@
 
 - (IBAction)popover:(id)sender {
     NSArray *header = [[NSArray alloc] initWithObjects:@"Physician", @"Med Student", nil];
-    NSArray *info = [[NSArray alloc] initWithObjects:[physicianField.text stringByReplacingOccurrencesOfString:@"," withString:@";"],[studentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    NSMutableArray *info = [[NSMutableArray alloc] initWithObjects:[physicianField.text stringByReplacingOccurrencesOfString:@"," withString:@";"],[studentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    if ([info count] != [header count]) {
+        for (int i = [info count] ; i < [header count]; i++) {
+            [info addObject:@" "];
+        }
+    }
     docDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:header];
     [CSVParser saveData:docDict];
 }
 
 - (IBAction)save:(id)sender {
     NSArray *header = [[NSArray alloc] initWithObjects:@"Physician", @"Med Student", nil];
-    NSArray *info = [[NSArray alloc] initWithObjects:[physicianField.text stringByReplacingOccurrencesOfString:@"," withString:@";"],[studentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    NSMutableArray *info = [[NSMutableArray alloc] initWithObjects:[physicianField.text stringByReplacingOccurrencesOfString:@"," withString:@";"],[studentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    if ([info count] != [header count]) {
+        for (NSString *blank in header) {
+            [info addObject:@" "];
+        }
+    }
     docDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:header];
     [CSVParser saveData:docDict];
 }

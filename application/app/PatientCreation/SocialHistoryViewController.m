@@ -41,9 +41,9 @@
     if([socialHis objectForKey:@"Alcohol Use"] == @"YES"){
         alcButton.selectedSegmentIndex = 1;
     }
-drugField.text = [[socialHis objectForKey:@"Drug Detail"] stringByReplacingOccurrencesOfString:@";" withString:@","];
-alcField.text = [[socialHis objectForKey:@"Alcohol Detail"] stringByReplacingOccurrencesOfString:@";" withString:@","];
-otherField.text = [[socialHis objectForKey:@"Other Information"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    drugField.text = [[socialHis objectForKey:@"Drug Detail"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    alcField.text = [[socialHis objectForKey:@"Alcohol Detail"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    otherField.text = [[socialHis objectForKey:@"Other Information"] stringByReplacingOccurrencesOfString:@";" withString:@","];
 
 }
 
@@ -92,7 +92,12 @@ otherField.text = [[socialHis objectForKey:@"Other Information"] stringByReplaci
     else{
         alcUse = @"NO";
     }
-    NSArray *info = [[NSArray alloc] initWithObjects: drugUse,[drugField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], alcUse, [alcField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], [otherField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    NSMutableArray *info = [[NSMutableArray alloc] initWithObjects: drugUse,[drugField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], alcUse, [alcField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], [otherField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    if ([info count] != [headers count]) {
+        for (int i = [info count] ; i < [headers count]; i++) {
+            [info addObject:@" "];
+        }
+    }
     socialHis = [[NSMutableDictionary alloc] initWithObjects:info forKeys:headers];
     [CSVParser saveData:socialHis];
 }
@@ -113,7 +118,14 @@ otherField.text = [[socialHis objectForKey:@"Other Information"] stringByReplaci
     else{
         alcUse = @"NO";
     }
-    NSArray *info = [[NSArray alloc] initWithObjects: drugUse,[drugField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], alcUse, [alcField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], [otherField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    NSMutableArray *info = [[NSMutableArray alloc] initWithObjects: drugUse,[drugField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], alcUse, [alcField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], [otherField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
+    NSLog(@"%@", info);
+    NSLog(@"%d", [info count]);
+    if ([info count] != [headers count]) {
+        for (int i = [info count] ; i < [headers count]; i++) {
+            [info addObject:@" "];
+        }
+    }
     socialHis = [[NSMutableDictionary alloc] initWithObjects:info forKeys:headers];
     [CSVParser saveData:socialHis];
     [CSVParser writeData];

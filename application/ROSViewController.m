@@ -66,7 +66,12 @@
     NSString *nerv = [nervField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *pul = [pulField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *neuro = [neuroField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
-    NSArray *info = [[NSArray alloc] initWithObjects: vital, general, heent, cardio, resp, gastro, geni, nerv, pul, neuro, nil];
+    NSMutableArray *info = [[NSMutableArray alloc] initWithObjects: vital, general, heent, cardio, resp, gastro, geni, nerv, pul, neuro, nil];
+    if ([info count] != [headers count]) {
+        for (int i = [info count] ; i < [headers count]; i++) {
+            [info addObject:@" "];
+        }
+    }
     ROSDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:headers];
     [CSVParser saveData:ROSDict];
 }
@@ -83,7 +88,12 @@
     NSString *nerv = [nervField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *pul = [pulField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *neuro = [neuroField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
-    NSArray *info = [[NSArray alloc] initWithObjects: vital, general, heent, cardio, resp, gastro, geni, nerv, pul, neuro, nil];
+    NSMutableArray *info = [[NSMutableArray alloc] initWithObjects: vital, general, heent, cardio, resp, gastro, geni, nerv, pul, neuro, nil];
+    if ([info count] != [headers count]) {
+        for (int i = [info count] ; i < [headers count]; i++) {
+            [info addObject:@" "];
+        }
+    }
     ROSDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:headers];
     [CSVParser saveData:ROSDict];
     [CSVParser writeData];
