@@ -91,8 +91,8 @@ static NSArray *fields = nil;
     NSArray *fileList = [[NSArray alloc] init];
     fileList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dir error: &error];
     for (NSString *i in fileList){ //goes through each patient
-        if ([i isEqualToString:@".csv"]) {
-            
+        if ([i isEqualToString:@" .csv"]) {
+            NSLog(@"%@", i);
            }
         else if([i isEqualToString:@".DS_Store"]) {
             
