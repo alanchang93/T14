@@ -18,7 +18,6 @@ static NSArray *fields = nil;
 
 + (void) initialize{
     fields = [NSArray arrayWithObjects: @"Visit Date",@"Name", @"DOB",@"Gender", @"City", @"State", @"Country",@"CC", @"HPI", @"Childhood Medical History", @"Adulthood Medical History", @"Childhood Surgical History", @"Adulthood Surgical History",@"Rx",@"Allergies",@"Family History",@"Drug Use",@"Drug Detail", @"Alcohol Use",@"Alcohol Detail", @"Other Information",@"ROSVital", @"ROSGeneral",@"ROSHeent", @"ROSCardio",@"ROSResp", @"ROSGastro", @"ROSGeni" ,@"ROSNervous" ,@"ROSPulmonary",@"ROSNeuro",@"PEGeneral", @"PEHeent", @"PECardio", @"PEResp", @"PEGastro", @"PEGeni", @"PENerv", @"PEPul", @"PENeuro", @"Lab&Other",@"prescript", @"notes",@"Physician", @"Med Student", nil];
-
     NSArray *blanks = [NSArray arrayWithObjects: @"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"" ,@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",nil];
 
     patient = [[NSMutableDictionary alloc] initWithObjects: blanks forKeys:fields];
@@ -34,7 +33,6 @@ static NSArray *fields = nil;
             
         }
     }
-    NSLog(@"%d", [patient count]);
     return patient;
 }
 
@@ -92,7 +90,6 @@ static NSArray *fields = nil;
     fileList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dir error: &error];
     for (NSString *i in fileList){ //goes through each patient
         if ([i isEqualToString:@" .csv"]) {
-            NSLog(@"%@", i);
            }
         else if([i isEqualToString:@".DS_Store"]) {
             
@@ -113,13 +110,14 @@ static NSArray *fields = nil;
     NSArray *patientInfo = [latestVisit componentsSeparatedByString:@","];
     NSMutableArray *fileList = [CSVParser getFileNames];
     NSString *Name = [NSString stringWithFormat:@"%@%@%@%@",[patient objectForKey:@"Name"],@" ",[patient objectForKey:@"DOB"],@".csv"];
-    if ([patientInfo count] > 45){ //change if new fields are added or removed
+    if ([patientInfo count] > 46){ //change if new fields are added or removed
+        NSLog(@"yes");
         for (int i = 0; i < [fields count]; i++){
             [patient setObject:[patientInfo objectAtIndex: i+[fields count]] forKey:[fields objectAtIndex:i]];
         }
     }
     else{
-
+        NSLog(@"no");
         for (int i = 0; i < [fields count]; i++){
             [patient setObject:[patientInfo objectAtIndex: i] forKey:[[fields sortedArrayUsingSelector:@selector(compare:) ] objectAtIndex:i]];
         }
