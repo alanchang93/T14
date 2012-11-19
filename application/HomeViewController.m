@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "Transfer.h"
 
 @interface HomeViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *disconnectButton;
@@ -14,7 +15,7 @@
 @end
 
 @implementation HomeViewController
-
+@synthesize disconnectButton;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -22,6 +23,22 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    if(currentSession)
+        [disconnectButton setHidden:NO];
+    else
+        [disconnectButton setHidden:YES];
+}
+- (IBAction)disconnect:(id)sender {
+    if(currentSession)
+    {
+        [currentSession disconnectFromAllPeers];
+        currentSession = nil;
+        [disconnectButton setHidden:YES];
+    }
 }
 
 - (void)viewDidLoad

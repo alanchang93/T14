@@ -49,6 +49,9 @@
 
 - (void)viewDidLoad
 {
+    self.searchBar.delegate = self;
+    self.fileTable.delegate = self;
+    self.fileTable.dataSource = self;
     [super viewDidLoad];
     if(currentSession == nil)
     {
@@ -65,7 +68,6 @@
     }
     [self setupSend];
 }
-
 - (IBAction)transferTypeChanged:(id)sender {
     if([transferTypeControl selectedSegmentIndex] == 0)
     {
@@ -73,7 +75,6 @@
     }
     else
     {
-        NSLog(@"Entering receiving mode");
         [self sendRetrieveFileListing];
     }
 }
@@ -86,6 +87,7 @@
     [currentSession setDataReceiveHandler:mySessionDelegate withContext:nil];
     picker.delegate = nil;
     [picker dismiss];
+    [self setupSend];
 }
 
 - (void)peerPickerControllerDidCancel:(GKPeerPickerController*) picker
@@ -96,14 +98,10 @@
 - (void) setupSend
 {
     self.mode = SENDING;
-    listOfFileName = [CSVParser getFileNames];
-    [fileTable reloadData];
+    [mySessionDelegate reloadFiles];
+    [self updateTable];
 }
 
-- (void) reloadSendTable
-{
-    [fileTable reloadData];
-}
 
 //
 // TABLE VIEW CONTROLLER DELEGATE METHODS
@@ -124,10 +122,10 @@
         switch(self.mode)
         {
             case SENDING:
-                cell.textLabel.text = [listOfFileName objectAtIndex:indexPath.row];
+                cell.textLabel.text = [mySessionDelegate.listFileNames objectAtIndex:indexPath.row];
                 break;
             case RECEIVING:
-                cell.textLabel.text = [listOfOtherFileNames objectAtIndex:indexPath.row];
+                cell.textLabel.text = [mySessionDelegate.listOtherFileNames objectAtIndex:indexPath.row];
                 break;
         }
     }
@@ -141,11 +139,11 @@
     switch(self.mode)
     {
         case SENDING:
-            return [listOfFileName count];
+            return [mySessionDelegate.listFileNames count];
         case RECEIVING:
-            return [listOfOtherFileNames count];
+            return [mySessionDelegate.listOtherFileNames count];
     }
-    return [listOfFileName count];
+    return [mySessionDelegate.listFileNames count];
 }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
@@ -204,9 +202,8 @@
     return [listOfFiles componentsJoinedByString:@";"];
 }
 
-- (void) updateOtherFileList:(NSArray *)otherFileList
+- (void) updateTable
 {
-    listOfOtherFileNames = otherFileList;
     [fileTable reloadData];
 }
 
@@ -221,7 +218,7 @@
         switch(self.mode)
         {
             case SENDING:
-                for(NSString*str in listOfFileName)
+                for(NSString*str in mySessionDelegate.listFileNames)
                 {
                     NSRange stringRange = [str rangeOfString:searchText options:NSCaseInsensitiveSearch];
                     
@@ -231,7 +228,7 @@
                 }
                 break;
             case RECEIVING:
-                for(NSString* str in listOfOtherFileNames)
+                for(NSString* str in mySessionDelegate.listOtherFileNames)
                 {
                     NSRange stringRange = [str rangeOfString:searchText options:NSCaseInsensitiveSearch];
                     

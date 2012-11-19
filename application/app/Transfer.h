@@ -29,15 +29,22 @@ extern GKSession* currentSession;
 @property (nonatomic) TransferType type;
 @property (nonatomic) NSString* fileName;
 @property (nonatomic) NSString* data;
+
 @end
 
 // Session Controller DELEGATE
 @interface MySessionDelegate : NSObject<GKSessionDelegate>
 - (void) receiveData:(NSData*) data fromPeer:(NSString*) peer inSession:(GKSession*) session context:(void*) context;
+- (void) reloadFiles;
 @property (nonatomic) BlueToothViewController* blueToothViewController;
+@property (nonatomic) NSMutableArray* listFileNames;
+@property (nonatomic) NSArray* listOtherFileNames;
+
 
 - (id)initWithBlueToothViewController:(BlueToothViewController*) btvc;
 - (void)updateBlueToothViewController:(BlueToothViewController*) btvc;
+- (NSArray*) getOtherFileNames;
+- (NSMutableArray*) getFileNames;
 - (void) testFunction;
 
 @end;

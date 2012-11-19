@@ -66,6 +66,10 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="6mT-eR-0rl">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oRJ-MC-i4q">
                                 <rect key="frame" x="177" y="160" width="414" height="92"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -114,9 +118,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ixe-nB-OPo">
-                                <rect key="frame" x="177" y="716" width="414" height="101"/>
+                                <rect key="frame" x="177" y="716" width="414" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Disconnect :: Desconectar">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -124,6 +128,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="disconnect:" destination="2NU-iW-4o4" eventType="touchUpInside" id="0eo-Au-j8t"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -201,15 +208,19 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="FNp-1r-d4O">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name :: Nombre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gER-z2-Waz">
-                                <rect key="frame" x="74" y="141" width="125" height="21"/>
+                                <rect key="frame" x="71" y="198" width="125" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex. Bob Smith" minimumFontSize="17" clearButtonMode="whileEditing" id="pNT-mc-6vk">
-                                <rect key="frame" x="74" y="165" width="248" height="30"/>
+                                <rect key="frame" x="71" y="222" width="248" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -218,14 +229,14 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DOB :: Fecha de Nacimiento" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aR8-Pw-xEp">
-                                <rect key="frame" x="77" y="279" width="217" height="21"/>
+                                <rect key="frame" x="74" y="336" width="217" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1-1-2012" minimumFontSize="17" clearButtonMode="whileEditing" id="oKX-y1-L80">
-                                <rect key="frame" x="77" y="299" width="131" height="30"/>
+                                <rect key="frame" x="74" y="356" width="131" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -234,14 +245,14 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City :: Ciudad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7vc-OY-fcB">
-                                <rect key="frame" x="77" y="346" width="103" height="21"/>
+                                <rect key="frame" x="74" y="403" width="103" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="9am-Mq-gKY">
-                                <rect key="frame" x="74" y="370" width="184" height="30"/>
+                                <rect key="frame" x="71" y="427" width="184" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -250,14 +261,14 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="State/Territory :: Estado ò municipio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g9u-Sb-Yny">
-                                <rect key="frame" x="74" y="408" width="271" height="21"/>
+                                <rect key="frame" x="71" y="465" width="271" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="Te0-VD-xKp">
-                                <rect key="frame" x="74" y="427" width="189" height="30"/>
+                                <rect key="frame" x="71" y="484" width="189" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -266,14 +277,14 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Country :: País" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3NA-0L-vq0">
-                                <rect key="frame" x="74" y="470" width="113" height="21"/>
+                                <rect key="frame" x="71" y="527" width="113" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="e2b-HO-YvW">
-                                <rect key="frame" x="74" y="489" width="184" height="30"/>
+                                <rect key="frame" x="71" y="546" width="184" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -298,7 +309,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="aRX-tf-4sA">
-                                <rect key="frame" x="0.0" y="696" width="768" height="263"/>
+                                <rect key="frame" x="0.0" y="741" width="768" height="263"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" id="Ov7-m2-avx">
@@ -359,27 +370,27 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Gender :: Sexo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DBf-XV-GoL">
-                                <rect key="frame" x="74" y="212" width="115" height="21"/>
+                                <rect key="frame" x="71" y="269" width="115" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="IUB-4a-sv0">
-                                <rect key="frame" x="77" y="235" width="97" height="30"/>
+                                <rect key="frame" x="74" y="292" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Visit Date :: Fecha de Visita" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U4H-f8-IUB">
-                                <rect key="frame" x="74" y="65" width="209" height="21"/>
+                                <rect key="frame" x="71" y="122" width="209" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1-1-2012" minimumFontSize="17" clearButtonMode="whileEditing" id="dqG-hU-SiS">
-                                <rect key="frame" x="77" y="88" width="108" height="30"/>
+                                <rect key="frame" x="74" y="145" width="108" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -409,14 +420,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2047" y="-1545"/>
+            <point key="canvasLocation" x="433" y="-865"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="0Jw-Iu-AzZ">
             <objects>
                 <tableViewController id="ntY-4d-EDW" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6I7-bp-KLA">
-                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -662,9 +673,13 @@
             <objects>
                 <viewController id="uuu-ww-GlP" customClass="CCHPIViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P7S-9R-Cnb">
-                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="PO4-xS-lll">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xVQ-rk-omK">
                                 <rect key="frame" x="9" y="20" width="85" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -745,9 +760,13 @@
             <objects>
                 <viewController id="YGx-J7-YyQ" customClass="PastHistoryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6yL-mm-t19">
-                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="3Wd-qO-gzV">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Childhood" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iDr-ey-wEb">
                                 <rect key="frame" x="32" y="124" width="77" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
@@ -911,9 +930,13 @@
             <objects>
                 <viewController id="QmE-RQ-hRf" customClass="RxAllergiesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XjW-sa-dOk">
-                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="ZDY-Ip-Jau">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9HT-ho-R8E">
                                 <rect key="frame" x="25" y="20" width="38" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1215,9 +1238,13 @@
             <objects>
                 <viewController id="gGS-kB-MoB" customClass="FamilyViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jtx-Oh-lrf">
-                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="cUJ-CV-CQb">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fP2-fU-SFO">
                                 <rect key="frame" x="29" y="20" width="43" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1237,7 +1264,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="ym1-nY-B8Z">
-                                <rect key="frame" x="38" y="87" width="681" height="433"/>
+                                <rect key="frame" x="44" y="98" width="681" height="433"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1262,7 +1289,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ygE-rh-cYr"/>
+                    <navigationItem key="navigationItem" id="NaM-kh-Vdx"/>
                     <connections>
                         <outlet property="familyText" destination="ym1-nY-B8Z" id="2IV-bY-Lvo"/>
                     </connections>
@@ -1276,7 +1303,7 @@
             <objects>
                 <viewController id="Hbq-kd-B7z" customClass="SocialHistoryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h8D-Xy-8sj">
-                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SCc-2j-zVd">
@@ -1422,6 +1449,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="tJm-xL-ESK">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1448,9 +1479,13 @@
             <objects>
                 <viewController id="bgk-4d-Ief" customClass="ROSViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9K-9a-Rzi">
-                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="V1s-5h-S7A">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cCz-Gi-fiD">
                                 <rect key="frame" x="20" y="15" width="60" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1655,9 +1690,13 @@
             <objects>
                 <viewController id="5YG-Af-Eim" customClass="PEViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VU4-Iz-d0t">
-                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="ea0-Yz-7jU">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="67z-uj-TK8">
                                 <rect key="frame" x="18" y="20" width="63" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -1850,6 +1889,10 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="08S-0K-B0X">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2bx-EJ-yzr">
                                 <rect key="frame" x="27" y="21" width="48" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1908,9 +1951,13 @@
             <objects>
                 <viewController id="lTT-Mx-MGd" customClass="AssessmentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YpX-fV-Dek">
-                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="Wr8-pc-RFc">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6yu-D3-oC9">
                                 <rect key="frame" x="7" y="21" width="89" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2151,9 +2198,13 @@
             <objects>
                 <viewController id="72C-DA-btY" customClass="DocViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gdy-zP-Hib">
-                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="1gM-m0-xab">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="x15-Ea-anr">
                                 <rect key="frame" x="11" y="20" width="87" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
@@ -2187,15 +2238,15 @@
                                     <segue destination="2NU-iW-4o4" kind="push" id="jJI-FF-yVU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Completed By::: Visita completo por" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K0p-zm-9aQ">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Completed By :: Visita completo por" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K0p-zm-9aQ">
                                 <rect key="frame" x="38" y="105" width="271" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Physician:: médico" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a5w-Ym-hKe">
-                                <rect key="frame" x="38" y="147" width="142" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Physician :: médico" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a5w-Ym-hKe">
+                                <rect key="frame" x="38" y="147" width="147" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2549,19 +2600,236 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Background.png" width="1536" height="2008"/>
         <image name="Home-icon.png" width="48" height="48"/>
         <image name="clipboard_arrow_down.png" width="40" height="40"/>
     </resources>
+    <classes>
+        <class className="AssessmentViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AssessmentViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home:"/>
+                <relationship kind="action" name="popover:"/>
+                <relationship kind="outlet" name="dose1" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dose2" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dose3" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dose4" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dose5" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="freq1" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="freq2" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="freq3" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="freq4" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="freq5" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="name1" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="name2" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="name3" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="name4" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="name5" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="noteField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="route1" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="route2" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="route3" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="route4" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="route5" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="BlueToothViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlueToothViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="transferTypeChanged:"/>
+                <relationship kind="outlet" name="fileTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="transferTypeControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="CCHPIViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCHPIViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home:"/>
+                <relationship kind="action" name="popover:"/>
+                <relationship kind="outlet" name="CCText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="HPIText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="ContactViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clearButton:"/>
+                <relationship kind="action" name="hidButton:"/>
+                <relationship kind="action" name="home:"/>
+                <relationship kind="action" name="popover:"/>
+                <relationship kind="action" name="showDropDown:"/>
+                <relationship kind="action" name="update:"/>
+                <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="background" candidateClass="UIView"/>
+                <relationship kind="outlet" name="cellField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="cellLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cityField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="cityLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="countryField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="countryLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dobField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dobLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="genderField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="stateField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="stateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="visitDateField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="workField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="workLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="zipField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="zipLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DocViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DocViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home:"/>
+                <relationship kind="action" name="popover:"/>
+                <relationship kind="action" name="save:"/>
+                <relationship kind="outlet" name="physicianField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="studentField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="FamilyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FamilyViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="famHome:"/>
+                <relationship kind="action" name="popover:"/>
+                <relationship kind="outlet" name="familyText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="HomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="PatientSearch:"/>
+                <relationship kind="action" name="newPatientButton:"/>
+                <relationship kind="outlet" name="connection" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="disconnectButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="LabsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LabsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home:"/>
+                <relationship kind="action" name="popover:"/>
+                <relationship kind="outlet" name="textField" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="PEViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PEViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home:"/>
+                <relationship kind="action" name="popover:"/>
+                <relationship kind="outlet" name="cardioField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="gastroField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="generalField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="geniField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="heentField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nervField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="neuroField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pulField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="respField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="PastHistoryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PastHistoryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="PastHistoryHome:"/>
+                <relationship kind="action" name="PastHistoryPopover:"/>
+                <relationship kind="outlet" name="adultMedical" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="adultSurgical" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="childMedical" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="childSurgical" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="PatientListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PatientListViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mySearchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="myTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ROSViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ROSViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="home:"/>
+                <relationship kind="action" name="popover:"/>
+                <relationship kind="outlet" name="cardioField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="gastroField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="generalField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="geniField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="heentField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nervField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="neuroField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pulField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="respField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="vitalField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="RxAllergiesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RxAllergiesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addAllergies:"/>
+                <relationship kind="action" name="addRx:"/>
+                <relationship kind="action" name="home:"/>
+                <relationship kind="action" name="popover:"/>
+                <relationship kind="outlet" name="RxDose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="RxEnded" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="RxFreq" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="RxName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="RxRoute" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="RxStarted" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="RxTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="allergiesItem" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="allergiesReaction" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="allergiesTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="mainTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SocialHistoryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialHistoryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="alcButton:"/>
+                <relationship kind="action" name="drugButton:"/>
+                <relationship kind="action" name="home:"/>
+                <relationship kind="action" name="popover:"/>
+                <relationship kind="action" name="tobButton:"/>
+                <relationship kind="outlet" name="alcButton" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="alcField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="alcLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="drugButton" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="drugField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="drugLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="otherField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="tabacField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tobButton" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="tobLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="VisitViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VisitViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="oLg-vX-IjR"/>
-        <segue reference="XoX-rO-6eT"/>
-        <segue reference="kjU-YO-7ja"/>
+        <segue reference="pPC-ev-rE2"/>
         <segue reference="TtK-m4-eBb"/>
+        <segue reference="PhM-fc-RHo"/>
         <segue reference="x6A-Di-40b"/>
+        <segue reference="kjU-YO-7ja"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -25,6 +25,6 @@ typedef enum
 @property (nonatomic) MODE mode;
 - (void) alert:(NSString*) msg;
 - (void) setupSend;
-- (void) updateOtherFileList:(NSArray*) otherFileList;
+- (void) updateTable;
 - (NSString*) getListOfFileNames;
 @end

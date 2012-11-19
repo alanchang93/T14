@@ -8,6 +8,7 @@
 
 #import "Transfer.h"
 #import "BlueToothViewController.h"
+#import "CSVParser.h"
 
 // Global GKSession connection variable
 GKSession* currentSession;
@@ -60,22 +61,31 @@ MySessionDelegate* mySessionDelegate;
 //==================================
 
 @implementation MySessionDelegate{
-    NSArray* listOfOtherFileNames;
-    NSMutableArray* listFileNames;
 }
 
-
+@synthesize listFileNames;
+@synthesize listOtherFileNames;
 @synthesize blueToothViewController;
+
+- (NSArray*) getOtherFileNames
+{
+    return self.listOtherFileNames;
+}
+
+- (NSMutableArray*) getFileNames
+{
+    return self.listFileNames;
+}
+
+- (void) reloadFiles
+{
+    listFileNames = [CSVParser getFileNames];
+}
 
 - (id) initWithBlueToothViewController:(BlueToothViewController *)btvc
 {
     blueToothViewController = btvc;
     return self;
-}
-
-- (void) testFunction
-{
-    [blueToothViewController alert:@"Hello from Test Function"];
 }
 
 - (void) updateBlueToothViewController:(BlueToothViewController *)btvc
@@ -104,8 +114,9 @@ MySessionDelegate* mySessionDelegate;
         {
             // get list of local files and send it back
             Transfer* responseTransfer = [[Transfer alloc] initWithSession:currentSession transferType:SEND_FILE_LISTING];
+            [self reloadFiles];
             // retrieves list of files from bluetooth controller
-            responseTransfer.data = [blueToothViewController getListOfFileNames];
+            responseTransfer.data = [listFileNames componentsJoinedByString:@";"];
             [responseTransfer transfer];
             break;
         }
@@ -125,7 +136,8 @@ MySessionDelegate* mySessionDelegate;
         case SEND_FILE_LISTING:
         {
             // update partner filename list
-            [blueToothViewController updateOtherFileList: [transfer.data componentsSeparatedByString:@";"]];
+            listOtherFileNames = [transfer.data componentsSeparatedByString:@";"];
+            [blueToothViewController updateTable];
             break;
         }
     }
