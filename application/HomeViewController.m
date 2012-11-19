@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 
 @interface HomeViewController ()
+@property (strong, nonatomic) IBOutlet UIButton *disconnectButton;
 
 @end
 

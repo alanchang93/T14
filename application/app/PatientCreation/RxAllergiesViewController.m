@@ -42,6 +42,11 @@
     allergiesTableView.layer.cornerRadius = 5;
 }
 
+-(void) viewDidUnload
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(void) viewDidAppear:(BOOL)animated{
     RxDict = [CSVParser getPatient];
     allRx = [RxDict objectForKey:@"Rx"];

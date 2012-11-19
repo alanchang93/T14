@@ -17,8 +17,8 @@ static NSArray *fields = nil;
 
 
 + (void) initialize{
-    fields = [NSArray arrayWithObjects: @"Visit Date",@"Name", @"DOB",@"Gender", @"City", @"State", @"Country",@"CC", @"HPI", @"Childhood Medical History", @"Adulthood Medical History", @"Childhood Surgical History", @"Adulthood Surgical History",@"Rx",@"Allergies",@"Family History",@"Drug Use",@"Drug Detail", @"Alcohol Use",@"Alcohol Detail", @"Other Information",@"ROSVital", @"ROSGeneral",@"ROSHeent", @"ROSCardio",@"ROSResp", @"ROSGastro", @"ROSGeni" ,@"ROSNervous" ,@"ROSPulmonary",@"ROSNeuro",@"PEGeneral", @"PEHeent", @"PECardio", @"PEResp", @"PEGastro", @"PEGeni", @"PENerv", @"PEPul", @"PENeuro", @"Lab&Other",@"prescript", @"notes",@"Physician", @"Med Student", nil];
-    NSArray *blanks = [NSArray arrayWithObjects: @"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"" ,@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",nil];
+    fields = [NSArray arrayWithObjects: @"Visit Date",@"Name", @"DOB",@"Gender", @"City", @"State", @"Country",@"CC", @"HPI", @"Childhood Medical History", @"Adulthood Medical History", @"Childhood Surgical History", @"Adulthood Surgical History",@"Rx",@"Allergies",@"Family History",@"Drug Use",@"Drug Detail", @"Alcohol Use",@"Alcohol Detail",@"Tobacco Use", @"Tobacco Detail", @"Other Information",@"ROSVital", @"ROSGeneral",@"ROSHeent", @"ROSCardio",@"ROSResp", @"ROSGastro", @"ROSGeni" ,@"ROSNervous" ,@"ROSMSK",@"ROSNeuro",@"PEGeneral", @"PEHeent", @"PECardio", @"PEResp", @"PEGastro", @"PEGeni", @"PENerv", @"PEMSK", @"PENeuro", @"Lab&Other",@"prescript", @"notes",@"Physician", @"Med Student", nil];
+    NSArray *blanks = [NSArray arrayWithObjects: @"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"" ,@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",nil];
 
     patient = [[NSMutableDictionary alloc] initWithObjects: blanks forKeys:fields];
 }
@@ -63,6 +63,7 @@ static NSArray *fields = nil;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *dir = [paths objectAtIndex:0];
     NSString *filePath = [dir stringByAppendingPathComponent:fileName];
+    NSLog(@"%@", filePath);
     NSString *toFile;
     if (![fileList containsObject: fileName]){
     headers = [NSMutableString stringWithFormat:@"%@\n", headers];
@@ -110,7 +111,7 @@ static NSArray *fields = nil;
     NSArray *patientInfo = [latestVisit componentsSeparatedByString:@","];
     NSMutableArray *fileList = [CSVParser getFileNames];
     NSString *Name = [NSString stringWithFormat:@"%@%@%@%@",[patient objectForKey:@"Name"],@" ",[patient objectForKey:@"DOB"],@".csv"];
-    if ([patientInfo count] > 46){ //change if new fields are added or removed
+    if ([patientInfo count] > 48){ //change if new fields are added or removed
         for (int i = 0; i < [fields count]; i++){
             [patient setObject:[patientInfo objectAtIndex: i+[fields count]] forKey:[fields objectAtIndex:i]];
         }
@@ -121,6 +122,27 @@ static NSArray *fields = nil;
         }
     }
     return patient;
+}
+
++(NSMutableArray *) loadVisits:(NSString *)fileName{
+    NSMutableString *allData = [[NSMutableString alloc]initWithContentsOfFile:fileName];
+    NSArray *visit = [allData componentsSeparatedByString:@"\n"];
+    NSMutableArray *visitDates =[[NSMutableArray alloc] init];
+    NSMutableArray *info = [[NSMutableArray alloc]init];
+    NSMutableDictionary *visitInfo = [[NSMutableDictionary alloc] init];
+    int i =0;
+    while ( i < [visit count]) {
+        [info addObject: [visit objectAtIndex:i]];
+        if (i % 45 == 0 && i > 45){
+            [visitDates addObject:[visit objectAtIndex:i]];
+        }
+        if (i %47 == 0 && i > 47){
+            [visitInfo setObject:info forKey:[visitDates objectAtIndex:[visitDates count]-1]];
+             info = [NSMutableArray init];
+        }
+        i++;
+    }
+    return visitInfo;
 }
 
 + (NSMutableDictionary *) getPatient{

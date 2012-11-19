@@ -12,18 +12,21 @@
 @interface SocialHistoryViewController : UIViewController{
     IBOutlet UISegmentedControl *drugButton;
     IBOutlet UISegmentedControl *alcButton;
+    IBOutlet UISegmentedControl *tobButton;
     NSMutableDictionary *socialHis;
 }
 
-
+- (IBAction)tobButton:(id)sender;
 - (IBAction)drugButton:(id)sender;
 - (IBAction)alcButton:(id)sender;
 - (IBAction)popover:(id)sender;
 - (IBAction)home:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *otherField;
 @property (weak, nonatomic) IBOutlet UITextField *drugField;
+@property (weak, nonatomic) IBOutlet UITextField *tabacField;
 @property (weak, nonatomic) IBOutlet UITextField *alcField;
 @property (weak, nonatomic) IBOutlet UILabel *drugLabel;
 @property (weak, nonatomic) IBOutlet UILabel *alcLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tobLabel;
 
 @end

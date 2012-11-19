@@ -36,6 +36,11 @@
     [textField.layer setCornerRadius:5];
 }
 
+-(void) viewDidUnload
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(void) viewDidAppear:(BOOL)animated{
     labDict = [CSVParser getPatient];
     textField.text = [[labDict objectForKey:@"Lab&Other"] stringByReplacingOccurrencesOfString:@";" withString:@","];

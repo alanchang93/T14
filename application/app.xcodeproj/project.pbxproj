@@ -12,6 +12,10 @@
 		4115E4EF165369470008DA34 /* FamilyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4115E4EE165369470008DA34 /* FamilyViewController.m */; };
 		4115E4F216536A880008DA34 /* SocialHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4115E4F116536A880008DA34 /* SocialHistoryViewController.m */; };
 		415661111654FAD200FA9EEF /* PatientListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 415661101654FAD200FA9EEF /* PatientListViewController.m */; };
+		416958D91659A6DA00B22491 /* VisitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 416958D81659A6DA00B22491 /* VisitViewController.m */; };
+		416958DC1659B47F00B22491 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416958DB1659B47F00B22491 /* GameKit.framework */; };
+		416958E31659B57A00B22491 /* Transfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 416958E21659B57A00B22491 /* Transfer.m */; };
+		416958E51659B78A00B22491 /* iconv1.png in Resources */ = {isa = PBXBuildFile; fileRef = 416958E41659B78A00B22491 /* iconv1.png */; };
 		41855C841658D3160043DA7B /* BlueToothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41855C831658D3160043DA7B /* BlueToothViewController.m */; };
 		418770AB16536BB9007135B7 /* ROSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418770AA16536BB9007135B7 /* ROSViewController.m */; };
 		418770AF16536C3C007135B7 /* PEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418770AE16536C3C007135B7 /* PEViewController.m */; };
@@ -65,6 +69,12 @@
 		4115E4F116536A880008DA34 /* SocialHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialHistoryViewController.m; sourceTree = "<group>"; };
 		4156610F1654FAD200FA9EEF /* PatientListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientListViewController.h; sourceTree = "<group>"; };
 		415661101654FAD200FA9EEF /* PatientListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientListViewController.m; sourceTree = "<group>"; };
+		416958D71659A6DA00B22491 /* VisitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisitViewController.h; sourceTree = "<group>"; };
+		416958D81659A6DA00B22491 /* VisitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitViewController.m; sourceTree = "<group>"; };
+		416958DB1659B47F00B22491 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		416958E11659B57900B22491 /* Transfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transfer.h; sourceTree = "<group>"; };
+		416958E21659B57A00B22491 /* Transfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transfer.m; sourceTree = "<group>"; };
+		416958E41659B78A00B22491 /* iconv1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconv1.png; sourceTree = "<group>"; };
 		41855C821658D3160043DA7B /* BlueToothViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueToothViewController.h; sourceTree = "<group>"; };
 		41855C831658D3160043DA7B /* BlueToothViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueToothViewController.m; sourceTree = "<group>"; };
 		418770A916536BB9007135B7 /* ROSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ROSViewController.h; path = ../../ROSViewController.h; sourceTree = "<group>"; };
@@ -77,7 +87,7 @@
 		418770B416536DE7007135B7 /* AssessmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssessmentViewController.m; path = ../AssessmentViewController.m; sourceTree = "<group>"; };
 		418770B616536E29007135B7 /* DocViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocViewController.h; path = ../../DocViewController.h; sourceTree = "<group>"; };
 		418770B716536E29007135B7 /* DocViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocViewController.m; path = ../../DocViewController.m; sourceTree = "<group>"; };
-		4199F748164F66F9003A57F0 /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4199F748164F66F9003A57F0 /* gEMR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gEMR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4199F74C164F66F9003A57F0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4199F74E164F66F9003A57F0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4199F750164F66F9003A57F0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				416958DC1659B47F00B22491 /* GameKit.framework in Frameworks */,
 				4199F74D164F66F9003A57F0 /* UIKit.framework in Frameworks */,
 				4199F74F164F66F9003A57F0 /* Foundation.framework in Frameworks */,
 				4199F751164F66F9003A57F0 /* CoreGraphics.framework in Frameworks */,
@@ -166,6 +177,8 @@
 		4199F73D164F66F9003A57F0 = {
 			isa = PBXGroup;
 			children = (
+				416958E41659B78A00B22491 /* iconv1.png */,
+				416958DB1659B47F00B22491 /* GameKit.framework */,
 				41D8FAC81658C9DC0006FFB9 /* Home-icon.png */,
 				4199F752164F66F9003A57F0 /* app */,
 				4199F779164F66F9003A57F0 /* appTests */,
@@ -177,7 +190,7 @@
 		4199F749164F66F9003A57F0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4199F748164F66F9003A57F0 /* app.app */,
+				4199F748164F66F9003A57F0 /* gEMR.app */,
 				4199F772164F66F9003A57F0 /* appTests.octest */,
 			);
 			name = Products;
@@ -203,6 +216,8 @@
 				4199F75C164F66F9003A57F0 /* AppDelegate.m */,
 				4199F764164F66F9003A57F0 /* MainStoryboard_iPhone.storyboard */,
 				4199F767164F66F9003A57F0 /* MainStoryboard_iPad.storyboard */,
+				416958D71659A6DA00B22491 /* VisitViewController.h */,
+				416958D81659A6DA00B22491 /* VisitViewController.m */,
 				41855C821658D3160043DA7B /* BlueToothViewController.h */,
 				41855C831658D3160043DA7B /* BlueToothViewController.m */,
 				4156610F1654FAD200FA9EEF /* PatientListViewController.h */,
@@ -220,6 +235,8 @@
 		4199F753164F66F9003A57F0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				416958E11659B57900B22491 /* Transfer.h */,
+				416958E21659B57A00B22491 /* Transfer.m */,
 				41D8FAC41658C7CF0006FFB9 /* clipboard_arrow_down.png */,
 				41D8FAC01658C4010006FFB9 /* bluetooth.png */,
 				41B746F2165852BD008D18AA /* Countries.plist */,
@@ -270,7 +287,7 @@
 			);
 			name = app;
 			productName = app;
-			productReference = 4199F748164F66F9003A57F0 /* app.app */;
+			productReference = 4199F748164F66F9003A57F0 /* gEMR.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4199F771164F66F9003A57F0 /* appTests */ = {
@@ -334,6 +351,7 @@
 				41D8FAC11658C4010006FFB9 /* bluetooth.png in Resources */,
 				41D8FAC51658C7CF0006FFB9 /* clipboard_arrow_down.png in Resources */,
 				41D8FAC91658C9DC0006FFB9 /* Home-icon.png in Resources */,
+				416958E51659B78A00B22491 /* iconv1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +403,8 @@
 				418770B816536E29007135B7 /* DocViewController.m in Sources */,
 				415661111654FAD200FA9EEF /* PatientListViewController.m in Sources */,
 				41855C841658D3160043DA7B /* BlueToothViewController.m in Sources */,
+				416958D91659A6DA00B22491 /* VisitViewController.m in Sources */,
+				416958E31659B57A00B22491 /* Transfer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,7 +520,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "app/app-Prefix.pch";
 				INFOPLIST_FILE = "app/app-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = gEMR;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -511,7 +531,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "app/app-Prefix.pch";
 				INFOPLIST_FILE = "app/app-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = gEMR;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

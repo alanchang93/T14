@@ -33,6 +33,10 @@
     [HPIText.layer setCornerRadius:5];
 }
 
+-(void) viewDidUnload
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (void) viewDidAppear:(BOOL)animated{
     CCHPI = [CSVParser getPatient];
     self.CCText.text = [[CCHPI objectForKey:@"CC"] stringByReplacingOccurrencesOfString:@";" withString:@","];

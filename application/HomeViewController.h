@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIButton *connection;
 
 - (IBAction)newPatientButton:(id)sender;
 - (IBAction)PatientSearch:(id)sender;

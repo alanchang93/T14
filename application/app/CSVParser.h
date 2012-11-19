@@ -24,4 +24,5 @@ extern NSMutableDictionary *contact;
 + (NSMutableDictionary *) getPatient;
 + (NSMutableDictionary *) clearPatient;
 + (NSMutableDictionary *) loadDataFromFile: (NSString *) fileName;
++ (NSMutableArray *)loadVisits: (NSString *) fileName;
 @end

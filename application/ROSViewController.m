@@ -43,9 +43,14 @@
     gastroField.text = [[ROSDict objectForKey:@"ROSGastro"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     geniField.text = [[ROSDict objectForKey:@"ROSGeni"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     nervField.text = [[ROSDict objectForKey:@"ROSNervous"] stringByReplacingOccurrencesOfString:@";" withString:@","];
-    pulField.text = [[ROSDict objectForKey:@"ROSPulmonary"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    pulField.text = [[ROSDict objectForKey:@"ROSMSK"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     neuroField.text = [[ROSDict objectForKey:@"ROSNeuro"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     
+}
+
+-(void) viewDidUnload
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,7 +60,7 @@
 }
 
 - (IBAction)popover:(id)sender {
-    NSArray *headers = [[NSArray alloc] initWithObjects:@"ROSVital", @"ROSGeneral",@"ROSHeent", @"ROSCardio",@"ROSResp", @"ROSGastro", @"ROSGeni" ,@"ROSNervous" ,@"ROSPulmonary",@"ROSNeuro", nil];
+    NSArray *headers = [[NSArray alloc] initWithObjects:@"ROSVital", @"ROSGeneral",@"ROSHeent", @"ROSCardio",@"ROSResp", @"ROSGastro", @"ROSGeni" ,@"ROSNervous" ,@"ROSMSK",@"ROSNeuro", nil];
     NSString *vital = [vitalField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *general = [generalField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *heent = [heentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
@@ -77,7 +82,7 @@
 }
 
 - (IBAction)home:(id)sender {
-    NSArray *headers = [[NSArray alloc] initWithObjects:@"ROSVital", @"ROSGeneral",@"ROSHeent", @"ROSCardio",@"ROSResp", @"ROSGastro", @"ROSGeni" ,@"ROSNervous" ,@"ROSPulmonary",@"ROSNeuro", nil];
+    NSArray *headers = [[NSArray alloc] initWithObjects:@"ROSVital", @"ROSGeneral",@"ROSHeent", @"ROSCardio",@"ROSResp", @"ROSGastro", @"ROSGeni" ,@"ROSNervous" ,@"ROSMSK",@"ROSNeuro", nil];
     NSString *vital = [vitalField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *general = [generalField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *heent = [heentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];

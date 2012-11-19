@@ -33,6 +33,11 @@
 	// Do any additional setup after loading the view.
 }
 
+-(void) viewDidUnload
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(void) viewDidAppear:(BOOL)animated{
     docDict = [CSVParser getPatient];
     physicianField.text = [[docDict objectForKey:@"Physician"] stringByReplacingOccurrencesOfString:@";" withString:@","];
@@ -81,5 +86,7 @@
     }
     docDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:header];
     [CSVParser saveData:docDict];
+    [CSVParser writeData];
+    [CSVParser clearPatient];
 }
 @end

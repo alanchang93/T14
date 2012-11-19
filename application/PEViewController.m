@@ -33,6 +33,11 @@
     [self.navigationItem setTitle:@"Physical Exam"];
 }
 
+-(void)viewDidUnload
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(void)viewDidAppear:(BOOL)animated{
     PEDict = [CSVParser getPatient];
     generalField.text = [[PEDict objectForKey:@"PEGeneral"] stringByReplacingOccurrencesOfString:@";" withString:@","];
@@ -42,7 +47,7 @@
     gastroField.text = [[PEDict objectForKey:@"PEGastro"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     geniField.text = [[PEDict objectForKey:@"PEGeni"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     nervField.text = [[PEDict objectForKey:@"PENerv"] stringByReplacingOccurrencesOfString:@";" withString:@","];
-    pulField.text = [[PEDict objectForKey:@"PEPul"] stringByReplacingOccurrencesOfString:@";" withString:@","];
+    pulField.text = [[PEDict objectForKey:@"PEMSK"] stringByReplacingOccurrencesOfString:@";" withString:@","];
     neuroField.text = [[PEDict objectForKey:@"PENeuro"] stringByReplacingOccurrencesOfString:@";" withString:@","];
 }
 
@@ -53,7 +58,7 @@
 }
 
 - (IBAction)home:(id)sender {
-    NSArray *headers = [[NSArray alloc] initWithObjects: @"PEGeneral", @"PEHeent", @"PECardio", @"PEResp", @"PEGastro", @"PEGeni", @"PENerv", @"PEPul", @"PENeuro", nil];
+    NSArray *headers = [[NSArray alloc] initWithObjects: @"PEGeneral", @"PEHeent", @"PECardio", @"PEResp", @"PEGastro", @"PEGeni", @"PENerv", @"PEMSK", @"PENeuro", nil];
     NSString *general = [generalField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *heent = [heentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *cardio = [cardioField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
@@ -76,7 +81,7 @@
 }
 
 - (IBAction)popover:(id)sender {
-    NSArray *headers = [[NSArray alloc] initWithObjects: @"PEGeneral", @"PEHeent", @"PECardio", @"PEResp", @"PEGastro", @"PEGeni", @"PENerv", @"PEPul", @"PENeuro", nil];
+    NSArray *headers = [[NSArray alloc] initWithObjects: @"PEGeneral", @"PEHeent", @"PECardio", @"PEResp", @"PEGastro", @"PEGeni", @"PENerv", @"PEMSK", @"PENeuro", nil];
     NSString *general = [generalField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *heent = [heentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];
     NSString *cardio = [cardioField.text stringByReplacingOccurrencesOfString:@"," withString:@";"];

@@ -85,6 +85,7 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    [self dismissViewControllerAnimated:YES completion:nil];
     // Release any retained subviews of the main view.
 }
 
@@ -120,9 +121,18 @@
     //shows pickerview
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
-    background.frame = CGRectMake(0, 741, 768, 263);
+    background.frame = CGRectMake(0, 696, 768, 263);
     [UIView commitAnimations];
-    
+}
+
+- (IBAction)hidButton:(id)sender {
+    //hides pickerview
+
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    background.frame = CGRectMake(0, 1000, 768, 263);
+    [UIView commitAnimations];
+
 }
 
 -(IBAction)home:(id)sender{
@@ -168,14 +178,6 @@
     }
     NSDictionary *contact = [[NSDictionary alloc] initWithObjects: _contactInfo forKeys:fields];
     [CSVParser saveData:contact];
-}
-
-- (IBAction)hidButton:(id)sender {
-    //hides pickerview
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.3];
-    background.frame = CGRectMake(0, 1000, 768, 263);
-    [UIView commitAnimations];
 }
 
 - (IBAction)clearButton:(id)sender {

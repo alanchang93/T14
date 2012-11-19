@@ -1,16 +1,15 @@
 //
-//  PatientListViewController.m
+//  VisitViewController.m
 //  app
 //
-//  Created by App Jam on 11/15/12.
+//  Created by App Jam on 11/18/12.
 //  Copyright (c) 2012 Team 14. All rights reserved.
 //
 
-#import "PatientListViewController.h"
+#import "VisitViewController.h"
 #import "CSVParser.h"
 
-@interface PatientListViewController ()
-{
+@interface VisitViewController (){
     NSMutableArray *totalStrings;
     NSMutableArray *filteredStrings;
     NSMutableDictionary *contentOfFile;
@@ -19,11 +18,7 @@
 
 @end
 
-@implementation PatientListViewController
-
-static NSString *cellFileName;
-
-
+@implementation VisitViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,10 +31,21 @@ static NSString *cellFileName;
 
 - (void)viewDidLoad
 {
-    self.mySearchBar.delegate = self;
-    self.myTableView.delegate = self;
-    self.myTableView.dataSource = self;
-    totalStrings = [CSVParser getFileNames];
+    self.searchBar.delegate = self;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    NSMutableDictionary *patient = [CSVParser getPatient];
+    NSString *name = [NSString stringWithFormat: @"%@%@%@%@",[patient objectForKey:@"Name"],@" ", [patient objectForKey:@"DOB"], @".csv"];
+    NSLog(@"%@", name);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *dir = [paths objectAtIndex:0];
+    NSString *filePath = [dir stringByAppendingPathComponent: name];
+    NSMutableString *fileContent = [[NSMutableString alloc]initWithContentsOfFile:filePath];
+    NSMutableArray *visitList = [[NSMutableArray alloc] initWithObjects:[fileContent componentsSeparatedByString:@"\n"], nil];
+    NSLog(@"%@", fileContent);
+    NSMutableDictionary *loaddic = [CSVParser loadVisits:filePath];
+    NSLog(@"%@", loaddic);
+    totalStrings = visitList;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -61,17 +67,17 @@ static NSString *cellFileName;
             }
         }
     }
-    [self.myTableView reloadData];
+    [self.tableView reloadData];
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    [self.mySearchBar resignFirstResponder ];
+    [self.searchBar resignFirstResponder ];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *CellIdentifier = @"patient";
-     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if(!cell){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
@@ -99,12 +105,11 @@ static NSString *cellFileName;
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *cellText = cell.textLabel.text;
-    cellFileName = cellText;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *dir = [paths objectAtIndex:0];
     NSString *filePath = [dir stringByAppendingPathComponent:cellText];
     [CSVParser loadDataFromFile: filePath];
-
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -112,4 +117,10 @@ static NSString *cellFileName;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void) getFileNameByCell: (NSString*) name
+{
+    
+}
+
 @end

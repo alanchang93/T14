@@ -52,6 +52,11 @@
         
 }
 
+-(void) viewDidUnload
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

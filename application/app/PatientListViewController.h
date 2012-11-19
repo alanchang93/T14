@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VisitViewController.h"
 
 @interface PatientListViewController : UIViewController<UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *mySearchBar;
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
-
 
 @end
