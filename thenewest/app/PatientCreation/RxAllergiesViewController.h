@@ -27,7 +27,7 @@
 - (IBAction)addRx:(id)sender;
 
 //for allergies
-@property (weak, nonatomic) IBOutlet UITextField *allergiesItem;
+@property (weak, nonatomic) IBOutlet UITextField *alleragiesItem;
 @property (weak, nonatomic) IBOutlet UITextField *allergiesReaction;
 - (IBAction)addAllergies:(id)sender;
 
@@ -35,7 +35,7 @@
 - (IBAction)home:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITableView *RxTableView;
-@property (weak, nonatomic) IBOutlet UITableView *allergiesTableView;
+@property (weak, nonatomic) IBOutlet UITableView *AllergiesTableView;
 
 
 @end

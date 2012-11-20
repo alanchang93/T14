@@ -23,7 +23,6 @@ static NSArray *fields = nil;
     patient = [[NSMutableDictionary alloc] initWithObjects: blanks forKeys:fields];
 }
 
-
 +(NSMutableDictionary *)saveData:(NSMutableDictionary *)data{
     for (NSString *key in [data allKeys]){
         for(NSString *k in [patient allKeys]){
@@ -66,9 +65,9 @@ static NSArray *fields = nil;
     NSLog(@"%@", filePath);
     NSString *toFile;
     if (![fileList containsObject: fileName]){
-    headers = [NSMutableString stringWithFormat:@"%@\n", headers];
-    [headers appendString: data];
-    toFile = headers;
+        headers = [NSMutableString stringWithFormat:@"%@\n", headers];
+        [headers appendString: data];
+        toFile = headers;
     }
     else{
         NSMutableString *allData = [[NSMutableString alloc]initWithContentsOfFile:filePath];
@@ -151,7 +150,10 @@ static NSArray *fields = nil;
 }
 
 +(NSMutableDictionary *)clearPatient{
-    patient = [[NSMutableDictionary alloc] init];
+    fields = [NSArray arrayWithObjects: @"Visit Date",@"Name", @"DOB",@"Gender", @"City", @"State", @"Country",@"CC", @"HPI", @"Childhood Medical History", @"Adulthood Medical History", @"Childhood Surgical History", @"Adulthood Surgical History",@"Rx",@"Allergies",@"Family History",@"Drug Use",@"Drug Detail", @"Alcohol Use",@"Alcohol Detail",@"Tobacco Use", @"Tobacco Detail", @"Other Information",@"ROSVital", @"ROSGeneral",@"ROSHeent", @"ROSCardio",@"ROSResp", @"ROSGastro", @"ROSGeni" ,@"ROSNervous" ,@"ROSMSK",@"ROSNeuro",@"PEGeneral", @"PEHeent", @"PECardio", @"PEResp", @"PEGastro", @"PEGeni", @"PENerv", @"PEMSK", @"PENeuro", @"Lab&Other",@"prescript", @"notes",@"Physician", @"Med Student", nil];
+    NSArray *blanks = [NSArray arrayWithObjects: @"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"" ,@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",nil];
+    
+    patient = [[NSMutableDictionary alloc] initWithObjects: blanks forKeys:fields];
     return patient;
 }
 @end

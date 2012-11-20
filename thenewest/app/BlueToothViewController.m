@@ -192,10 +192,6 @@
     [transfer transfer];
 }
 
-- (NSString*) getListOfFileNames
-{
-    return [self flattenListOfFileNames:listOfFileName];
-}
 
 - (NSString*) flattenListOfFileNames:(NSMutableArray*) listOfFiles
 {

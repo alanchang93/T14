@@ -26,5 +26,4 @@ typedef enum
 - (void) alert:(NSString*) msg;
 - (void) setupSend;
 - (void) updateTable;
-- (NSString*) getListOfFileNames;
 @end

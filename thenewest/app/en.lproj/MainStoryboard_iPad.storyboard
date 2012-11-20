@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="JDl-dS-Ri8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="JDl-dS-Ri8">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Patient List View Controller-->
@@ -68,7 +68,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="6mT-eR-0rl">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oRJ-MC-i4q">
                                 <rect key="frame" x="177" y="160" width="414" height="92"/>
@@ -187,7 +187,7 @@
                                     <segment title="Receive"/>
                                 </segments>
                                 <connections>
-                                    <action selector="transferTypeChange:" destination="70w-t4-jP8" eventType="valueChanged" id="UHd-Vy-Seb"/>
+                                    <action selector="transferTypeChanged:" destination="70w-t4-jP8" eventType="valueChanged" id="S0h-pb-iOT"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
@@ -197,6 +197,7 @@
                     <connections>
                         <outlet property="fileTable" destination="zhE-gB-X7A" id="6L3-Tx-RQU"/>
                         <outlet property="searchBar" destination="3g3-cM-nan" id="8HU-kq-kp5"/>
+                        <outlet property="transferTypeControl" destination="RyT-zZ-Mfa" id="kof-oj-muw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ef2-XJ-PyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -213,7 +214,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="FNp-1r-d4O">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name :: Nombre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gER-z2-Waz">
                                 <rect key="frame" x="71" y="198" width="125" height="21"/>
@@ -430,7 +431,7 @@
             <objects>
                 <tableViewController id="ntY-4d-EDW" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6I7-bp-KLA">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -676,12 +677,12 @@
             <objects>
                 <viewController id="uuu-ww-GlP" customClass="CCHPIViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P7S-9R-Cnb">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="PO4-xS-lll">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xVQ-rk-omK">
                                 <rect key="frame" x="9" y="20" width="85" height="44"/>
@@ -763,12 +764,12 @@
             <objects>
                 <viewController id="YGx-J7-YyQ" customClass="PastHistoryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6yL-mm-t19">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="3Wd-qO-gzV">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Childhood" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iDr-ey-wEb">
                                 <rect key="frame" x="32" y="124" width="77" height="21"/>
@@ -933,12 +934,12 @@
             <objects>
                 <viewController id="QmE-RQ-hRf" customClass="RxAllergiesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XjW-sa-dOk">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="ZDY-Ip-Jau">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9HT-ho-R8E">
                                 <rect key="frame" x="25" y="20" width="38" height="44"/>
@@ -1084,42 +1085,42 @@
                                     </tableView>
                                 </subviews>
                             </scrollView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date Ended" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A3s-4T-fPL">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date Ended" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A3s-4T-fPL">
                                 <rect key="frame" x="636" y="302" width="90" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date Started" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="buQ-2h-Efs">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date Started" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="buQ-2h-Efs">
                                 <rect key="frame" x="503" y="302" width="96" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Frequency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WJW-67-AJ1">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Frequency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WJW-67-AJ1">
                                 <rect key="frame" x="390" y="302" width="81" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Route" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aWi-3K-Ank">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Route" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aWi-3K-Ank">
                                 <rect key="frame" x="287" y="302" width="46" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zdz-qY-r1C">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zdz-qY-r1C">
                                 <rect key="frame" x="176" y="302" width="40" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tsa-KU-zxa">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tsa-KU-zxa">
                                 <rect key="frame" x="55" y="302" width="53" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1227,7 +1228,7 @@
                         <outlet property="RxRoute" destination="3GI-g6-c8P" id="cna-f8-Wfc"/>
                         <outlet property="RxStarted" destination="IFJ-HI-wi6" id="Gl3-jM-WfD"/>
                         <outlet property="RxTableView" destination="XEj-Sr-PUT" id="5Uc-Ko-lIp"/>
-                        <outlet property="allergiesItem" destination="oG7-bG-kau" id="X0p-XK-i7I"/>
+                        <outlet property="alleragiesItem" destination="oG7-bG-kau" id="wV7-cU-lwt"/>
                         <outlet property="allergiesReaction" destination="W40-Ao-UHS" id="KgZ-Zm-hpI"/>
                         <outlet property="allergiesTableView" destination="yn3-Vm-RH1" id="XAB-hi-SaO"/>
                     </connections>
@@ -1241,12 +1242,12 @@
             <objects>
                 <viewController id="gGS-kB-MoB" customClass="FamilyViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jtx-Oh-lrf">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="cUJ-CV-CQb">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fP2-fU-SFO">
                                 <rect key="frame" x="29" y="20" width="43" height="46"/>
@@ -1306,9 +1307,13 @@
             <objects>
                 <viewController id="Hbq-kd-B7z" customClass="SocialHistoryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h8D-Xy-8sj">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="tJm-xL-ESK">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SCc-2j-zVd">
                                 <rect key="frame" x="20" y="18" width="45" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1452,10 +1457,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="tJm-xL-ESK">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1482,12 +1483,12 @@
             <objects>
                 <viewController id="bgk-4d-Ief" customClass="ROSViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9K-9a-Rzi">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="V1s-5h-S7A">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cCz-Gi-fiD">
                                 <rect key="frame" x="20" y="15" width="60" height="56"/>
@@ -1693,12 +1694,12 @@
             <objects>
                 <viewController id="5YG-Af-Eim" customClass="PEViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VU4-Iz-d0t">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="ea0-Yz-7jU">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="67z-uj-TK8">
                                 <rect key="frame" x="18" y="20" width="63" height="44"/>
@@ -1889,12 +1890,12 @@
             <objects>
                 <viewController id="Fio-nH-4Rq" customClass="LabsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OjO-xB-p2l">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="08S-0K-B0X">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2bx-EJ-yzr">
                                 <rect key="frame" x="27" y="21" width="48" height="45"/>
@@ -1954,12 +1955,12 @@
             <objects>
                 <viewController id="lTT-Mx-MGd" customClass="AssessmentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YpX-fV-Dek">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="Wr8-pc-RFc">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6yu-D3-oC9">
                                 <rect key="frame" x="7" y="21" width="89" height="44"/>
@@ -2201,12 +2202,12 @@
             <objects>
                 <viewController id="72C-DA-btY" customClass="DocViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gdy-zP-Hib">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Background.png" id="1gM-m0-xab">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="x15-Ea-anr">
                                 <rect key="frame" x="11" y="20" width="87" height="44"/>
@@ -2286,7 +2287,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="save:" destination="72C-DA-btY" eventType="touchUpInside" id="zcf-72-QXW"/>
+                                    <action selector="save:" destination="72C-DA-btY" eventType="touchUpInside" id="Fxy-L7-RFl"/>
                                     <segue destination="2NU-iW-4o4" kind="push" id="HL3-RW-Ecm"/>
                                 </connections>
                             </button>
@@ -2783,6 +2784,7 @@
                 <relationship kind="action" name="addRx:"/>
                 <relationship kind="action" name="home:"/>
                 <relationship kind="action" name="popover:"/>
+                <relationship kind="outlet" name="AllergiesTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="RxDose" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="RxEnded" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="RxFreq" candidateClass="UITextField"/>
@@ -2790,9 +2792,8 @@
                 <relationship kind="outlet" name="RxRoute" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="RxStarted" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="RxTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="allergiesItem" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="alleragiesItem" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="allergiesReaction" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="allergiesTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="mainTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -2830,10 +2831,10 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pPC-ev-rE2"/>
-        <segue reference="TtK-m4-eBb"/>
-        <segue reference="PhM-fc-RHo"/>
-        <segue reference="x6A-Di-40b"/>
+        <segue reference="Ex7-4z-ry1"/>
+        <segue reference="VR5-ek-nyA"/>
         <segue reference="kjU-YO-7ja"/>
+        <segue reference="x6A-Di-40b"/>
+        <segue reference="TtK-m4-eBb"/>
     </inferredMetricsTieBreakers>
 </document>

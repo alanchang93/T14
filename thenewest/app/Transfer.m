@@ -67,6 +67,12 @@ MySessionDelegate* mySessionDelegate;
 @synthesize listOtherFileNames;
 @synthesize blueToothViewController;
 
+- (void) alert:(NSString* ) msg
+{
+    [[[UIAlertView alloc] initWithTitle:@"Alert" message:msg delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+
+}
+
 - (NSArray*) getOtherFileNames
 {
     return self.listOtherFileNames;
@@ -128,7 +134,7 @@ MySessionDelegate* mySessionDelegate;
             NSString *filePath = [dir stringByAppendingPathComponent:transfer.fileName];
             [transfer.data
              writeToFile:filePath atomically:YES encoding:NSASCIIStringEncoding error:nil];
-            [blueToothViewController alert:[NSString stringWithFormat:@"Received file: %@", transfer.fileName]];
+            [self alert:[NSString stringWithFormat:@"Received file: %@", transfer.fileName]];
             if(blueToothViewController.mode == SENDING)
                 [blueToothViewController setupSend];
             break;

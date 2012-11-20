@@ -80,13 +80,12 @@
     NSArray *header = [[NSArray alloc] initWithObjects:@"Physician", @"Med Student", nil];
     NSMutableArray *info = [[NSMutableArray alloc] initWithObjects:[physicianField.text stringByReplacingOccurrencesOfString:@"," withString:@";"],[studentField.text stringByReplacingOccurrencesOfString:@"," withString:@";"], nil];
     if ([info count] != [header count]) {
-        for (NSString *blank in header) {
+        for (int i = [info count] ; i < [header count]; i++) {
             [info addObject:@" "];
         }
     }
     docDict = [[NSMutableDictionary alloc] initWithObjects:info forKeys:header];
     [CSVParser saveData:docDict];
     [CSVParser writeData];
-    [CSVParser clearPatient];
-}
+    [CSVParser clearPatient];}
 @end
